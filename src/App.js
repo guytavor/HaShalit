@@ -34,7 +34,11 @@ function Deck() {
   const bind = useGesture(({ args: [index], down, delta: [xDelta], distance, direction: [xDir], velocity }) => {
     const trigger = velocity > 0.2 // If you flick hard enough it should trigger the card to fly out
     const dir = xDir < 0 ? -1 : 1 // Direction should either point left or right
-    setAnswer(xDelta > 0 ? 'Do this' : (xDelta === 0 ? '' : 'Do that'));
+    if (!down) {
+      setAnswer('');
+    } else {
+      setAnswer(xDelta > 0 ? 'Do this' : (xDelta === 0 ? '' : 'Do that'));
+    }
     if (!down && trigger) gone.add(index) // If button/finger's up and trigger velocity is reached, we flag the card ready to fly out
     set(i => {
       if (index !== i) return // We're only interested in changing spring-data for the current spring
@@ -50,7 +54,7 @@ function Deck() {
 
   return (
     <div className="deck">
-      <h2>{answer}</h2>
+      <h2 className="title">{answer}</h2>
       {
         props.map(({ x, y, rot, scale }, i) => (
           <animated.div className="card-wrapper" key={i} style={{ transform: interpolate([x, y], (x, y) => `translate3d(${x}px,${y}px,0)`) }}>
