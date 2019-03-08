@@ -23,7 +23,7 @@ const cards = [
 const to = i => ({ x: 0, y: 0, scale: 1, rot: 0, delay: i * 100 })
 const from = i => ({ x: -1000, y: -1000, rot: -4, scale: 1.5 })
 // This is being used down there in the view, it interpolates rotation and scale into a css transform
-const trans = (r, s) => `translate(${r * 50}px, ${r * r * 20}px) rotateZ(${r * 15}deg) scale(${s})`
+const trans = (r, s) => `rotateZ(${r}deg) scale(${s})`
 // const trans = (r, s) => `perspective(1500px) rotateX(30deg) rotateY(${r / 10}deg) rotateZ(${r}deg) scale(${s})`
 
 function Deck() {
@@ -36,9 +36,10 @@ function Deck() {
     const bind = useGesture(({ args: [index], down, delta: [xDelta], distance, direction: [xDir], velocity }) => {
         // If you flick hard enough it should trigger the card to fly out
         const isInCenter = Math.abs(xDelta) < 10
-        const isMovedToAnswer = Math.abs(xDelta) > 40
+        const isMovedToAnswer = Math.abs(xDelta) > 20
         const trigger = velocity > 0.2
-        const dir = xDir < 0 ? -1 : 1 // Direction should either point left or right
+        // Direction should either point left or right
+        const dir = xDir < 0 ? -1 : 1
         if (!down || !isMovedToAnswer) {
             setAnswer('');
         } else {
@@ -51,7 +52,7 @@ function Deck() {
             const springData = {
                 x: 0,
                 y: 0,
-                rot: down ? xDelta / 100 : 0,
+                rot: 0,
                 // Active cards lift up a bit
                 scale: down ? 1.05 : 1,
                 config: {friction: 50, tension: down ? 800 : isGone ? 200 : 500}
@@ -61,11 +62,19 @@ function Deck() {
                 springData.x = (200 + window.innerWidth) * dir
                 springData.y = 200 + window.innerHeight
                 // How much the card tilts, flicking it harder makes it rotate faster
-                springData.rot += dir * 10 * velocity
-            } else if (isInCenter) {
-                springData.rot = 0
-            } else {
-                springData.x = down ? xDelta : 0
+                springData.rot = dir * 150 * velocity
+            } else if (down) {
+                springData.y = -10
+                if (!isInCenter) {
+                    const absDelta = Math.abs(xDelta) * 3
+                    const xDir = xDelta < 0 ? -1 : 1
+                    const slope = 1.08
+                    const xOffset = 50
+                    const x = xDir * 85 / (1 + Math.pow(slope, -(absDelta - 50))) + xDelta / 10 // Math.abs(xDelta) * xDelta / 100
+                    springData.x = Math.max(-100, Math.min(x, 100))
+                    springData.y += springData.x * springData.x / 220
+                    springData.rot = springData.x * 0.15
+                }
             }
             return springData
         })
