@@ -1,4 +1,3 @@
-import { render } from 'react-dom'
 import React, { useState } from 'react'
 import { useSprings, animated, interpolate } from 'react-spring'
 import { useGesture } from 'react-with-gesture'
@@ -21,7 +20,7 @@ const cards = [
 
 // These two are just helpers, they curate spring data, values that are later being interpolated into css
 const to = i => ({ x: 0, y: 0, scale: 1, rot: 0, delay: i * 100 })
-const from = i => ({ x: 0, y: 0, rot: 0, scale: 1.5, y: -1000 })
+const from = i => ({ x: 0, y: -1000, rot: 0, scale: 1.5 })
 // This is being used down there in the view, it interpolates rotation and scale into a css transform
 const trans = (r, s) => `perspective(0) rotateX(30deg) rotateY(${r / 10}deg) rotateZ(${r}deg) scale(${s})`
 // const trans = (r, s) => `perspective(1500px) rotateX(30deg) rotateY(${r / 10}deg) rotateZ(${r}deg) scale(${s})`
