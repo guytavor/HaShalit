@@ -21,9 +21,9 @@ const cards = [
 // These two are just helpers, they curate spring data, values that are later being interpolated into css
 // They influence the way cards enter the screen then the game starts.
 const to = i => ({ x: 0, y: 0, scale: 1, rot: 0, delay: i * 100 })
-const from = i => ({ x: 0, y: -1000, rot: 0, scale: 1.5 })
+const from = i => ({ x: -1000, y: -1000, rot: -4, scale: 1.5 })
 // This is being used down there in the view, it interpolates rotation and scale into a css transform
-const trans = (r, s) => `translate(${r * 20}px, ${r * r * 20}px) rotateZ(${r * 15}deg) scale(${s})`
+const trans = (r, s) => `translate(${r * 50}px, ${r * r * 20}px) rotateZ(${r * 15}deg) scale(${s})`
 // const trans = (r, s) => `perspective(1500px) rotateX(30deg) rotateY(${r / 10}deg) rotateZ(${r}deg) scale(${s})`
 
 function Deck() {
