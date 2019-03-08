@@ -37,15 +37,17 @@ function Deck() {
         // If you flick hard enough it should trigger the card to fly out
         const isInCenter = Math.abs(xDelta) < 10
         const isMovedToAnswer = Math.abs(xDelta) > 20
-        const trigger = velocity > 0.2
         // Direction should either point left or right
-        const dir = xDir < 0 ? -1 : 1
+        const dir = xDelta < 0 ? -1 : 1
         if (!down || !isMovedToAnswer) {
             setAnswer('');
         } else {
             setAnswer(xDelta > 0 ? 'Do this' : (xDelta === 0 ? '' : 'Do that'));
         }
-        if (!down && isMovedToAnswer && trigger) gone.add(index) // If button/finger's up and trigger velocity is reached, we flag the card ready to fly out
+        // If button/finger's up and moved to answer, we flag the card ready to fly out
+        if (!down && isMovedToAnswer) {
+            gone.add(index)
+        }
         set(i => {
             if (index !== i) return // We're only interested in changing spring-data for the current spring
             const isGone = gone.has(index)
@@ -55,22 +57,20 @@ function Deck() {
                 rot: 0,
                 // Active cards lift up a bit
                 scale: down ? 1.05 : 1,
-                config: {friction: 50, tension: down ? 800 : isGone ? 200 : 500}
+                config: {friction: 45, tension: down ? 800 : isGone ? 100 : 500}
             }
             if (isGone) {
                 // When a card is gone it flys out left or right, otherwise goes back to zero
-                springData.x = (200 + window.innerWidth) * dir
-                springData.y = 200 + window.innerHeight
-                // How much the card tilts, flicking it harder makes it rotate faster
-                springData.rot = dir * 150 * velocity
+                springData.x = 1100 * dir
+                springData.y = 1300
+                springData.rot = dir * 200
             } else if (down) {
                 springData.y = -10
                 if (!isInCenter) {
                     const absDelta = Math.abs(xDelta) * 3
-                    const xDir = xDelta < 0 ? -1 : 1
                     const slope = 1.08
                     const xOffset = 50
-                    const x = xDir * 85 / (1 + Math.pow(slope, -(absDelta - 50))) + xDelta / 10 // Math.abs(xDelta) * xDelta / 100
+                    const x = dir * 85 / (1 + Math.pow(slope, -(absDelta - xOffset))) + xDelta / 10
                     springData.x = Math.max(-100, Math.min(x, 100))
                     springData.y += springData.x * springData.x / 220
                     springData.rot = springData.x * 0.15
