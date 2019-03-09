@@ -3,48 +3,48 @@ export default [
         id: '1',
         img: require('../assets/cards/1.gif'),
         answers: {
-            left: '1שמאלה',
-            right: '1ימינה',
+            left: 'קלף 1 שמאלה',
+            right: 'קלף 1 ימינה',
         }
     },
     {
         id: '2',
         img: require('../assets/cards/2.gif'),
         answers: {
-            left: '2שמאלה',
-            right: '2ימינה',
+            left: 'קלף 2 שמאלה',
+            right: 'קלף 2 ימינה',
         }
     },
     {
         id: '3',
         img: require('../assets/cards/3.gif'),
         answers: {
-            left: 'שמאלה3',
-            right: 'ימינה3',
+            left: 'קלף 3 שמאלה',
+            right: 'קלף 3 ימינה',
         }
     },
     {
         id: '4',
         img: require('../assets/cards/4.gif'),
         answers: {
-            left: 'שמאלה4',
-            right: 'ימינה4',
+            left: 'קלף 4 שמאלה',
+            right: 'קלף 4 ימינה',
         }
     },
     {
         id: '5',
         img: require('../assets/cards/5.gif'),
         answers: {
-            left: 'שמאלה5',
-            right: 'ימינה5',
+            left: 'קלף 5 שמאלה',
+            right: 'קלף 5 ימינה',
         }
     },
     {
         id: '6',
         img: require('../assets/cards/6.gif'),
         answers: {
-            left: 'שמאלה6',
-            right: 'ימינה6',
+            left: 'קלף 6 שמאלה',
+            right: 'קלף 6 ימינה',
         }
     },
 ];
