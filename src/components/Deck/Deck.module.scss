@@ -1,7 +1,9 @@
 .deck {
     position: relative;
-    width: 512px;
-    height: 512px;
+    height: 70vh;
+    width: 70vh;
+    max-width: 512px;
+    max-height: 512px;
 
     .card, .back {
         position: absolute;
@@ -18,5 +20,12 @@
         background-repeat: no-repeat;
         background-color: black;
         border-radius: 10px;
+    }
+}
+
+@media all and (orientation: portrait) {
+    .deck {
+        width: 70vw;
+        height: 70vw;
     }
 }
