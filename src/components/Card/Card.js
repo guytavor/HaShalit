@@ -17,7 +17,7 @@ function Card({ imgUrl, onMoveToSide, onFlip, onRelease }) {
         reset: true,
     });
 
-    const actionHandlers = useGesture(({ down, delta: [xDelta] }) => {
+    const actionHandlers = useGesture(({ down, delta: [xDelta, yDelta] }) => {
         const isInCenter = Math.abs(xDelta) < 5;
         const isMovedToAnswer = Math.abs(xDelta) > 20;
         const dir = Math.sign(xDelta);
@@ -50,7 +50,7 @@ function Card({ imgUrl, onMoveToSide, onFlip, onRelease }) {
                 springData.rot = dir * 200;
                 setTimeout(() => onFlip(dir), 600);
             } else if (down) {
-                springData.y = -10;
+                springData.y = -10 + yDelta / 10;
                 if (!isInCenter) {
                     const dragSensitivity = 2
                     const absDelta = Math.abs(xDelta);
