@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useSpring, animated, interpolate } from 'react-spring'
+import { useSpring, useTransition, animated, interpolate } from 'react-spring'
 import { useGesture } from 'react-with-gesture'
 import styles from './Card.module.css'
 
@@ -7,8 +7,15 @@ const from = { x: 0, y: 0, rot: 0, scale: 1 };
 const trans = (r, s) => `rotateX(30deg) rotateY(${r / 10}deg) rotateZ(${r}deg) scale(${s})`;
 
 function Card({ imgUrl, onMoveToSide, onFlip, onRelease }) {
-    const [gone, setGone] = useState(() => new Set());
+    const [gone] = useState(() => new Set());
+    const [enter] = useState(true);
     const [props, set] = useSpring(() => ({ from }));
+    const enterProps = useTransition(enter, null, {
+        from: { rotation: 0 },
+        enter: { rotation: 180 },
+        leave: { rotation: 180 },
+        reset: true,
+    });
 
     const actionHandlers = useGesture(({ down, delta: [xDelta] }) => {
         const isInCenter = Math.abs(xDelta) < 5;
@@ -76,7 +83,16 @@ function Card({ imgUrl, onMoveToSide, onFlip, onRelease }) {
             style={{ transform: interpolate([props.x, props.y], (x, y) => `translate3d(${x}px,${y}px,0)`) }}>
             <animated.div className={styles.card}
                 {...actionHandlers()}
-                style={{ transform: interpolate([props.rot, props.scale], trans), backgroundImage: `url(${imgUrl})` }} />
+                style={{ transform: interpolate([props.rot, props.scale], trans) }}>
+                <div className={styles.flipWrapper}>
+                    {enterProps.map(({ item, key, props: eProps }) => (
+                        [
+                            <animated.div key={key} className={styles.back} style={{ transform: interpolate([eProps.rotation], r => `rotateY(${item ? r : 180}deg)`) }} />,
+                            <animated.div key={key} className={styles.front} style={{ transform: interpolate([eProps.rotation], r => `rotateY(${item ? r - 180 : 0}deg)`), backgroundImage: `url(${imgUrl})` }} />
+                        ]
+                    ))}
+                </div>
+            </animated.div>
         </animated.div>
     )
 }

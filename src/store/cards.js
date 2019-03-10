@@ -1,7 +1,14 @@
+import doctor from '../assets/cards/doctor.png';
+import dog from '../assets/cards/dog.png';
+import prince from '../assets/cards/prince.png';
+import princess from '../assets/cards/princess.png';
+import skeleton from '../assets/cards/skeleton.png';
+import sorceress from '../assets/cards/sorceress.png';
+
 export default [
     {
         id: '1',
-        img: require('../assets/cards/1.gif'),
+        img: doctor,
         answers: {
             left: 'קלף 1 שמאלה',
             right: 'קלף 1 ימינה',
@@ -9,7 +16,7 @@ export default [
     },
     {
         id: '2',
-        img: require('../assets/cards/2.gif'),
+        img: dog,
         answers: {
             left: 'קלף 2 שמאלה',
             right: 'קלף 2 ימינה',
@@ -17,7 +24,7 @@ export default [
     },
     {
         id: '3',
-        img: require('../assets/cards/3.gif'),
+        img: prince,
         answers: {
             left: 'קלף 3 שמאלה',
             right: 'קלף 3 ימינה',
@@ -25,7 +32,7 @@ export default [
     },
     {
         id: '4',
-        img: require('../assets/cards/4.gif'),
+        img: princess,
         answers: {
             left: 'קלף 4 שמאלה',
             right: 'קלף 4 ימינה',
@@ -33,7 +40,7 @@ export default [
     },
     {
         id: '5',
-        img: require('../assets/cards/5.gif'),
+        img: skeleton,
         answers: {
             left: 'קלף 5 שמאלה',
             right: 'קלף 5 ימינה',
@@ -41,7 +48,7 @@ export default [
     },
     {
         id: '6',
-        img: require('../assets/cards/6.gif'),
+        img: sorceress,
         answers: {
             left: 'קלף 6 שמאלה',
             right: 'קלף 6 ימינה',
