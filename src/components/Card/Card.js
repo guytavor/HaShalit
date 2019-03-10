@@ -16,10 +16,12 @@ function Card({ imgUrl, onMoveToSide, onFlip, onRelease }) {
 
         const dir = Math.sign(xDelta);
 
-        if (dir !== 0) {
+        if (isMovedToAnswer) {
             onMoveToSide(dir);
         } else if (!down) {
             onRelease();
+        } else {
+            onMoveToSide(0);
         }
 
         if (!down && isMovedToAnswer) {
