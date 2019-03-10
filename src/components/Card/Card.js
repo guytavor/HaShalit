@@ -4,45 +4,44 @@ import { useGesture } from 'react-with-gesture'
 import styles from './Card.module.css'
 
 const from = { x: 0, y: 0, rot: 0, scale: 1 };
-const trans = (r, s) => `rotateZ(${r}deg) scale(${s})`;
+const trans = (r, s) => `rotateX(30deg) rotateY(${r / 10}deg) rotateZ(${r}deg) scale(${s})`;
 
 function Card({ imgUrl, onMoveToSide, onFlip, onRelease }) {
-    const [gone, setGone] = useState(false);
+    const [gone, setGone] = useState(() => new Set());
     const [props, set] = useSpring(() => ({ from }));
 
     const actionHandlers = useGesture(({ down, delta: [xDelta] }) => {
         const isInCenter = Math.abs(xDelta) < 5;
         const isMovedToAnswer = Math.abs(xDelta) > 20;
-
         const dir = Math.sign(xDelta);
 
         if (isMovedToAnswer) {
             onMoveToSide(dir);
-        } else if (!down) {
-            onRelease();
         } else {
-            onMoveToSide(0);
+            onMoveToSide();
         }
 
         if (!down && isMovedToAnswer) {
-            setGone(true);
-            onFlip(dir);
+            gone.add('true');
+            onMoveToSide();
         }
 
         set(() => {
+            const isGone = gone.has('true');
             const springData = {
                 x: 0,
                 y: 0,
                 rot: 0,
                 scale: down ? 1.05 : 1,
                 // Friction 50 means no bounce at all. Below that increases the bounce.
-                config: { friction: 42, tension: down ? 800 : gone ? 100 : 500 }
+                config: { friction: 42, tension: down ? 800 : isGone ? 100 : 500 }
             };
 
-            if (gone) {
+            if (isGone) {
                 springData.x = 1100 * dir;
                 springData.y = 1300;
                 springData.rot = dir * 200;
+                setTimeout(() => onFlip(dir), 600);
             } else if (down) {
                 springData.y = -10;
                 if (!isInCenter) {
@@ -70,7 +69,7 @@ function Card({ imgUrl, onMoveToSide, onFlip, onRelease }) {
             }
             return springData;
         })
-    })
+    });
 
     return (
         <animated.div className={styles.cardWrapper}

@@ -20,10 +20,10 @@ class Deck extends React.PureComponent {
 
         return (
             <div className={styles.deck}>
-                <Card imgUrl={card.img}
+                <Card key={card.id}
+                    imgUrl={card.img}
                     onMoveToSide={this._onMoveToSide}
-                    onFlip={this._onFlip}
-                    onRelease={this._onReleaseCard} />
+                    onFlip={this._onFlip} />
             </div>
         );
     }
@@ -33,18 +33,13 @@ class Deck extends React.PureComponent {
         const side = direction > 0 ? 'right' : (direction < 0 ? 'left' : null);
 
         if (currentSide !== side) {
-            moveToSide({side});
+            moveToSide({ side });
         }
     };
 
     _onFlip = () => {
         const { nextCard } = this.props;
         nextCard();
-    };
-
-    _onReleaseCard = () => {
-        const { moveToSide } = this.props;
-        moveToSide({side: null});
     };
 }
 

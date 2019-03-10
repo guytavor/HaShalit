@@ -12,7 +12,7 @@ class Stage extends React.PureComponent {
             <div className={styles.stage}>
                 <h2 className={styles.answer}>{answer}</h2>
                 <Deck />
-            </div>  
+            </div>
         );
     }
 };
