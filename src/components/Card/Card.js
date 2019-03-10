@@ -4,9 +4,9 @@ import { useGesture } from 'react-with-gesture'
 import styles from './Card.module.scss'
 
 const from = { x: 0, y: 0, rot: 0, scale: 1 };
-const trans = (r, s) => `rotateY(${r / 10}deg) rotateZ(${r}deg) scale(${s})`;
+const trans = (r, s) => `rotateZ(${r}deg) scale(${s})`;
 
-function Card({ imgUrl, onMoveToSide, onFlip, onRelease }) {
+function Card({ imgUrl, onMoveToSide, onFlip }) {
     const [gone] = useState(() => new Set());
     const [enter] = useState(true);
     const [props, set] = useSpring(() => ({ from }));
@@ -52,7 +52,7 @@ function Card({ imgUrl, onMoveToSide, onFlip, onRelease }) {
             } else if (down) {
                 springData.y = -10 + yDelta / 10;
                 if (!isInCenter) {
-                    const dragSensitivity = 2
+                    const dragSensitivity = 2;
                     const absDelta = Math.abs(xDelta);
                     // This is a Sigmoid function. It slowly increase from 0, then at a
                     // certain "sweet spot" quickly increases and finally flattens at 1.

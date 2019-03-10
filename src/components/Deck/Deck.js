@@ -59,6 +59,6 @@ const mapDispatchToProps = dispatch => {
         moveToSide: Actions.moveToSide,
         nextCard: Actions.nextCard,
     }, dispatch);
-}
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(Deck);
