@@ -1,0 +1,22 @@
+.deck {
+    position: relative;
+    width: 512px;
+    height: 512px;
+
+    .card, .back {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .back {
+        background-image: url('../../assets/cards/back.jpg');
+        background-position: center center;
+        background-size: 400px 400px;
+        background-repeat: no-repeat;
+        background-color: black;
+        border-radius: 10px;
+    }
+}

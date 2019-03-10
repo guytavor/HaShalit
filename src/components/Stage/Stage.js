@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import Deck from '../Deck/Deck';
-import styles from './Stage.module.css';
+import styles from './Stage.module.scss';
 
 class Stage extends React.PureComponent {
     render() {

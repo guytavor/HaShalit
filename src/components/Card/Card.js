@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useSpring, useTransition, animated, interpolate } from 'react-spring'
 import { useGesture } from 'react-with-gesture'
-import styles from './Card.module.css'
+import styles from './Card.module.scss'
 
 const from = { x: 0, y: 0, rot: 0, scale: 1 };
 const trans = (r, s) => `rotateY(${r / 10}deg) rotateZ(${r}deg) scale(${s})`;

@@ -4,7 +4,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import Actions from '../../store/Actions';
 import Card from '../Card/Card';
-import styles from './Deck.module.css';
+import styles from './Deck.module.scss';
 
 class Deck extends React.PureComponent {
     state = {
