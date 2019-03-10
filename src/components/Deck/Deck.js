@@ -20,10 +20,13 @@ class Deck extends React.PureComponent {
 
         return (
             <div className={styles.deck}>
-                <Card key={card.id}
-                    imgUrl={card.img}
-                    onMoveToSide={this._onMoveToSide}
-                    onFlip={this._onFlip} />
+                <div className={styles.back} />
+                <div className={styles.card}>
+                    <Card key={card.id}
+                        imgUrl={card.img}
+                        onMoveToSide={this._onMoveToSide}
+                        onFlip={this._onFlip} />
+                </div>
             </div>
         );
     }

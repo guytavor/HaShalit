@@ -3,17 +3,21 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 100%;
+  height: 100%;
 }
 
 .cardWrapper .card {
   perspective: 1000px;
   border-radius: 10px;
+  width: 100%;
+  height: 100%;
 }
 
 .cardWrapper .card .flipWrapper {
   position: relative;
-  width: 512px;
-  height: 512px;
+  width: 100%;
+  height: 100%;
 	transition: 0.6s;
 	transform-style: preserve-3d;
 }
@@ -36,6 +40,8 @@
   background-size: 400px 400px;
   background-repeat: no-repeat;
   background-color: black;
+  width: 100%;
+  height: 100%;
 }
 
 .cardWrapper .card .flipWrapper .front {
@@ -43,7 +49,7 @@
   width: 100%;
   height: 100%;
   background-color: #95cde7;
-  background-size: auto 85%;
+  background-size: 100%;
   background-repeat: no-repeat;
   background-position: center center;
   will-change: transform;

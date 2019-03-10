@@ -4,7 +4,7 @@ import { useGesture } from 'react-with-gesture'
 import styles from './Card.module.css'
 
 const from = { x: 0, y: 0, rot: 0, scale: 1 };
-const trans = (r, s) => `rotateX(30deg) rotateY(${r / 10}deg) rotateZ(${r}deg) scale(${s})`;
+const trans = (r, s) => `rotateY(${r / 10}deg) rotateZ(${r}deg) scale(${s})`;
 
 function Card({ imgUrl, onMoveToSide, onFlip, onRelease }) {
     const [gone] = useState(() => new Set());
