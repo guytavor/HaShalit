@@ -1,12 +1,40 @@
 .stage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+
+  .answerContainer {
     display: flex;
-    flex-direction: column;
+    flex-direction: row-reverse;
     align-items: center;
-    justify-content: center;
-    height: 100vh;
+    justify-content: space-between;
+    width: 70vh;
 
     .answer {
-        height: 24px;
-        line-height: 1.2;
+      height: 24px;
+      line-height: 1.2;
+      margin-bottom: 60px;
+
+      &:first {
+          color: red;
+      }
+    }
+  }
+}
+
+@media all and (orientation: portrait) {
+    .stage .answerContainer {
+        width: 70vw;
+    }
+}
+
+@media all and (max-width: 768px) {
+    .stage .answerContainer {
+        .answer {
+            font-size: 12px;
+            margin-bottom: 10px;
+          }
     }
 }
