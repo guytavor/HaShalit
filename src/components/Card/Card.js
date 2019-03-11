@@ -92,12 +92,12 @@ function Card({ imgUrl, onMoveToSide, onFlip }) {
                                     [eProps.rotation],
                                     // This should be the animation if dir < 0. If dir > 0, it should be reversed.
                                     // TODO: How do we get the direction of the swipe here?
-                                    r => `translateX(${item ? Math.sin((r - 45) * Math.PI / 90) * 70 + 70 : 0}px) rotateY(${item ? r : 180}deg) scale(${item ? Math.sin((r - 45) * Math.PI / 90) / 4 + 1.25 : 1})`)
+                                    r => `translateX(${item ? Math.sin((Math.min(r * 1.1, 180) - 45) * Math.PI / 90) * 70 + 70 : 0}px) rotateY(${item ? Math.min(r * 1.1, 180) : 180}deg) scale(${item ? Math.sin((r - 45) * Math.PI / 90) / 4 + 1.25 : 1})`)
                             }} />,
                             <animated.div key={key} className={styles.front} style={{
                                 transform: interpolate(
                                     [eProps.rotation],
-                                    r => `translateX(${item ? Math.sin((r - 45) * Math.PI / 90) * 70 + 70 : 0}px) rotateY(${item ? r - 180 : 0}deg) scale(${item ? Math.sin((r - 45) * Math.PI / 90) / 4 + 1.25 : 1})`),
+                                    r => `translateX(${item ? Math.sin((Math.min(r * 1.1, 180) - 45) * Math.PI / 90) * 70 + 70 : 0}px) rotateY(${item ? Math.min(r * 1.1, 180) - 180 : 0}deg) scale(${item ? Math.sin((r - 45) * Math.PI / 90) / 4 + 1.25 : 1})`),
                                 backgroundImage: `url(${imgUrl})`
                             }} />
                         ]
