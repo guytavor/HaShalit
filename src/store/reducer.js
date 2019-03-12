@@ -25,6 +25,7 @@ const INITIAL_STATE = {
         hasLost: false,
         cardsUnlocked: new Set(),
         cardsUnlockedForever: new Set(),
+        // TODO: Keep a record of played cards to not draw them again.
     },
     // TODO: At the end of a session, copy persistentParameters and cardsUnlockedForever from the level.
     persistentParameters: {},
