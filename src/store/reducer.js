@@ -16,6 +16,8 @@ const INITIAL_STATE = {
         },
         persistantParameters: [],
         year: 0,
+        hasWon: false,
+        hasLost: false,
     },
     settings: {},
 };
