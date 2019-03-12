@@ -1,12 +1,28 @@
 import React, { useState } from 'react'
 import { useSpring, useTransition, animated, interpolate } from 'react-spring'
 import { useGesture } from 'react-with-gesture'
+import get from 'lodash/get';
 import styles from './Card.module.scss'
 
 const from = { x: 0, y: 0, rot: 0, scale: 1 };
 const trans = (r, s) => `rotateZ(${r}deg) scale(${s})`;
+const SIDES = {
+    '-1': 'left',
+    '1': 'right'
+};
 
-function Card({ imgUrl, onMoveToSide, onFlip }) {
+function getAnswer(card, side) {
+    let answer = '';
+
+    if (card && side && card[side]) {
+        answer = card[side].text;
+    }
+
+    return answer;
+}
+
+function Card({ card, onFlip }) {
+    const [side, setSide] = useState(0);
     const [gone] = useState(() => new Set());
     const [enter] = useState(true);
     const [props, set] = useSpring(() => ({ from }));
@@ -16,6 +32,8 @@ function Card({ imgUrl, onMoveToSide, onFlip }) {
         leave: { rotation: 180 },
         reset: true,
     });
+    const cardImg = get(card, 'character.img', '');
+    let answer = getAnswer(card, SIDES[side]);
 
     const actionHandlers = useGesture(({ down, delta: [xDelta, yDelta] }) => {
         const isInCenter = Math.abs(xDelta) < 5;
@@ -23,14 +41,14 @@ function Card({ imgUrl, onMoveToSide, onFlip }) {
         const dir = Math.sign(xDelta);
 
         if (isMovedToAnswer) {
-            onMoveToSide(dir);
+            setSide(dir);
         } else {
-            onMoveToSide();
+            setSide();
         }
 
         if (!down && isMovedToAnswer) {
             gone.add('true');
-            onMoveToSide();
+            setSide();
         }
 
         set(() => {
@@ -85,21 +103,25 @@ function Card({ imgUrl, onMoveToSide, onFlip }) {
                 {...actionHandlers()}
                 style={{ transform: interpolate([props.rot, props.scale], trans) }}>
                 <div className={styles.flipWrapper}>
-                    {enterProps.map(({ item, key, props: eProps }) => (
+                    {enterProps.map(({ item, props: eProps }) => (
                         [
-                            <animated.div key={key} className={styles.back} style={{
+                            <animated.div key={0} className={styles.back} style={{
                                 transform: interpolate(
                                     [eProps.rotation],
                                     // This should be the animation if dir < 0. If dir > 0, it should be reversed.
                                     // TODO: How do we get the direction of the swipe here?
                                     r => `translateX(${item ? Math.sin((Math.min(r * 1.1, 180) - 45) * Math.PI / 90) * 70 + 70 : 0}px) rotateY(${item ? Math.min(r * 1.1, 180) : 180}deg) scale(${item ? Math.sin((r - 45) * Math.PI / 90) / 4 + 1.25 : 1})`)
                             }} />,
-                            <animated.div key={key} className={styles.front} style={{
+                            <animated.div key={1} className={styles.front} style={{
                                 transform: interpolate(
                                     [eProps.rotation],
                                     r => `translateX(${item ? Math.sin((Math.min(r * 1.1, 180) - 45) * Math.PI / 90) * 70 + 70 : 0}px) rotateY(${item ? Math.min(r * 1.1, 180) - 180 : 0}deg) scale(${item ? Math.sin((r - 45) * Math.PI / 90) / 4 + 1.25 : 1})`),
-                                backgroundImage: `url(${imgUrl})`
-                            }} />
+                                backgroundImage: `url(${cardImg})`
+                            }}>
+                                <div className={styles.answerContainer}>
+                                    <h2 className={`${styles[SIDES[side]]} ${styles.answer}`}>{answer}</h2>
+                                </div>
+                            </animated.div>
                         ]
                     ))}
                 </div>

@@ -1,6 +1,6 @@
 import { createActions } from 'redux-actions';
 
 export default createActions({
-    MOVE_TO_SIDE: undefined,
+    INIT: undefined,
     NEXT_CARD: undefined,
 });

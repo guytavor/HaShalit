@@ -51,6 +51,22 @@
         will-change: transform;
         box-shadow: 0 12.5px 100px -10px rgba(50, 50, 73, 0.4),
           0 10px 10px -10px rgba(50, 50, 73, 0.3);
+
+        .answerContainer {
+          width: 100%;
+
+          .answer {
+            width: 100%;
+
+            &.left {
+              text-align: left;
+            }
+
+            &.right {
+              text-align: right;
+            }
+          }
+        }
       }
     }
   }
