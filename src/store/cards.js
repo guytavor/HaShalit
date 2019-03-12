@@ -67,6 +67,7 @@ const cards = {
         // A locked card can only appear if it is the 'nextCard' of the previous choice or
         // if it is unlocked at 'unlockCards' (or if it is hard coded like the lose cards).
         locked: true,
+        lose: true,
     },
     '1': {
         character: characters.president,
@@ -165,7 +166,7 @@ const cards = {
     }
 };
 
-for (let id in cards) {
+for (const id of Object.keys(cards)) {
     cards[id].id = id;
 }
 
