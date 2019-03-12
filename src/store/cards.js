@@ -1,55 +1,58 @@
-import doctor from '../assets/cards/doctor.png';
-import dog from '../assets/cards/dog.png';
-import prince from '../assets/cards/prince.png';
-import princess from '../assets/cards/princess.png';
-import skeleton from '../assets/cards/skeleton.png';
-import sorceress from '../assets/cards/sorceress.png';
+import loseSecurity from '../assets/cards/skeleton.png';
+import president from '../assets/cards/doctor.png';
+import consultant from '../assets/cards/dog.png';
+import ministerEducation from '../assets/cards/prince.png';
+import ministerTreasury from '../assets/cards/princess.png';
+import foreignEmissary from '../assets/cards/sorceress.png';
+import foreignAmbassador from '../assets/cards/sorceress.png';
+import foreignKing from '../assets/cards/sorceress.png';
+import protest from '../assets/cards/sorceress.png';
+import news from '../assets/cards/sorceress.png';
 
 const characters = {
     president: {
-        img: doctor,
+        img: president,
         name: 'הנשיא',
     },
     consultant: {
-        img: dog,
+        img: consultant,
         name: 'היועץ',
     },
     ministerEducation: {
-        img: prince,
+        img: ministerEducation,
         name: 'שר החינוך',
     },
     ministerTreasury: {
-        img: princess,
+        img: ministerTreasury,
         name: 'שר האוצר',
     },
     foreignEmissary: {
-        img: skeleton,
+        img: foreignEmissary,
         name: 'שליח ממלכת פיסטוקיה',
     },
     foreignAmbassador: {
-        img: sorceress,
+        img: foreignAmbassador,
         name: 'שגריר פיסטוקיה',
     },
     foreignKing: {
-        img: doctor,
+        img: foreignKing,
         name: 'מלך פיסטוקיה',
     },
     protest: {
-        img: dog,
+        img: protest,
         name: 'מחאה',
     },
     news: {
-        img: skeleton,
+        img: news,
         name: 'חדשות',
     },
 };
 
-export default {
+const cards = {
     // Special game cards.
     'loseSecurity': {
         // Cards can specify either a character or an image and name.
-        id: 'loseSecurity',
-        img: 'loseSecurity',
+        img: loseSecurity,
         name: 'הפסדת את השלטון',
         text: 'אתה. חלש. הצבא מפיל את השלטון.',
         left: {
@@ -66,7 +69,6 @@ export default {
         locked: true,
     },
     '1': {
-        id: '1',
         character: characters.president,
         text: 'כבוד השר, האם תרצה להיות השליט?',
         left: {
@@ -81,7 +83,7 @@ export default {
             //unlockCardsForever: ['20'],
         },
         right: {
-            text: 'לא',
+            text: 'לא, תודה',
             nextCard: '2',
         },
         // Cards add 1 year when played. This property indicates that the card should not advance time.
@@ -89,8 +91,30 @@ export default {
         // This card is locked because it only appears at the start of the game.
         locked: true,
     },
+    '2': {
+        character: characters.president,
+        text: 'חבל, העם בחר בך. שיהיה לך בהצלחה!',
+        left: {
+            text: 'תודה',
+            // A preset card to show after this choice.
+            nextCard: '3',
+            // Unlock cards are added to the pool of cards and show up randomly in this term.
+            // These cards are locked again after the game is lost.
+            //unlockCards: ['15'],
+            // Cards that are unlocked forever remain unlocked after a game is lost and can
+            // appear in the next games as well.
+            //unlockCardsForever: ['20'],
+        },
+        right: {
+            text: 'תודה',
+            nextCard: '3',
+        },
+        // Cards add 1 year when played. This property indicates that the card should not advance time.
+        advanceTime: false,
+        // This card is locked because it only appears at the start of the game.
+        locked: true,
+    },
     '3': {
-        id: '3',
         character: characters.consultant,
         text: 'המצב הכלכלי קשה - המדינה בגירעון',
         left: {
@@ -102,12 +126,12 @@ export default {
                 //security: 0,
                 image: -100,
                 //religion: 0,
-                add: {
+                /*add: {
                     // We can modify a variable with 'add' so if it gets to a certain value
                     // it might unlock new cards. For example, weaken the justice system 3
                     // times and you can get away with crime.
                     health: -1,
-                },
+                },*/
                 // Answers can specify this field so the player will finish the current sequence of cards
                 // before losing.
                 // dontLose: true,
@@ -118,11 +142,11 @@ export default {
             effects: {
                 economy: 100,
                 image: -100,
-                set: {
+                /*set: {
                     // We can set a variable's value and use it as a flag. Here it means that
                     // the people could remember that you raised taxes.
                     taxes: 1,
-                },
+                },*/
             },
         },
         locked: true,
@@ -140,3 +164,9 @@ export default {
         },*/
     }
 };
+
+for (let id in cards) {
+    cards[id].id = id;
+}
+
+export default cards;
