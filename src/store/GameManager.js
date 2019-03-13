@@ -109,31 +109,33 @@ export default class CardManager {
                 }
             }
             // Check conditions.
-            if (card.conditions) {
-                let areConditionsMet = true;
-                for (const parameterCondition of card.conditions) {
-                    const parameter = parameterCondition[0];
-                    const currentValue = state.parameters[parameter] || 0;
-                    const conditions = parameterCondition[1];
-                    for (const condition of Object.keys(conditions)) {
-                        const validationFunction = validationFunctions[condition];
-                        const value = parameterCondition[condition];
-                        if (!validationFunction(currentValue, value)) {
-                            areConditionsMet = false;
-                            break;
-                        }
-                    }
-                    if (!areConditionsMet) {
-                        break;
-                    }
-                }
-                if (!areConditionsMet) {
-                    continue;
-                }
+            if (card.conditions
+                && !CardManager._checkConditions(state.parameters, card.conditions, card.id)) {
+                continue;
             }
             availableCards.push(id);
         }
         return chooseRandomFromArray(availableCards);
+    }
+
+    static _checkConditions(parameters, conditions, id) {
+        for (const parameterCondition of conditions) {
+            const parameter = parameterCondition[0];
+            const currentValue = parameters[parameter] || 0;
+            const conditions = parameterCondition[1];
+            for (const condition of Object.keys(conditions)) {
+                const validationFunction = validationFunctions[condition];
+                if (!validationFunction) {
+                    console.error(
+                        'No validation function named:', condition, 'Used in card', id);
+                }
+                const value = parameterCondition[condition];
+                if (!validationFunction(currentValue, value)) {
+                    return false;
+                }
+            }
+        }
+        return true;
     }
 
     static _applyEffects(state, effects) {
