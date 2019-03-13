@@ -118,12 +118,12 @@ const cards = {
                 //security: 0,
                 image: -100,
                 //religion: 0,
-                /*add: {
+                /*add: [
                     // We can modify a variable with 'add' so if it gets to a certain value
                     // it might unlock new cards. For example, weaken the justice system 3
                     // times and you can get away with crime.
-                    health: -1,
-                },*/
+                    ['health', -1],
+                ],*/
                 // Answers can specify this field so the player will finish the current sequence of cards
                 // before losing.
                 // dontLose: true,
@@ -134,11 +134,11 @@ const cards = {
             effects: {
                 economy: 100,
                 image: -100,
-                /*set: {
+                /*set: [
                     // We can set a variable's value and use it as a flag. Here it means that
                     // the people could remember that you raised taxes.
-                    taxes: 1,
-                },*/
+                    ['taxes', 1],
+                ],*/
             },
         },
         locked: true,
@@ -149,11 +149,11 @@ const cards = {
         // (This means we have to keep track of the IDs of unlocked cards).
         // Note that conditions should be checked whenever parameters are changed because cards
         // could go back to being locked if their conditions are not met.
-        /*conditions: {
-            justice: {
+        /*conditions: [
+            ['justice', {
                 lessThan: -4,
-            },
-        },*/
+            }],
+        ],*/
     }
 };
 

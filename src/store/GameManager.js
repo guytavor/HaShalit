@@ -1,3 +1,24 @@
+const validationFunctions = {
+    equals: (lhs, rhs) => {
+        return lhs === rhs;
+    },
+    notEquals: (lhs, rhs) => {
+        return lhs !== rhs;
+    },
+    lessThan: (lhs, rhs) => {
+        return lhs < rhs;
+    },
+    lessThanOrEqual: (lhs, rhs) => {
+        return lhs <= rhs;
+    },
+    greaterThan: (lhs, rhs) => {
+        return lhs > rhs;
+    },
+    greaterThanOrEqual: (lhs, rhs) => {
+        return lhs >= rhs;
+    },
+};
+
 export default class CardManager {
     constructor(cards) {
         this._cards = cards;
@@ -90,16 +111,19 @@ export default class CardManager {
             // Check conditions.
             if (card.conditions) {
                 let areConditionsMet = true;
-                for (const parameter of Object.keys(card.conditions)) {
-                    const condition = card.conditions[parameter];
+                for (const parameterCondition of card.conditions) {
+                    const parameter = parameterCondition[0];
                     const currentValue = state.parameters[parameter] || 0;
-                    if ((condition.equals && currentValue !== condition.equals) ||
-                        (condition.notEquals && currentValue === condition.notEquals) ||
-                        (condition.lessThan && currentValue >= condition.lessThan) ||
-                        (condition.lessThanOrEqual && currentValue > condition.lessThanOrEqual) ||
-                        (condition.greaterThan && currentValue <= condition.greaterThan) ||
-                        (condition.greaterThanOrEqual && currentValue < condition.greaterThanOrEqual)) {
-                        areConditionsMet = false;
+                    const conditions = parameterCondition[1];
+                    for (const condition of Object.keys(conditions)) {
+                        const validationFunction = validationFunctions[condition];
+                        const value = parameterCondition[condition];
+                        if (!validationFunction(currentValue, value)) {
+                            areConditionsMet = false;
+                            break;
+                        }
+                    }
+                    if (!areConditionsMet) {
                         break;
                     }
                 }
@@ -120,15 +144,17 @@ export default class CardManager {
         }
 
         if (effects.set) {
-            for (const parameter of Object.keys(effects.set)) {
-                state.parameters[parameter] = effects.set[parameter];
+            for (const effect of effects.set) {
+                const parameter = effect[0];
+                state.parameters[parameter] = effect[1];
             }
         }
 
         if (effects.add) {
-            for (const parameter of Object.keys(effects.add)) {
+            for (const effect of effects.add) {
+                const parameter = effect[0];
                 const currentValue = state.parameters[parameter] || 0;
-                state.parameters[parameter] = currentValue + effects.add[parameter];
+                state.parameters[parameter] = currentValue + effect[1];
             }
         }
     }
