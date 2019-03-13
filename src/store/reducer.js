@@ -43,8 +43,10 @@ const INITIAL_STATE = {
 };
 
 export default handleActions({
-    INIT: (state) => {
-        const nextLevel = gameManager.getNextLevel(state.level);
+    INIT: (state, action) => {
+        const { payload } = action;
+        const { saved } = payload;
+        const nextLevel = gameManager.getNextLevel(saved ? saved.level : state.level);
 
         return {
             ...state,

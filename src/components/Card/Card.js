@@ -53,7 +53,7 @@ function flipScale(item, t) {
     return value * 0.25 + 1;
 }
 
-function Card({ card, onFlip }) {
+function Card({ card, onFlip, prevDir }) {
     const [side, setSide] = useState(0);
     const [gone] = useState(() => new Set());
     const [enter] = useState(true);
@@ -66,6 +66,8 @@ function Card({ card, onFlip }) {
     });
     const cardImg = get(card, 'character.img', '');
     let answer = getAnswer(card, SIDES[side]);
+
+    console.log('previous direction: ', prevDir);
 
     const actionHandlers = useGesture(({ down, delta: [xDelta, yDelta] }) => {
         const isInCenter = Math.abs(xDelta) < 5;

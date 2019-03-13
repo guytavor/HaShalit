@@ -1,6 +1,6 @@
-import { createActions } from 'redux-actions';
+import { createAction } from 'redux-actions';
 
-export default createActions({
-    INIT: undefined,
-    NEXT_CARD: undefined,
-});
+export default {
+    init: createAction('INIT'),
+    nextCard: createAction('NEXT_CARD'),
+};

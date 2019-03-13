@@ -6,9 +6,11 @@ import actions from '../../store/actions';
 import Card from '../Card/Card';
 import styles from './Deck.module.scss';
 
+const DEFAULT_DIRECTION_FLIP = 1;
+
 class Deck extends React.PureComponent {
     state = {
-        gone: false,
+        prevFlipDirection: DEFAULT_DIRECTION_FLIP,
     };
 
     static propTypes = {
@@ -16,6 +18,7 @@ class Deck extends React.PureComponent {
     };
 
     render() {
+        const { prevFlipDirection } = this.state;
         const { card } = this.props;
 
         return (
@@ -23,8 +26,9 @@ class Deck extends React.PureComponent {
                 <div className={styles.back} />
                 <div className={styles.card}>
                     {card ? <Card key={card.id}
-                        card={card}
-                        onFlip={this._onFlip} /> : null}
+                                  prevDir={prevFlipDirection}
+                                  card={card}
+                                  onFlip={this._onFlip} /> : null}
                 </div>
             </div>
         );
@@ -33,6 +37,7 @@ class Deck extends React.PureComponent {
     _onFlip = (dir) => {
         const { nextCard } = this.props;
         const side = dir > 0 ? 'right' : (dir < 0 ? 'left' : '');
+        this.setState({prevFlipDirection: dir});
         nextCard({ side });
     };
 }
