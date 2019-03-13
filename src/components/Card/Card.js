@@ -21,15 +21,47 @@ function getAnswer(card, side) {
     return answer;
 }
 
+function flipTranslateX(item, t, dir) {
+    if (!item) return 0;
+    t = Math.min(t * 1.1, 1);
+    const angle = t * 360 - 90;
+    const radians = angle * Math.PI / 180;
+    let value = Math.sin(radians) + 1;
+    if (dir < 0) {
+        value = -value;
+    }
+    return value * 70;
+}
+
+function flipRotateY(item, t, dir, isFront) {
+    if (!item) {
+        return isFront ? 0 : 180;
+    }
+    let rotation = isFront ? -180 : 0;
+    rotation += Math.min(t * 1.1, 1) * 180;
+    if (dir < 0) {
+        rotation = -rotation;
+    }
+    return rotation;
+}
+
+function flipScale(item, t) {
+    if (!item) return 1;
+    const angle = t * 360 - 90;
+    const radians = angle * Math.PI / 180;
+    let value = Math.sin(radians) + 1;
+    return value * 0.25 + 1;
+}
+
 function Card({ card, onFlip }) {
     const [side, setSide] = useState(0);
     const [gone] = useState(() => new Set());
     const [enter] = useState(true);
     const [props, set] = useSpring(() => ({ from }));
     const enterProps = useTransition(enter, null, {
-        from: { rotation: 0 },
-        enter: { rotation: 180 },
-        leave: { rotation: 180 },
+        from: { t: 0 },
+        enter: { t: 1 },
+        leave: { t: 1 },
         reset: true,
     });
     const cardImg = get(card, 'character.img', '');
@@ -107,15 +139,15 @@ function Card({ card, onFlip }) {
                         [
                             <animated.div key={0} className={styles.back} style={{
                                 transform: interpolate(
-                                    [eProps.rotation],
+                                    [eProps.t],
                                     // This should be the animation if dir < 0. If dir > 0, it should be reversed.
                                     // TODO: How do we get the direction of the swipe here?
-                                    r => `translateX(${item ? Math.sin((Math.min(r * 1.1, 180) - 45) * Math.PI / 90) * 70 + 70 : 0}px) rotateY(${item ? Math.min(r * 1.1, 180) : 180}deg) scale(${item ? Math.sin((r - 45) * Math.PI / 90) / 4 + 1.25 : 1})`)
+                                    t => `translateX(${flipTranslateX(item, t, 0)}px) rotateY(${flipRotateY(item, t, 9, false)}deg) scale(${flipScale(item, t)})`)
                             }} />,
                             <animated.div key={1} className={styles.front} style={{
                                 transform: interpolate(
-                                    [eProps.rotation],
-                                    r => `translateX(${item ? Math.sin((Math.min(r * 1.1, 180) - 45) * Math.PI / 90) * 70 + 70 : 0}px) rotateY(${item ? Math.min(r * 1.1, 180) - 180 : 0}deg) scale(${item ? Math.sin((r - 45) * Math.PI / 90) / 4 + 1.25 : 1})`),
+                                    [eProps.t],
+                                    t => `translateX(${flipTranslateX(item, t, 0)}px) rotateY(${flipRotateY(item, t, 0, true)}deg) scale(${flipScale(item, t)})`),
                                 backgroundImage: `url(${cardImg})`
                             }}>
                                 <div className={styles.answerContainer}>
