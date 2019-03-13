@@ -69,7 +69,7 @@ const cards = {
         locked: true,
         lose: true,
     },
-    '1': {
+    '10': {
         character: characters.president,
         text: 'כבוד השר, האם תרצה להיות השליט?',
         left: {

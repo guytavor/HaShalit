@@ -4,7 +4,10 @@ export default class CardManager {
     }
 
     getNextLevel(state, selectedSide) {
-        let nextCardId = '1';
+        // TODO: If a new game check if passed tutorial.
+        //       If so, show a random starting card.
+        //       If not, start with the tutorial card.
+        let nextCardId = '10';
         const card = state ? state.card : null;
 
         if (!card) {
