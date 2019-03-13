@@ -18,6 +18,7 @@ const INITIAL_STATE = {
             image: DEFAULT_METRICS_POINTS,
             religion: DEFAULT_METRICS_POINTS,
         },
+        // TODO: At the end of a game, delete the non persistent parameters.
         parameters: {},
         year: 2019,
         yearsInPower: 0,
@@ -25,11 +26,8 @@ const INITIAL_STATE = {
         hasLost: false,
         cardsUnlocked: new Set(),
         cardsUnlockedForever: new Set(),
-        // TODO: Keep a record of played cards to not draw them again.
+        playedCards: new Set(),
     },
-    // TODO: At the end of a session, copy persistentParameters and cardsUnlockedForever from the level.
-    persistentParameters: {},
-    cardsUnlockedForever: new Set(),
     settings: {},
 };
 

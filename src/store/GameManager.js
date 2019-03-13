@@ -61,6 +61,9 @@ export default class CardManager {
             };
         }
 
+        // Keep track of played cards. Don't draw them again in this session.
+        state.playedCards.add(state.card.id);
+
         const answer = card ? card[selectedSide] : null;
 
         if (answer) {
@@ -102,17 +105,25 @@ export default class CardManager {
         let availableCards = [];
         for (const id of Object.keys(this._cards)) {
             const card = this._cards[id];
+
             // Check if card is locked.
             if (card.locked) {
                 if (!state.cardsUnlocked.has(id) && !state.cardsUnlockedForever.has(id)) {
                     continue;
                 }
             }
+
             // Check conditions.
             if (card.conditions
                 && !CardManager._checkConditions(state.parameters, card.conditions, card.id)) {
                 continue;
             }
+
+            if (state.playedCards.has(id)) {
+                // Card already played in this session.
+                continue;
+            }
+
             availableCards.push(id);
         }
         return chooseRandomFromArray(availableCards);
