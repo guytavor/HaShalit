@@ -23,13 +23,21 @@ export default class CardManager {
         }
 
         if (card.lose) {
-            // TODO: Implement game over.
+            state.hasLost = true;
             console.log('Game Over');
+            return {
+                ...state,
+                card: null,
+            };
         }
 
         if (card.win) {
-            // TODO: Implement victory.
+            state.hasWon = true;
             console.log('Victory');
+            return {
+                ...state,
+                card: null,
+            };
         }
 
         const answer = card ? card[selectedSide] : null;
@@ -52,6 +60,7 @@ export default class CardManager {
 
             if (answer.effects) {
                 CardManager._applyEffects(state, answer.effects);
+                // TODO: Check if metrics are 0. If so, select a lost card.
             }
         }
 

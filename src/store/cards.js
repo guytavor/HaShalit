@@ -55,15 +55,6 @@ const cards = {
         img: loseSecurity,
         name: 'הפסדת את השלטון',
         text: 'אתה. חלש. הצבא מפיל את השלטון.',
-        left: {
-            text: 'אוי...',
-            // The effects of the lose cards are hard coded. No need to specify them.
-        },
-        right: {
-            text: 'הוי...',
-        },
-        // Cards add 1 year when played. This property indicates that the card should not advance time.
-        advanceTime: false,
         // A locked card can only appear if it is the 'nextCard' of the previous choice or
         // if it is unlocked at 'unlockCards' (or if it is hard coded like the lose cards).
         locked: true,
