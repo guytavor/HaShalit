@@ -19,7 +19,7 @@ const validationFunctions = {
     },
 };
 
-export default class CardManager {
+export default class GameManager {
     constructor(cards) {
         this._cards = cards;
     }
