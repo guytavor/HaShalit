@@ -27,6 +27,17 @@ const INITIAL_STATE = {
         cardsUnlocked: new Set(),
         cardsUnlockedForever: new Set(),
         playedCards: new Set(),
+        // TODO: Use the history array to display the timeline.
+        history: [
+            /*{
+                from: 2019,
+                to: 2020,
+            },*/
+        ],
+        achievements: {
+            // TODO: Display the achievements on the timeline.
+            //peace: 2023,
+        },
     },
     settings: {},
 };
