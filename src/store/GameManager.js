@@ -83,7 +83,7 @@ export default class GameManager {
             }
 
             if (answer.effects) {
-                CardManager._applyEffects(state, answer.effects);
+                GameManager._applyEffects(state, answer.effects);
                 // TODO: Check if metrics are 0. If so, select a lost card.
             }
         }
@@ -115,7 +115,7 @@ export default class GameManager {
 
             // Check conditions.
             if (card.conditions
-                && !CardManager._checkConditions(state.parameters, card.conditions, card.id)) {
+                && !GameManager._checkConditions(state.parameters, card.conditions, card.id)) {
                 continue;
             }
 
