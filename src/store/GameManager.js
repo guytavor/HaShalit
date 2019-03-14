@@ -103,11 +103,14 @@ export default class GameManager {
             }
 
             // TODO: Check if metrics are 0. If so, select a lost card.
-        }
+            if (answer.afterText) {
+                // TODO: Show after text somehow.
+            }
 
-        if (card.advanceTime !== false) {
-            state.year += 1;
-            state.yearsInPower += 1;
+            if (answer.advanceTime !== false) {
+                state.year += 1;
+                state.yearsInPower += 1;
+            }
         }
 
         // If the next card is not predetermined, select a random card.
