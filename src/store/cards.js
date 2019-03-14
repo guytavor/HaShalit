@@ -8,6 +8,11 @@ import foreignAmbassador from '../assets/cards/sorceress.png';
 import foreignKing from '../assets/cards/sorceress.png';
 import protest from '../assets/cards/sorceress.png';
 import news from '../assets/cards/sorceress.png';
+import opposition from '../assets/cards/sorceress.png';
+import rabi from '../assets/cards/sorceress.png';
+import wife from '../assets/cards/sorceress.png';
+import tycoon from '../assets/cards/sorceress.png';
+import general from '../assets/cards/sorceress.png';
 
 const characters = {
     president: {
@@ -45,6 +50,26 @@ const characters = {
     news: {
         img: news,
         name: 'חדשות',
+    },
+    opposition: {
+        img: opposition,
+        name: 'האופוזיציה',
+    },
+    rabi: {
+        img: rabi,
+        name: 'הרב הראשי',
+    },
+    wife: {
+        img: wife,
+        name: 'האישה',
+    },
+    tycoon: {
+        img: tycoon,
+        name: 'רמטכ"ל',
+    },
+    general: {
+        img: general,
+        name: 'הרמטכ"ל',
     },
 };
 

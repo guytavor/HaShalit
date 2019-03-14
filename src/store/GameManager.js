@@ -95,8 +95,11 @@ export default class GameManager {
         }
         const nextCard = this._cards[nextCardId];
         console.log('Next card:', nextCardId,
-            'Name:', nextCard.character.name,
+            'Name:', nextCard.character && nextCard.character.name,
             'Text:', nextCard.text);
+        if (!nextCard.character && !nextCard.name) {
+            console.error('Undefined character or name at card', nextCardId);
+        }
 
         return {
             ...state,
