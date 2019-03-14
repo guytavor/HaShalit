@@ -67,8 +67,6 @@ function Card({ card, onFlip, prevDir }) {
     const cardImg = get(card, 'character.img', '');
     let answer = getAnswer(card, SIDES[side]);
 
-    console.log('previous direction: ', prevDir);
-
     const actionHandlers = useGesture(({ down, delta: [xDelta, yDelta] }) => {
         const isInCenter = Math.abs(xDelta) < 5;
         const isMovedToAnswer = Math.abs(xDelta) > 20;
@@ -144,12 +142,12 @@ function Card({ card, onFlip, prevDir }) {
                                     [eProps.t],
                                     // This should be the animation if dir < 0. If dir > 0, it should be reversed.
                                     // TODO: How do we get the direction of the swipe here?
-                                    t => `translateX(${flipTranslateX(item, t, 0)}px) rotateY(${flipRotateY(item, t, 9, false)}deg) scale(${flipScale(item, t)})`)
+                                    t => `translateX(${flipTranslateX(item, t, prevDir)}px) rotateY(${flipRotateY(item, t, 9, false)}deg) scale(${flipScale(item, t)})`)
                             }} />,
                             <animated.div key={1} className={styles.front} style={{
                                 transform: interpolate(
                                     [eProps.t],
-                                    t => `translateX(${flipTranslateX(item, t, 0)}px) rotateY(${flipRotateY(item, t, 0, true)}deg) scale(${flipScale(item, t)})`),
+                                    t => `translateX(${flipTranslateX(item, t, prevDir)}px) rotateY(${flipRotateY(item, t, 0, true)}deg) scale(${flipScale(item, t)})`),
                                 backgroundImage: `url(${cardImg})`
                             }}>
                                 <div className={styles.answerContainer}>

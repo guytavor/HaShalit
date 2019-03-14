@@ -1,6 +1,7 @@
 import { handleActions } from 'redux-actions';
 import cards from './cards';
 import GameManager from './GameManager';
+import { SCREENS } from '../utils/constants';
 
 const DEFAULT_METRICS_POINTS = 50;
 const gameManager = new GameManager(cards);
@@ -10,6 +11,7 @@ const gameManager = new GameManager(cards);
 // TODO: Define a list of persistent parameters. Those will be copied to
 //       the level when the game starts, and from the level when it ends.
 const INITIAL_STATE = {
+    screen: SCREENS.INTRO,
     level: {
         card: null,
         metrics: {
@@ -50,6 +52,7 @@ export default handleActions({
 
         return {
             ...state,
+            screen: SCREENS.GAME,
             level: nextLevel,
         }
     },
