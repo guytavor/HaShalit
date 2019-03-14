@@ -29,6 +29,7 @@ const INITIAL_STATE = {
         cardsUnlocked: new Set(),
         cardsUnlockedForever: new Set(),
         playedCards: new Set(),
+        boosters: [],
         // TODO: Use the history array to display the timeline.
         history: [
             /*{
