@@ -1,4 +1,9 @@
+import loseEconomy from '../assets/cards/skeleton.png';
 import loseSecurity from '../assets/cards/skeleton.png';
+import loseImage from '../assets/cards/skeleton.png';
+import loseReligion from '../assets/cards/skeleton.png';
+import outOfCards from '../assets/cards/skeleton.png';
+import newGame from '../assets/cards/skeleton.png';
 import president from '../assets/cards/doctor.png';
 import consultant from '../assets/cards/dog.png';
 import ministerEducation from '../assets/cards/prince.png';
@@ -15,6 +20,10 @@ import tycoon from '../assets/cards/sorceress.png';
 import general from '../assets/cards/sorceress.png';
 
 const characters = {
+    newGame: {
+        img: newGame,
+        name: 'בחירות',
+    },
     president: {
         img: president,
         name: 'הנשיא',
@@ -75,27 +84,101 @@ const characters = {
 
 const cards = {
     // Special game cards.
-    'loseSecurity': {
+    'loseEconomy': {
         // Cards can specify either a character or an image and name.
-        img: loseSecurity,
+        img: loseEconomy,
         name: 'הפסדת את השלטון',
-        text: 'אתה. חלש. הצבא מפיל את השלטון.',
+        text: 'המדינה בפשיטת רגל, הבנק העולמי משתלט על ניהול המדינה',
         // A locked card can only appear if it is the 'nextCard' of the previous choice or
         // if it is unlocked at 'unlockCards' (or if it is hard coded like the lose cards).
         locked: true,
         lose: true,
     },
+    'loseSecurity': {
+        // Cards can specify either a character or an image and name.
+        img: loseSecurity,
+        name: 'הפסדת את השלטון',
+        text: 'אתה. חלש. הלכה המדינה',
+        locked: true,
+        lose: true,
+    },
+    'loseImage': {
+        // Cards can specify either a character or an image and name.
+        img: loseImage,
+        name: 'הפסדת את השלטון',
+        text: 'מחאה חברתית - אזלו האוהלים מריקושט',
+        locked: true,
+        lose: true,
+    },
+    'loseReligion': {
+        // Cards can specify either a character or an image and name.
+        img: loseReligion,
+        name: 'הפסדת את השלטון',
+        text: 'החרדים מפילים את הממשלה',
+        locked: true,
+        lose: true,
+    },
+    'outOfCards': {
+        // Cards can specify either a character or an image and name.
+        img: outOfCards,
+        name: 'הפסדת את השלטון',
+        text: 'כל כך הרבה שנים בשלטון ומה אתה עשית בשביל מדינה? העם מאס בך ודורש בחירות',
+        locked: true,
+        lose: true,
+    },
+    'afterTutorial': {
+        // Cards can specify either a character or an image and name.
+        character: newGame,
+        text: 'היום ה-10 באפריל. תוצאות הבחירות הגיעו ואתה נבחרת שוב',
+        left: {
+            text: 'לא היה לי ספק',
+            advanceTime: false,
+        },
+        right: {
+            text: 'אני?',
+            advanceTime: false,
+        },
+        locked: true,
+    },
+    'newGame01': {
+        // Cards can specify either a character or an image and name.
+        character: newGame,
+        text: 'כל הקולות נספרו - למרות הכל, נבחרת שוב',
+        left: {
+            text: 'העם איתי',
+            advanceTime: false,
+        },
+        right: {
+            text: 'עוד פעם?',
+            advanceTime: false,
+        },
+        locked: true,
+    },
+    'newGame02': {
+        // Cards can specify either a character or an image and name.
+        character: newGame,
+        text: 'כל הקולות נספרו - למרות הכל, נבחרת שוב',
+        left: {
+            text: 'תודה לך',
+            advanceTime: false,
+        },
+        right: {
+            text: 'בוא נתחיל',
+            advanceTime: false,
+        },
+        locked: true,
+    },
     '10': {
         character: characters.president,
         text: 'כבוד השר, האם תרצה להיות השליט?',
         left: {
-            text: 'לא',
-            next: '20',
+            text: 'כן',
+            next: '30',
             advanceTime: false,
         },
         right: {
-            text: 'כן',
-            next: '30',
+            text: 'לא',
+            next: '20',
             advanceTime: false,
         },
         locked: true,
@@ -199,7 +282,7 @@ const cards = {
     },
     '65': {
         character: characters.consultant,
-        text: 'ביטול הבחירות על לשיקום הדמוקרטיה?',
+        text: 'ביטול הבחירות עד לשיקום הדמוקרטיה?',
         left: {
             text: 'כן',
             next: 'victory',
@@ -310,13 +393,18 @@ const cards = {
                 image: 20,
             },
         },
+        conditions: [
+            ['madePeace', {
+                equals: 1,
+            }],
+        ],
     },
     '120': {
         character: characters.rabi,
         text: 'רב בת״א ערך חתונה חד-מינית',
         left: {
             text: 'הכנס אותו לכלא',
-            achievement: 'anti_gay',
+            achievement: 'antiGay',
             effects: {
                 image: -10,
                 religion: 30,
@@ -418,9 +506,6 @@ const cards = {
             effects: {
                 economy: -10,
                 image: 30,
-                set: [
-                    ['withWife', 1],
-                ],
             },
         },
     },
@@ -445,19 +530,24 @@ const cards = {
         character: characters.protest,
         text: 'רוצים שלום',
         left: {
-            text: 'כנס ועידה בינלאומית',
-            next: '193',
-            unlockCards: ['193'],
+            text: 'אין פרטנר',
             effects: {
+                security: -10,
                 image: 10,
             },
         },
         right: {
-            text: 'אין פרטנר',
+            text: 'כנס ועידה בינלאומית',
+            next: '193',
             effects: {
-                image: 0,
+                image: -10,
             },
         },
+        conditions: [
+            ['madePeace', {
+                equals: 0,
+            }],
+        ],
     },
     '193': {
         character: characters.consultant,
@@ -577,16 +667,19 @@ const cards = {
         character: characters.consultant,
         text: 'ערוץ הטלויזיה עולה לנו הון',
         left: {
+            text: 'הזמן את הטייקון הטחון',
+            next: '240',
+            unlockCardsForever: ['250'],
+            effects: {
+                economy: 10,
+            },
+        },
+        right: {
             text: 'זה מחיר ההצלחה',
             effects: {
                 economy: 20,
                 image: -20,
             },
-        },
-        right: {
-            text: 'הזמן את הטייקון הטחון',
-            next: '240',
-            unlockCardsForever: ['240250'],
         },
         locked: true,
     },
@@ -605,6 +698,7 @@ const cards = {
             effects: {
                 economy: -10,
             },
+            booster: 'removeOwnMedia',
         },
         locked: true,
     },
@@ -644,6 +738,294 @@ const cards = {
             effects: {
                 economy: 20,
                 image: 10,
+            },
+        },
+    },
+    '280': {
+        character: characters.rabi,
+        text: 'כבודו, לא מספיק רב ראשי אשכנזי וספרדי. צריך גם אחד היברידי',
+        left: {
+            text: 'תשכח מזה',
+            effects: {
+                image: 10,
+                religion: -10,
+            },
+        },
+        right: {
+            text: 'בכיף. כמה זה עולה?',
+            effects: {
+                economy: -10,
+                religion: 20,
+            },
+        },
+    },
+    '300': {
+        character: characters.general,
+        text: 'רוה""מ, הפיסטוקיאנים מפגינים ועולים על הגדרות. צריך תכנית פעולה',
+        left: {
+            text: 'נפתור את זה דיפלומטית',
+            next: '320',
+            effects: {
+                image: 10,
+            },
+        },
+        right: {
+            text: 'תיכנס בהם',
+            effects: {
+                security: -10,
+                image: -10,
+            },
+        },
+    },
+    '320': {
+        character: characters.general,
+        text: 'תזכור שאצלם דיבור זה סימן לחולשה',
+        left: {
+            text: 'נשב לדבר איתם',
+            next: '340',
+            effects: {
+                image: 10,
+            },
+        },
+        right: {
+            text: 'אז תיכנס בהם',
+            effects: {
+                security: -10,
+                image: -10,
+            },
+        },
+    },
+    '340': {
+        character: characters.general,
+        text: 'אבל יש את הטילים החדשים שקנינו והבטחת שננסה יחד!',
+        left: {
+            text: 'נכון! בוא ניכנס בהם',
+            effects: {
+                security: -10,
+                image: -10,
+            },
+        },
+        right: {
+            text: 'רק מו""מ',
+            next: '360',
+            effects: {
+                image: 10,
+            },
+        },
+    },
+    '360': {
+        character: characters.consultant,
+        text: 'אדוני, מלחמה זה צילום ענק בעמוד הראשון ואתה נראה הורס באפוד קרמי',
+        left: {
+            text: 'תחזיק אותי שאני לא אכנס בהם!',
+            effects: {
+                security: -10,
+            },
+        },
+        right: {
+            text: 'לא. רק מו""מ.',
+            next: '380',
+            effects: {
+                image: 10,
+            },
+        },
+    },
+    '380': {
+        character: characters.general,
+        text: 'טוב, עלית עליי... אשתי זרקה אותי מהבית. אני מחפש תירוץ לישון בבור',
+        left: {
+            text: 'אז תגיד... ותיכנס בהם!',
+            effects: {
+                security: -10,
+            },
+        },
+        right: {
+            text: 'מו""מ איתם ועם אשתך',
+            effects: {
+                image: 10,
+            },
+        },
+    },
+    '400': {
+        character: characters.ministerTreasury,
+        text: 'ראש הממשלה, אנחנו בלחץ תקציבי. אולי נקטין את סל הבריאות?',
+        left: {
+            text: 'אל תיגע בסל',
+            effects: {
+                image: 20,
+            },
+        },
+        right: {
+            text: 'כן. תהפוך אותו לסלסלת בריאות',
+            effects: {
+                economy: 10,
+                image: -10,
+            },
+        },
+    },
+    '420': {
+        character: characters.consultant,
+        text: 'המדענים שלנו גילו דרך להפיק אנרגיה ממרמור של רווקות מזדקנות. לייצר חשמל או נשק?',
+        left: {
+            text: 'תאיר את רמת גן!',
+            effects: {
+                economy: 10,
+                image: 10,
+            },
+        },
+        right: {
+            text: 'תמחק את שואסמקיסטן!',
+            effects: {
+                security: 10,
+                image: -10,
+            },
+        },
+    },
+    '440': {
+        character: characters.ministerTreasury,
+        text: 'אדוני, הנכים יצאו לרחובות להפגין. להגדיל את קצבת הנכים?',
+        left: {
+            text: 'ברור',
+            effects: {
+                economy: -10,
+                image: 10,
+            },
+        },
+        right: {
+            text: 'בשביל מה? הקלפי לא נגיש לנכים',
+            effects: {
+                economy: 10,
+                image: -5,
+            },
+        },
+    },
+    '460': {
+        character: characters.opposition,
+        text: 'הטייקון הטחון בונה קניון על איזור הציד של חמוס בסכנת הכחדה. תעצור אותו!',
+        left: {
+            text: 'שהחמוס יקנה שווארמה בקניון.',
+            unlockCardsForever: ['820'],
+            effects: {
+                economy: 20,
+                image: -10,
+            },
+        },
+        right: {
+            text: 'ברור. כדור הארץ הוא של כולנו!',
+            effects: {
+                image: 10,
+            },
+        },
+    },
+    '480': {
+        character: characters.news,
+        text: 'חשיפה בלעדית: ראש הממשלה קיבל וילה מהטייקון הטחון ',
+        left: {
+            text: 'אחזיר כל שקל',
+            effects: {
+                economy: 5,
+                image: 20,
+            },
+        },
+        right: {
+            text: 'לוילה אין פתק החלפה',
+            unlockCardsForever: ['540','820'],
+            effects: {
+                image: -30,
+            },
+        },
+    },
+    '500': {
+        character: characters.rabi,
+        text: 'כבודו, אני צריך חצי מיליארד ש""ח לבנות את הכותל הדיגיטלי בענן',
+        left: {
+            text: 'לא תודה',
+            effects: {
+                religion: -10,
+            },
+        },
+        right: {
+            text: 'קח כסף ותתחיל!',
+            effects: {
+                economy: -10,
+                religion: 30,
+            },
+        },
+    },
+
+
+
+    '800': {
+        character: characters.news,
+        text: 'יש התפרעויות בהר הבית',
+        left: {
+            text: 'טפלו בזה',
+            effects: {
+                security: 10,
+                image: -10,
+            },
+        },
+        right: {
+            text: 'הווקף אשם!',
+            effects: {
+                security: 20,
+            },
+        },
+    },
+    '810': {
+        character: characters.news,
+        text: 'התפרעויות של מלפפונים חמוצים בשכנתינו כבושיה',
+        left: {
+            text: 'העבירו להם מעטפות כסף',
+            afterText: 'חדש בספרייה: ״הטרור: כיצד יוכל המערב לנצח״. רב מכר.',
+            effects: {
+                security: 10,
+                image: 20,
+            },
+        },
+        right: {
+            text: 'נפיל את שלטון הטרור',
+            afterText: 'ארגון הטרור של כבושיה חוסל. הנשק נאסף, ונראה שיש סיכוי לשלום',
+            effects: {
+                security: -20,
+                image: -20,
+            },
+        },
+    },
+    '820': {
+        character: characters.consultant,
+        text: 'היועמש רוצה לפתוח בחקירה',
+        left: {
+            text: 'באסה',
+            effects: {
+                image: -30,
+            },
+        },
+        right: {
+            text: 'היועמ״ש, פרקליט המדינה והתקשורת עושים פוטש.',
+            next: '830',
+            effects: {
+                economy: -5,
+                image: 15,
+            },
+        },
+    },
+    '830': {
+        character: characters.consultant,
+        text: 'איזו שאלה תופיע במשאל העם?',
+        left: {
+            text: '״האם אתה בעד לבטל את הבחירות?״',
+            afterText: 'העם החליט לתת לדמוקרטיה עוד צ׳אנס.',
+            effects: {
+                image: -30,
+            },
+        },
+        right: {
+            text: '״האם אתה בעד מניעת הפיכה של משת״פים הנתמכים ע״י אויבנו?״',
+            next: 'victory',
+            afterText: 'הבחירות בוטלו, היועמש, פרקליט המדינה, שופטים, אקדמאים, אנשי תקשרות ושאר בוגדים נעצרו. אין בחירות באופק. שיחקת אותה',
+            effects: {
+                image: 100,
             },
         },
     },
