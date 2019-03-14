@@ -23,11 +23,11 @@ function getAnswer(card, side) {
 
 function flipTranslateX(item, t, dir) {
     if (!item) return 0;
-    t = Math.min(t * 1.1, 1);
+    t = Math.min(t * 1.2, 1);
     const angle = t * 360 - 90;
     const radians = angle * Math.PI / 180;
     let value = Math.sin(radians) + 1;
-    if (dir < 0) {
+    if (dir > 0) {
         value = -value;
     }
     return value * 70;
@@ -38,7 +38,7 @@ function flipRotateY(item, t, dir, isFront) {
         return isFront ? 0 : 180;
     }
     let rotation = isFront ? -180 : 0;
-    rotation += Math.min(t * 1.1, 1) * 180;
+    rotation += Math.min(t * 1.15, 1) * 180;
     if (dir < 0) {
         rotation = -rotation;
     }
@@ -142,12 +142,12 @@ function Card({ card, onFlip, prevDir }) {
                                     [eProps.t],
                                     // This should be the animation if dir < 0. If dir > 0, it should be reversed.
                                     // TODO: How do we get the direction of the swipe here?
-                                    t => `translateX(${flipTranslateX(item, t, prevDir)}px) rotateY(${flipRotateY(item, t, 9, false)}deg) scale(${flipScale(item, t)})`)
+                                    t => `translateX(${flipTranslateX(item, t, prevDir)}px) rotateY(${flipRotateY(item, t, prevDir, false)}deg) scale(${flipScale(item, t)})`)
                             }} />,
                             <animated.div key={1} className={styles.front} style={{
                                 transform: interpolate(
                                     [eProps.t],
-                                    t => `translateX(${flipTranslateX(item, t, prevDir)}px) rotateY(${flipRotateY(item, t, 0, true)}deg) scale(${flipScale(item, t)})`),
+                                    t => `translateX(${flipTranslateX(item, t, prevDir)}px) rotateY(${flipRotateY(item, t, prevDir, true)}deg) scale(${flipScale(item, t)})`),
                                 backgroundImage: `url(${cardImg})`
                             }}>
                                 <div className={styles.answerContainer}>
