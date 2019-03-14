@@ -216,6 +216,9 @@ export default class GameManager {
     _enableBooster(state, booster) {
         if (booster.endsWith('Remove')) {
             booster = booster.substring(0, booster.length - 6);
+            if (!state.boosters[booster]) {
+                console.error('Booster', booster, 'removed when not active');
+            }
             state.boosters[booster] = false;
             return;
         }
