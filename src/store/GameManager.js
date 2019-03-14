@@ -67,7 +67,7 @@ export default class GameManager {
         const answer = card ? card[selectedSide] : null;
 
         if (answer) {
-            nextCardId = answer.nextCard;
+            nextCardId = answer.next;
             // Unlock cards.
             if (answer.unlockCards) {
                 for (const unlockedCardId of answer.unlockCards) {
@@ -93,11 +93,14 @@ export default class GameManager {
             console.log('Selecting a random card...');
             nextCardId = this._selectRandomCard(state);
         }
-        console.log('Next card:', nextCardId);
+        const nextCard = this._cards[nextCardId];
+        console.log('Next card:', nextCardId,
+            'Name:', nextCard.character.name,
+            'Text:', nextCard.text);
 
         return {
             ...state,
-            card: this._cards[nextCardId],
+            card: nextCard,
         };
     }
 
