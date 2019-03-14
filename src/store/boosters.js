@@ -1,4 +1,4 @@
-const boosters = {
+export const boosters = {
     blameArabs: {
         text: 'הערבים לוקחים לנו את העבודות! רוב הציבור ילך איתך',
         effects: {
@@ -24,7 +24,7 @@ const boosters = {
     },
 };
 
-const blameBoosters = [];
+export const blameBoosters = [];
 for (const booster of Object.keys(boosters)) {
     if (booster.startsWith('blame')) {
         blameBoosters.push(booster);

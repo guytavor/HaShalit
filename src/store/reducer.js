@@ -1,10 +1,11 @@
 import { handleActions } from 'redux-actions';
 import cards from './cards';
+import {boosters, blameBoosters} from './boosters';
 import GameManager from './GameManager';
 import { SCREENS } from '../utils/constants';
 
 const DEFAULT_METRICS_POINTS = 50;
-const gameManager = new GameManager(cards);
+const gameManager = new GameManager(cards, boosters, blameBoosters);
 
 // TODO: Keep the state between sessions. Leaving the game in the middle
 //       and returning to it, should start from the same point.
