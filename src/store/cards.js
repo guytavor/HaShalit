@@ -84,7 +84,7 @@ const characters = {
 
 const cards = {
     // Special game cards.
-    'loseEconomy': {
+    'economyLose': {
         // Cards can specify either a character or an image and name.
         img: loseEconomy,
         name: 'הפסדת את השלטון',
@@ -94,7 +94,7 @@ const cards = {
         locked: true,
         lose: true,
     },
-    'loseSecurity': {
+    'securityLose': {
         // Cards can specify either a character or an image and name.
         img: loseSecurity,
         name: 'הפסדת את השלטון',
@@ -102,7 +102,7 @@ const cards = {
         locked: true,
         lose: true,
     },
-    'loseImage': {
+    'imageLose': {
         // Cards can specify either a character or an image and name.
         img: loseImage,
         name: 'הפסדת את השלטון',
@@ -110,7 +110,7 @@ const cards = {
         locked: true,
         lose: true,
     },
-    'loseReligion': {
+    'religionLose': {
         // Cards can specify either a character or an image and name.
         img: loseReligion,
         name: 'הפסדת את השלטון',

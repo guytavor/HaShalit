@@ -1,3 +1,5 @@
+import {DEFAULT_METRICS_POINTS} from "./reducer";
+
 const validationFunctions = {
     equals: (lhs, rhs) => {
         return lhs === rhs;
@@ -44,10 +46,26 @@ export default class GameManager {
         if (card.lose) {
             state.hasLost = true;
             console.log('Game Over');
-            return {
-                ...state,
-                card: null,
-            };
+            // TODO: Move this code to newGame action.
+            // TODO: Select random new game card.
+            state.card = this._cards['newGame01'];
+            for (const metric of Object.keys(state.metrics)) {
+                state.metrics[metric] = DEFAULT_METRICS_POINTS;
+            }
+            // TODO: Delete the non persistent parameters.
+            //state.parameters = {};
+            state.history.push({
+                from: state.year - state.yearsInPower,
+                to: state.year,
+            });
+            state.year = state.year + 1;
+            state.yearsInPower = 0;
+            state.hasWon = false;
+            state.hasLost = false;
+            state.cardsUnlocked.clear();
+            state.playedCards.clear();
+            state.boosters = [];
+            return state;
         }
 
         if (card.win) {
@@ -102,9 +120,11 @@ export default class GameManager {
                 // TODO: Show booster UI.
             }
 
-            // TODO: Check if metrics are 0. If so, select a lost card.
             if (answer.afterText) {
                 // TODO: Show after text somehow.
+            } else if (!answer.dontLose) {
+                // Check if metrics are 0. If so, select a lost card.
+                nextCardId = GameManager._checkMetrics(state.metrics, nextCardId);
             }
 
             if (answer.advanceTime !== false) {
@@ -231,6 +251,15 @@ export default class GameManager {
             }
         }
         state.boosters[booster] = true;
+    }
+
+    static _checkMetrics(metrics, nextCardId) {
+        for (const metric of Object.keys(metrics)) {
+            if (metrics[metric] <= 0) {
+                return metric + 'Lose';
+            }
+        }
+        return nextCardId;
     }
 }
 
