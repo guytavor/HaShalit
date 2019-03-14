@@ -140,8 +140,6 @@ function Card({ card, onFlip, prevDir }) {
                             <animated.div key={0} className={styles.back} style={{
                                 transform: interpolate(
                                     [eProps.t],
-                                    // This should be the animation if dir < 0. If dir > 0, it should be reversed.
-                                    // TODO: How do we get the direction of the swipe here?
                                     t => `translateX(${flipTranslateX(item, t, prevDir)}px) rotateY(${flipRotateY(item, t, prevDir, false)}deg) scale(${flipScale(item, t)})`)
                             }} />,
                             <animated.div key={1} className={styles.front} style={{

@@ -7,8 +7,6 @@ import { SCREENS } from '../utils/constants';
 export const DEFAULT_METRICS_POINTS = 50;
 const gameManager = new GameManager(cards, boosters, blameBoosters);
 
-// TODO: Keep the state between sessions. Leaving the game in the middle
-//       and returning to it, should start from the same point.
 // TODO: Define a list of persistent parameters. Those will be copied to
 //       the level when the game starts, and from the level when it ends.
 const INITIAL_STATE = {
@@ -21,7 +19,6 @@ const INITIAL_STATE = {
             image: DEFAULT_METRICS_POINTS,
             religion: DEFAULT_METRICS_POINTS,
         },
-        // TODO: At the end of a game, delete the non persistent parameters.
         parameters: {},
         year: 2019,
         yearsInPower: 0,
