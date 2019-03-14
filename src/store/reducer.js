@@ -64,7 +64,7 @@ export default handleActions({
         const { side } = payload;
         const nextLevel = gameManager.getNextLevel(state.level, side);
 
-        console.log(nextLevel);
+        console.log(nextLevel.metrics, nextLevel);
 
         return {
             ...state,
