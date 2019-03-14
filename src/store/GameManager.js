@@ -20,8 +20,10 @@ const validationFunctions = {
 };
 
 export default class GameManager {
-    constructor(cards) {
+    constructor(cards, boosters, blameBoosters) {
         this._cards = cards;
+        this._boosters = boosters;
+        this._blameBoosters = blameBoosters;
     }
 
     getNextLevel(state, selectedSide) {
@@ -37,11 +39,6 @@ export default class GameManager {
                 ...state,
                 card: this._cards[nextCardId],
             };
-        }
-
-        if (card.advanceTime !== false) {
-            state.year += 1;
-            state.yearsInPower += 1;
         }
 
         if (card.lose) {
@@ -83,10 +80,34 @@ export default class GameManager {
                 }
             }
 
+            this._applyBoostersEffects(state);
+
             if (answer.effects) {
                 GameManager._applyEffects(state, answer.effects);
-                // TODO: Check if metrics are 0. If so, select a lost card.
             }
+
+            // Achievements.
+            if (answer.achievement) {
+                console.log('Achievement!', answer.achievement);
+                if (!state.achievements[answer.achievement]) {
+                    state.achievements[answer.achievement] = state.year;
+                    // TODO: Show achievement UI.
+                }
+            }
+
+            // Boosters.
+            if (answer.booster) {
+                console.log('Booster!', answer.booster);
+                this._enableBooster(state, answer.booster);
+                // TODO: Show booster UI.
+            }
+
+            // TODO: Check if metrics are 0. If so, select a lost card.
+        }
+
+        if (card.advanceTime !== false) {
+            state.year += 1;
+            state.yearsInPower += 1;
         }
 
         // If the next card is not predetermined, select a random card.
@@ -156,6 +177,19 @@ export default class GameManager {
         return true;
     }
 
+    _applyBoostersEffects(state) {
+        for (const booster of Object.keys(state.boosters)) {
+            const effects = this._boosters[booster].effects;
+            if (!effects) continue;
+
+            for (const metric of Object.keys(state.metrics)) {
+                if (effects[metric]) {
+                    state.metrics[metric] = clamp(state.metrics[metric] + effects[metric], 0, 100)
+                }
+            }
+        }
+    }
+
     static _applyEffects(state, effects) {
         for (const metric of Object.keys(state.metrics)) {
             if (effects[metric]) {
@@ -177,6 +211,20 @@ export default class GameManager {
                 state.parameters[parameter] = currentValue + effect[1];
             }
         }
+    }
+
+    _enableBooster(state, booster) {
+        if (booster.endsWith('Remove')) {
+            booster = booster.substring(0, booster.length - 6);
+            state.boosters[booster] = false;
+            return;
+        }
+        if (booster.startsWith('blame')) {
+            for (const blameBooster of this._blameBoosters) {
+                state.boosters[blameBooster] = false;
+            }
+        }
+        state.boosters[booster] = true;
     }
 }
 
