@@ -168,6 +168,7 @@ const cards = {
         },
         locked: true,
     },
+    // Paste here //
     '10': {
         character: characters.president,
         text: 'כבוד השר, האם תרצה להיות השליט?',
@@ -376,7 +377,6 @@ const cards = {
                 ],
             },
         },
-        locked: true,
     },
     '110': {
         character: characters.opposition,
@@ -698,7 +698,7 @@ const cards = {
             effects: {
                 economy: -10,
             },
-            booster: 'removeOwnMedia',
+            booster: 'ownMediaRemove',
         },
         locked: true,
     },
@@ -794,6 +794,7 @@ const cards = {
                 image: -10,
             },
         },
+        locked: true,
     },
     '340': {
         character: characters.general,
@@ -812,6 +813,7 @@ const cards = {
                 image: 10,
             },
         },
+        locked: true,
     },
     '360': {
         character: characters.consultant,
@@ -829,6 +831,7 @@ const cards = {
                 image: 10,
             },
         },
+        locked: true,
     },
     '380': {
         character: characters.general,
@@ -845,6 +848,7 @@ const cards = {
                 image: 10,
             },
         },
+        locked: true,
     },
     '400': {
         character: characters.ministerTreasury,
@@ -1009,6 +1013,7 @@ const cards = {
                 image: 15,
             },
         },
+        locked: true,
     },
     '830': {
         character: characters.consultant,
@@ -1028,6 +1033,7 @@ const cards = {
                 image: 100,
             },
         },
+        locked: true,
     },
 };
 
