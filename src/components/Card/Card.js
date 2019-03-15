@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useSpring, useTransition, animated, interpolate } from 'react-spring'
+import { useSpring, useTransition, animated, interpolate, config } from 'react-spring'
 import { useGesture } from 'react-with-gesture'
 import get from 'lodash/get';
 import styles from './Card.module.scss'
@@ -9,6 +9,12 @@ const trans = (r, s) => `rotateZ(${r}deg) scale(${s})`;
 const SIDES = {
     '-1': 'left',
     '1': 'right'
+};
+const TRANSITION_CONFIG = {
+    clamp: true,
+    tension: 240,
+    friction: 55
+    // ease: some kind of easing
 };
 
 function getAnswer(card, side) {
@@ -62,7 +68,7 @@ function Card({ card, onFlip, prevDir }) {
         from: { t: 0 },
         enter: { t: 1 },
         leave: { t: 1 },
-        reset: true,
+        config: TRANSITION_CONFIG,
     });
     const cardImg = get(card, 'character.img', '');
     let answer = getAnswer(card, SIDES[side]);
