@@ -3,12 +3,12 @@ import loseSecurity from '../assets/cards/skeleton.png';
 import loseImage from '../assets/cards/skeleton.png';
 import loseReligion from '../assets/cards/skeleton.png';
 import outOfCards from '../assets/cards/skeleton.png';
+import victory from '../assets/cards/dog.png';
 import newGame from '../assets/cards/skeleton.png';
 import president from '../assets/cards/doctor.png';
 import consultant from '../assets/cards/dog.png';
 import ministerEducation from '../assets/cards/prince.png';
 import ministerTreasury from '../assets/cards/princess.png';
-import foreignEmissary from '../assets/cards/sorceress.png';
 import foreignAmbassador from '../assets/cards/sorceress.png';
 import foreignKing from '../assets/cards/sorceress.png';
 import protest from '../assets/cards/sorceress.png';
@@ -39,10 +39,6 @@ const characters = {
     ministerTreasury: {
         img: ministerTreasury,
         name: 'שר האוצר',
-    },
-    foreignEmissary: {
-        img: foreignEmissary,
-        name: 'שליח ממלכת פיסטוקיה',
     },
     foreignAmbassador: {
         img: foreignAmbassador,
@@ -84,6 +80,13 @@ const characters = {
 
 const cards = {
     // Special game cards.
+    'victory': {
+        img: victory,
+        name: 'ניצחון!',
+        text: 'הבחירות בוטלו! השלטון שלך לעולמים!',
+        locked: true,
+        win: true,
+    },
     'economyLose': {
         // Cards can specify either a character or an image and name.
         img: loseEconomy,
