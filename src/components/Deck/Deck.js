@@ -54,7 +54,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return bindActionCreators({
-        nextCard: actions.nextCard,
+        nextCard: actions.selectAnswer,
         moveCard: actions.moveCard,
     }, dispatch);
 };

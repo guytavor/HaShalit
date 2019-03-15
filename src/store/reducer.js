@@ -59,7 +59,7 @@ export default handleActions({
         }
     },
 
-    [actions.nextCard]: (state, {payload}) => {
+    [actions.selectAnswer]: (state, {payload}) => {
         const { side } = payload;
         const nextLevel = gameManager.getNextLevel(state.level, side);
 

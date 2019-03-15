@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useSpring, useTransition, animated, interpolate, config } from 'react-spring'
+import { useSpring, useTransition, animated, interpolate } from 'react-spring'
 import { useGesture } from 'react-with-gesture'
 import get from 'lodash/get';
 import styles from './Card.module.scss'
