@@ -19,7 +19,7 @@ class Deck extends React.PureComponent {
 
     render() {
         const { prevFlipDirection } = this.state;
-        const { card } = this.props;
+        const { card, interactions, moveCard } = this.props;
 
         return (
             <div className={styles.deck}>
@@ -28,13 +28,15 @@ class Deck extends React.PureComponent {
                     {card ? <Card key={card.id}
                         prevDir={prevFlipDirection}
                         card={card}
-                        onFlip={this._onFlip} /> : null}
+                        cardSide={interactions.moveCardSide}
+                        onCardMove={moveCard}
+                        onSelectAnswer={this._onSelectAnswer} /> : null}
                 </div>
             </div>
         );
     }
 
-    _onFlip = (dir) => {
+    _onSelectAnswer = (dir) => {
         const { nextCard } = this.props;
         const side = dir > 0 ? 'right' : (dir < 0 ? 'left' : '');
         this.setState({ prevFlipDirection: dir }, () => {
@@ -46,12 +48,14 @@ class Deck extends React.PureComponent {
 const mapStateToProps = state => {
     return {
         card: state.level.card,
+        interactions: state.interactions
     };
 };
 
 const mapDispatchToProps = dispatch => {
     return bindActionCreators({
         nextCard: actions.nextCard,
+        moveCard: actions.moveCard,
     }, dispatch);
 };
 

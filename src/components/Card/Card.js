@@ -59,8 +59,7 @@ function flipScale(item, t) {
     return value * 0.25 + 1;
 }
 
-function Card({ card, onFlip, prevDir }) {
-    const [side, setSide] = useState(0);
+function Card({ card, cardSide, onSelectAnswer, onCardMove, prevDir }) {
     const [gone] = useState(() => new Set());
     const [enter] = useState(true);
     const [props, set] = useSpring(() => ({ from }));
@@ -71,7 +70,7 @@ function Card({ card, onFlip, prevDir }) {
         config: TRANSITION_CONFIG,
     });
     const cardImg = get(card, 'character.img', '');
-    let answer = getAnswer(card, SIDES[side]);
+    let answer = getAnswer(card, cardSide);
 
     const actionHandlers = useGesture(({ down, delta: [xDelta, yDelta] }) => {
         const isInCenter = Math.abs(xDelta) < 5;
@@ -79,14 +78,14 @@ function Card({ card, onFlip, prevDir }) {
         const dir = Math.sign(xDelta);
 
         if (isMovedToAnswer) {
-            setSide(dir);
+            onCardMove({side: SIDES[dir]});
         } else {
-            setSide();
+            onCardMove({side: null});
         }
 
         if (!down && isMovedToAnswer) {
             gone.add('true');
-            setSide();
+            onCardMove({side: null});
         }
 
         set(() => {
@@ -104,7 +103,7 @@ function Card({ card, onFlip, prevDir }) {
                 springData.x = 1100 * dir;
                 springData.y = 1300;
                 springData.rot = dir * 200;
-                setTimeout(() => onFlip(dir), 600);
+                setTimeout(() => onSelectAnswer(dir), 600);
             } else if (down) {
                 springData.y = -10 + yDelta / 10;
                 if (!isInCenter) {
@@ -155,7 +154,7 @@ function Card({ card, onFlip, prevDir }) {
                                 backgroundImage: `url(${cardImg})`
                             }}>
                                 <div className={styles.answerContainer}>
-                                    <h2 className={`${styles[SIDES[side]]} ${styles.answer}`}>{answer}</h2>
+                                    <h2 className={`${styles[cardSide]} ${styles.answer}`}>{answer}</h2>
                                 </div>
                             </animated.div>
                         ]

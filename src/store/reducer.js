@@ -1,4 +1,5 @@
 import { handleActions } from 'redux-actions';
+import actions from './actions';
 import cards from './cards';
 import {boosters, blameBoosters} from './boosters';
 import GameManager from './GameManager';
@@ -40,12 +41,14 @@ const INITIAL_STATE = {
             //peace: 2023,
         },
     },
+    interactions: {
+        moveCardSide: null,
+    },
     settings: {},
 };
 
 export default handleActions({
-    INIT: (state, action) => {
-        const { payload } = action;
+    [actions.init]: (state, {payload}) => {
         const { saved } = payload;
         const nextLevel = gameManager.getNextLevel(saved ? saved.level : state.level);
 
@@ -56,16 +59,25 @@ export default handleActions({
         }
     },
 
-    NEXT_CARD: (state, action) => {
-        const { payload } = action;
+    [actions.nextCard]: (state, {payload}) => {
         const { side } = payload;
         const nextLevel = gameManager.getNextLevel(state.level, side);
-
-        console.log(nextLevel.metrics, nextLevel);
 
         return {
             ...state,
             level: nextLevel,
         }
+    },
+
+    [actions.moveCard]: (state, {payload}) => {
+        const { side } = payload;
+
+        return {
+            ...state,
+            interactions: {
+                ...state.interactions,
+                moveCardSide: side
+            }
+        };
     }
 }, INITIAL_STATE);
