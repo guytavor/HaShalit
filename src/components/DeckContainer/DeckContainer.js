@@ -19,7 +19,7 @@ export default class DeckContainer extends React.PureComponent {
         return (
             <div className={styles.wrapper}>
                 {description}
-                <Deck />
+                <Deck {...this.props} />
                 {name}
             </div>
         );

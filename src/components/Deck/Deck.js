@@ -1,25 +1,25 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
-import actions from '../../store/actions';
 import Card from '../Card/Card';
 import styles from './Deck.module.scss';
 
 const DEFAULT_DIRECTION_FLIP = 1;
 
-class Deck extends React.PureComponent {
+export default class Deck extends React.PureComponent {
     state = {
         prevFlipDirection: DEFAULT_DIRECTION_FLIP,
     };
 
     static propTypes = {
         card: PropTypes.object,
+        interactions: PropTypes.object, 
+        onSelectAnswer: PropTypes.func, 
+        onMoveCard: PropTypes.func
     };
 
     render() {
         const { prevFlipDirection } = this.state;
-        const { card, interactions, moveCard } = this.props;
+        const { card, interactions, onMoveCard } = this.props;
 
         return (
             <div className={styles.deck}>
@@ -29,7 +29,7 @@ class Deck extends React.PureComponent {
                         prevDir={prevFlipDirection}
                         card={card}
                         cardSide={interactions.moveCardSide}
-                        onCardMove={moveCard}
+                        onCardMove={onMoveCard}
                         onSelectAnswer={this._onSelectAnswer} /> : null}
                 </div>
             </div>
@@ -37,26 +37,10 @@ class Deck extends React.PureComponent {
     }
 
     _onSelectAnswer = (dir) => {
-        const { nextCard } = this.props;
+        const { onSelectAnswer } = this.props;
         const side = dir > 0 ? 'right' : (dir < 0 ? 'left' : '');
         this.setState({ prevFlipDirection: dir }, () => {
-            nextCard({ side });
+            onSelectAnswer({ side });
         });
     };
 }
-
-const mapStateToProps = state => {
-    return {
-        card: state.level.card,
-        interactions: state.interactions
-    };
-};
-
-const mapDispatchToProps = dispatch => {
-    return bindActionCreators({
-        nextCard: actions.selectAnswer,
-        moveCard: actions.moveCard,
-    }, dispatch);
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(Deck);
