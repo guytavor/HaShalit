@@ -30,6 +30,7 @@ export default class GameManager {
     }
 
     startNewGame(state) {
+        // TODO: If didn't pass tutorial, show afterTutorial and mark tutorial as passed.
         state.card = this._cards[chooseRandomFromArray(this._newGameCards)];
         for (const metric of Object.keys(state.metrics)) {
             state.metrics[metric] = DEFAULT_METRICS_POINTS;
@@ -51,10 +52,6 @@ export default class GameManager {
     }
 
     getNextLevel(state, selectedSide) {
-        // TODO: If a new game check if passed tutorial.
-        //       If so, show a random starting card. newGameXX
-        //       (if first game after tutorial, show afterTutorial)
-        //       If not, start with the tutorial card.
         let nextCardId = '10';
         const card = state ? state.card : null;
 
@@ -68,7 +65,6 @@ export default class GameManager {
         if (card.lose) {
             state.hasLost = true;
             console.log('Game Over');
-            // TODO: Move this code to newGame action.
             return state;
         }
 
