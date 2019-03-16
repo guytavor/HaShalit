@@ -11,37 +11,35 @@ function Effects() {
 		<div className={styles.effectsContainer}>
      <div className={styles.iconContainer}>
 			<div className={`${styles.icon} ${styles.iconBg}`}>
-				<ReligionIcon className={`${styles.Icon} ${styles.iconBg}`}/>
+				<ReligionIcon />
 			</div>
 			<div className={`${styles.icon} ${styles.iconFill}`}>
-				<ReligionIcon className={`${styles.Icon} ${styles.iconFill}`}/>
+				<ReligionIcon />
 			</div>
 		 </div>
 
 		 <div className={styles.iconContainer}>
 			<div className={`${styles.icon} ${styles.iconBg}`}>
-				<EconomyIcon className={`${styles.Icon} ${styles.iconBg}`}/>
+				<EconomyIcon />
 			</div>
 			<div className={`${styles.icon} ${styles.iconFill}`}>
-				<EconomyIcon className={`${styles.Icon} ${styles.iconFill}`}/>
+				<EconomyIcon />
+			</div>
+		 </div>
+
+		 <div className={styles.iconContainer}>
+			<div className={`${styles.iconInverse} ${styles.iconBgInverse}`}/>
+			<div className={`${styles.iconInverse} ${styles.iconFillInverse}`}>
+				<ReligionIconInverse />
 			</div>
 		 </div>
 
 		 <div className={styles.iconContainer}>
 			<div className={`${styles.icon} ${styles.iconBg}`}>
-				<ReligionIconInverse className={`${styles.Icon} ${styles.iconBg}`}/>
+				<EconomyIconInverse />
 			</div>
 			<div className={`${styles.icon} ${styles.iconFill}`}>
-				<ReligionIconInverse className={`${styles.Icon} ${styles.iconFill}`}/>
-			</div>
-		 </div>
-
-		 <div className={styles.iconContainer}>
-			<div className={`${styles.icon} ${styles.iconBg}`}>
-				<EconomyIconInverse className={`${styles.Icon} ${styles.iconBg}`}/>
-			</div>
-			<div className={`${styles.icon} ${styles.iconFill}`}>
-				<EconomyIconInverse className={`${styles.Icon} ${styles.iconFill}`}/>
+				<EconomyIconInverse />
 			</div>
 		 </div>
 

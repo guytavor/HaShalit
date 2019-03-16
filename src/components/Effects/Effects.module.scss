@@ -33,6 +33,30 @@
       clip: rect(38px, 50px, 50px, 0px);
 
     }
+
+    .iconInverse {
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 100%;
+          width: 100%;
+          
+          overflow: hidden;
+        }
+
+        .iconBgInverse {
+          height: 94%;
+          width: 100%;
+          background-color: blue;
+        }
+
+        .iconFillInverse {
+          fill: #5c7f90;
+          fill: red;
+          position: absolute;
+        }
+
+
   }
 }
 
