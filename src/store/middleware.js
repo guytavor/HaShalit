@@ -1,6 +1,11 @@
 import { save } from '../utils/StorageHelper';
+// import actions from './actions';
 
-const handlers = {};
+const handlers = {
+    /*[actions.startOver]: (store) => {
+        store.dispatch(actions.init({}));
+    }*/
+};
 
 export default store => next => action => {
     const prevState = store.getState();
