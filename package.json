@@ -2,6 +2,15 @@
   "name": "the-ruler",
   "version": "0.1.0",
   "private": true,
+  "scripts": {
+    "start": "node index.js",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook",
+    "deploy": "gcloud app deploy"
+  },
   "dependencies": {
     "lodash": "^4.17.11",
     "node-sass": "^4.11.0",
@@ -13,13 +22,8 @@
     "react-spring": "^8.0.12",
     "react-with-gesture": "^4.0.5",
     "redux": "^4.0.1",
-    "redux-actions": "^2.6.5"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "redux-actions": "^2.6.5",
+    "serve": "^10.1.2"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -29,5 +33,13 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "devDependencies": {
+    "@storybook/react": "^5.0.1",
+    "@storybook/addon-actions": "^5.0.1",
+    "@storybook/addon-links": "^5.0.1",
+    "@storybook/addons": "^5.0.1",
+    "@babel/core": "^7.3.4",
+    "babel-loader": "^8.0.5"
+  }
 }
