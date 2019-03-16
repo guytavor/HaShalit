@@ -4,4 +4,4 @@ export const SCREENS = {
     CREDITS: 'CREDITS',
     LOST: 'LOST',
     WON: 'WON',
-}
+};

@@ -28,6 +28,28 @@ export default class GameManager {
         this._blameBoosters = blameBoosters;
     }
 
+    startNewGame(state) {
+        // TODO: Select random new game card.
+        state.card = this._cards['newGame01'];
+        for (const metric of Object.keys(state.metrics)) {
+            state.metrics[metric] = DEFAULT_METRICS_POINTS;
+        }
+        // TODO: Delete the non persistent parameters.
+        //state.parameters = {};
+        state.history.push({
+            from: state.year - state.yearsInPower,
+            to: state.year,
+        });
+        state.year = state.year + 1;
+        state.yearsInPower = 0;
+        state.hasWon = false;
+        state.hasLost = false;
+        state.cardsUnlocked.clear();
+        state.playedCards.clear();
+        state.boosters = [];
+        return state;
+    }
+
     getNextLevel(state, selectedSide) {
         // TODO: If a new game check if passed tutorial.
         //       If so, show a random starting card. newGameXX
@@ -47,24 +69,6 @@ export default class GameManager {
             state.hasLost = true;
             console.log('Game Over');
             // TODO: Move this code to newGame action.
-            // TODO: Select random new game card.
-            state.card = this._cards['newGame01'];
-            for (const metric of Object.keys(state.metrics)) {
-                state.metrics[metric] = DEFAULT_METRICS_POINTS;
-            }
-            // TODO: Delete the non persistent parameters.
-            //state.parameters = {};
-            state.history.push({
-                from: state.year - state.yearsInPower,
-                to: state.year,
-            });
-            state.year = state.year + 1;
-            state.yearsInPower = 0;
-            state.hasWon = false;
-            state.hasLost = false;
-            state.cardsUnlocked.clear();
-            state.playedCards.clear();
-            state.boosters = [];
             return state;
         }
 

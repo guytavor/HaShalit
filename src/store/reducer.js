@@ -50,6 +50,8 @@ const INITIAL_STATE = {
 
 export default handleActions({
     [actions.init]: (state, {payload}) => {
+        console.log('Init', state);
+        // TODO: Start with the intro, then if loading a save, go to the timeline.
         const { saved } = payload;
         const nextLevel = gameManager.getNextLevel(saved ? saved.level : state.level);
 
@@ -60,6 +62,7 @@ export default handleActions({
     },
 
     [actions.selectAnswer]: (state, {payload}) => {
+        console.log('Select answer', state);
         const { side } = payload;
         const nextLevel = gameManager.getNextLevel(state.level, side);
         const cardId = get(nextLevel, 'card.id');
@@ -67,7 +70,7 @@ export default handleActions({
 
         if (cardId === 'victory') {
             screen = SCREENS.WON;
-        } else if (cardId.toLowerCase().indexOf('lose') > -1) {
+        } else if (nextLevel.hasLost) {
             screen = SCREENS.LOST;
         }
         
@@ -91,13 +94,21 @@ export default handleActions({
     },
 
     [actions.startGame]: (state) => {
+        console.log('Start game', state);
         return {
             ...state,
             screen: SCREENS.GAME,
         }
     },
 
-    [actions.startOver]: () => {
-        return INITIAL_STATE;
+    [actions.startOver]: (state) => {
+        console.log('Start over', state);
+        const nextLevel = gameManager.startNewGame(state.level);
+
+        return {
+            ...state,
+            screen: SCREENS.GAME,
+            level: nextLevel,
+        }
     },
 }, INITIAL_STATE);
