@@ -1,0 +1,38 @@
+.effectsContainer {
+  // width: 100vw;
+  margin: 0 auto;
+  height: 100%;
+  width: 100%;
+  max-width: 768px; //TODO
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-around;
+  align-items: center;
+
+  .iconContainer {
+    height: 60%;
+    width: 50px;
+    position: relative;
+
+    .icon {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+    }
+
+    .iconBg {
+      fill: blue;
+    }
+
+    .iconFill {
+      fill: red;
+      // clip-path: rect(10px, 20px, 30px, 40px);
+      position: absolute;
+      clip: rect(38px, 50px, 50px, 0px);
+
+    }
+  }
+}
+
