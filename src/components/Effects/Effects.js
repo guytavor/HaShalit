@@ -28,17 +28,17 @@ function Effects() {
 		 </div>
 
 		 <div className={styles.iconContainer}>
-			<div className={`${styles.iconInverse} ${styles.iconBgInverse}`}/>
-			<div className={`${styles.iconInverse} ${styles.iconFillInverse}`}>
+			<div className={`${styles.iconInverse} ${styles.iconFillInverse}`}/>
+			<div className={`${styles.iconInverse} ${styles.iconFillLevelInverse}`}/>
+			<div className={`${styles.iconInverse} ${styles.iconBgInverse}`}>
 				<ReligionIconInverse />
 			</div>
 		 </div>
 
 		 <div className={styles.iconContainer}>
-			<div className={`${styles.icon} ${styles.iconBg}`}>
-				<EconomyIconInverse />
-			</div>
-			<div className={`${styles.icon} ${styles.iconFill}`}>
+		 <div className={`${styles.iconInverse} ${styles.iconFillInverse}`}/>
+			<div className={`${styles.iconInverse} ${styles.iconFillLevelInverse}`}/>
+			<div className={`${styles.iconInverse} ${styles.iconBgInverse}`}>
 				<EconomyIconInverse />
 			</div>
 		 </div>

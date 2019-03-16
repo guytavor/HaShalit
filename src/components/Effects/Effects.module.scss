@@ -10,9 +10,10 @@
   align-items: center;
 
   .iconContainer {
-    height: 60%;
+    height: 56%;
     width: 50px;
     position: relative;
+    overflow: hidden;
 
     .icon {
       position: absolute;
@@ -40,21 +41,26 @@
           left: 0;
           height: 100%;
           width: 100%;
-          
-          overflow: hidden;
         }
+        
+        .iconFillInverse {
+          background-color: violet;
+        }
+        
+        .iconFillLevelInverse {
+          background-color: aquamarine;
+          height: 20px;
+          top: auto;
+          bottom: 0;
+        }
+
 
         .iconBgInverse {
-          height: 94%;
+          height: 100%;
           width: 100%;
-          background-color: blue;
+          fill: #5c7f90;
         }
 
-        .iconFillInverse {
-          fill: #5c7f90;
-          fill: red;
-          position: absolute;
-        }
 
 
   }
