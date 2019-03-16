@@ -5,6 +5,9 @@ import actions from '../../store/actions';
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import DeckContainer from '../DeckContainer/DeckContainer';
+import Intro from '../Intro/Intro';
+import Win from '../Win/Win';
+import Lost from '../Lost/Lost';
 import { SCREENS } from '../../utils/constants';
 import styles from "./Stage.module.scss";
 
@@ -14,29 +17,35 @@ class Stage extends React.PureComponent {
   }
 
   _getContent() {
-    const { screen, card, interactions, selectAnswer, moveCard } = this.props;
+    const { screen, card, interactions, selectAnswer, moveCard, startGame, startOver } = this.props;
     let content = null;
 
     switch(screen) {
       case SCREENS.INTRO:
+        content = <Intro startGame={startGame} />
+        break;
+      case SCREENS.WON:
+        content = <Win startOver={startOver} />
+        break;
+      case SCREENS.LOST:
+        content = <Lost startOver={startOver} />
+        break;
       case SCREENS.GAME:
       case SCREENS.CREDITS:
-      case SCREENS.WON:
-      case SCREENS.LOST:
         content = (
-          <div className={styles.stage}>
+          <React.Fragment>
             <Header />
             <DeckContainer card={card} 
                            interactions={interactions}
                            onSelectAnswer={selectAnswer}
                            onMoveCard={moveCard} />
             <Footer />
-          </div>
+          </React.Fragment>
         );
         break;
     }
 
-    return content;
+    return <div className={styles.stage}>{content}</div>;
   }
 }
 
@@ -52,6 +61,8 @@ const mapDispatchToProps = dispatch => {
   return bindActionCreators({
       selectAnswer: actions.selectAnswer,
       moveCard: actions.moveCard,
+      startGame: actions.startGame,
+      startOver: actions.startOver,
   }, dispatch);
 };
 

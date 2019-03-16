@@ -1,4 +1,5 @@
 import { handleActions } from 'redux-actions';
+import get from 'lodash/get';
 import actions from './actions';
 import cards from './cards';
 import {boosters, blameBoosters} from './boosters';
@@ -54,7 +55,6 @@ export default handleActions({
 
         return {
             ...state,
-            screen: SCREENS.GAME,
             level: nextLevel,
         }
     },
@@ -62,9 +62,18 @@ export default handleActions({
     [actions.selectAnswer]: (state, {payload}) => {
         const { side } = payload;
         const nextLevel = gameManager.getNextLevel(state.level, side);
+        const cardId = get(nextLevel, 'card.id');
+        let screen = state.screen;
 
+        if (cardId === 'victory') {
+            screen = SCREENS.WON;
+        } else if (cardId.toLowerCase().indexOf('lose') > -1) {
+            screen = SCREENS.LOST;
+        }
+        
         return {
             ...state,
+            screen,
             level: nextLevel,
         }
     },
@@ -79,5 +88,16 @@ export default handleActions({
                 moveCardSide: side
             }
         };
-    }
+    },
+
+    [actions.startGame]: (state) => {
+        return {
+            ...state,
+            screen: SCREENS.GAME,
+        }
+    },
+
+    [actions.startOver]: () => {
+        return INITIAL_STATE;
+    },
 }, INITIAL_STATE);
