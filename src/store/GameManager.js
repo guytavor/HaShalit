@@ -30,23 +30,38 @@ export default class GameManager {
     }
 
     startNewGame(state) {
-        // TODO: If didn't pass tutorial, show afterTutorial and mark tutorial as passed.
-        state.card = this._cards[chooseRandomFromArray(this._newGameCards)];
+        // If didn't play any games yet, it means the player just finished the tutorial.
+        let nextCardId = 'afterTutorial';
+        if (state.games > 0) {
+            // After completing the first real game, show a random new game card.
+            nextCardId = chooseRandomFromArray(this._newGameCards);
+        }
+        state.games = state.games + 1;
+        state.card = this._cards[nextCardId];
+
+        // Reset metrics.
         for (const metric of Object.keys(state.metrics)) {
             state.metrics[metric] = DEFAULT_METRICS_POINTS;
         }
         // TODO: Delete the non persistent parameters.
         //state.parameters = {};
+
+        // Add term to history.
         state.history.push({
             from: state.year - state.yearsInPower,
             to: state.year,
         });
+
+        // Reset years in power.
         state.year = state.year + 1;
         state.yearsInPower = 0;
+
         state.hasWon = false;
         state.hasLost = false;
+
         state.cardsUnlocked.clear();
         state.playedCards.clear();
+
         state.boosters = [];
         return state;
     }

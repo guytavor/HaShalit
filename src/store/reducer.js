@@ -41,6 +41,7 @@ const INITIAL_STATE = {
             // TODO: Display the achievements on the timeline.
             //peace: 2023,
         },
+        games: 0,
     },
     interactions: {
         moveCardSide: null,
