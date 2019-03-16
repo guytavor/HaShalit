@@ -21,6 +21,8 @@ const validationFunctions = {
     },
 };
 
+const persistentParameters = [];
+
 export default class GameManager {
     constructor(cards, newGameCards, boosters, blameBoosters) {
         this._cards = cards;
@@ -43,8 +45,15 @@ export default class GameManager {
         for (const metric of Object.keys(state.metrics)) {
             state.metrics[metric] = DEFAULT_METRICS_POINTS;
         }
-        // TODO: Delete the non persistent parameters.
-        //state.parameters = {};
+
+        // Delete the non persistent parameters.
+        const newParameters = {};
+        for (const parameter of Object.keys(state.parameters)) {
+            if (persistentParameters.includes(parameter)) {
+                newParameters[parameter] = state.parameters[parameter];
+            }
+        }
+        state.parameters = newParameters;
 
         // Add term to history.
         state.history.push({

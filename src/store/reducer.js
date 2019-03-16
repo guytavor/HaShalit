@@ -9,8 +9,6 @@ import { SCREENS } from '../utils/constants';
 export const DEFAULT_METRICS_POINTS = 50;
 const gameManager = new GameManager(cards, newGameCards, boosters, blameBoosters);
 
-// TODO: Define a list of persistent parameters. Those will be copied to
-//       the level when the game starts, and from the level when it ends.
 const INITIAL_STATE = {
     screen: SCREENS.INTRO,
     level: {
