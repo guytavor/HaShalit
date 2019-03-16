@@ -17,7 +17,7 @@ class Stage extends React.PureComponent {
     }
 
     _getContent() {
-        const { screen, card, interactions, selectAnswer, moveCard, startGame, startOver } = this.props;
+        const { screen, card, metrics, interactions, selectAnswer, moveCard, startGame, startOver } = this.props;
         let content = null;
 
         switch(screen) {
@@ -34,7 +34,7 @@ class Stage extends React.PureComponent {
             case SCREENS.CREDITS:
                 content = (
                     <React.Fragment>
-                        <Header />
+                        <Header metrics={metrics}/>
                         <DeckContainer card={card} 
                                                      interactions={interactions}
                                                      onSelectAnswer={selectAnswer}
@@ -55,6 +55,7 @@ const mapStateToProps = state => {
     return {
         screen: state.screen,
         card: state.level.card,
+        metrics: state.level.metrics,
         interactions: state.interactions
     };
 };

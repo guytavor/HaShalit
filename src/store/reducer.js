@@ -1,5 +1,6 @@
 import { handleActions } from 'redux-actions';
 import get from 'lodash/get';
+import cloneDeep from 'lodash/cloneDeep';
 import actions from './actions';
 import {cards, newGameCards} from './cards';
 import {boosters, blameBoosters} from './boosters';
@@ -56,7 +57,7 @@ export default handleActions({
 
         return {
             ...state,
-            level: nextLevel,
+            level: cloneDeep(nextLevel),
         }
     },
 
@@ -76,7 +77,7 @@ export default handleActions({
         return {
             ...state,
             screen,
-            level: nextLevel,
+            level: cloneDeep(nextLevel),
         }
     },
 
@@ -107,7 +108,7 @@ export default handleActions({
         return {
             ...state,
             screen: SCREENS.GAME,
-            level: nextLevel,
+            level: cloneDeep(nextLevel),
         }
     },
 }, INITIAL_STATE);

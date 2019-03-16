@@ -1,23 +1,21 @@
 import React from "react";
-import { connect } from "react-redux";
+import PropTypes from 'prop-types';
 import styles from "./Header.module.scss";
 import Effects from "../Effects/Effects"
 
-class Header extends React.PureComponent {
+export default class Header extends React.PureComponent {
+  static propTypes = {
+    metrics: PropTypes.object,
+  };
+
   render() {
+    const { metrics } = this.props;
+    
     return (
       <div className={styles.headerContainer}>
-        <Effects />
+        <Effects points={metrics}/>
       </div>
     );
   }
 }
-
-const mapStateToProps = state => {
-  return {
-    //
-  };
-};
-
-export default connect(mapStateToProps)(Header);
 
