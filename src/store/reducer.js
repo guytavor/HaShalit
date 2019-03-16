@@ -1,13 +1,13 @@
 import { handleActions } from 'redux-actions';
 import get from 'lodash/get';
 import actions from './actions';
-import cards from './cards';
+import {cards, newGameCards} from './cards';
 import {boosters, blameBoosters} from './boosters';
 import GameManager from './GameManager';
 import { SCREENS } from '../utils/constants';
 
 export const DEFAULT_METRICS_POINTS = 50;
-const gameManager = new GameManager(cards, boosters, blameBoosters);
+const gameManager = new GameManager(cards, newGameCards, boosters, blameBoosters);
 
 // TODO: Define a list of persistent parameters. Those will be copied to
 //       the level when the game starts, and from the level when it ends.

@@ -22,15 +22,15 @@ const validationFunctions = {
 };
 
 export default class GameManager {
-    constructor(cards, boosters, blameBoosters) {
+    constructor(cards, newGameCards, boosters, blameBoosters) {
         this._cards = cards;
+        this._newGameCards = newGameCards;
         this._boosters = boosters;
         this._blameBoosters = blameBoosters;
     }
 
     startNewGame(state) {
-        // TODO: Select random new game card.
-        state.card = this._cards['newGame01'];
+        state.card = this._cards[chooseRandomFromArray(this._newGameCards)];
         for (const metric of Object.keys(state.metrics)) {
             state.metrics[metric] = DEFAULT_METRICS_POINTS;
         }
@@ -269,7 +269,7 @@ export default class GameManager {
 
 // TODO: Move to utils.js or something?
 function chooseRandomFromArray(arr) {
-    const randIndex = Math.floor(Math.random() * (arr.length - 1));
+    const randIndex = Math.floor(Math.random() * arr.length);
     return arr[randIndex];
 }
 

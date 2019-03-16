@@ -78,7 +78,7 @@ const characters = {
     },
 };
 
-const cards = {
+export const cards = {
     // Special game cards.
     'victory': {
         img: victory,
@@ -1040,8 +1040,11 @@ const cards = {
     },
 };
 
+export const newGameCards = [];
+
 for (const id of Object.keys(cards)) {
     cards[id].id = id;
+    if (id.startsWith('newGame')) {
+        newGameCards.push(id);
+    }
 }
-
-export default cards;
