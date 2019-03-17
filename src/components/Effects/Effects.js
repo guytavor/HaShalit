@@ -5,7 +5,6 @@ import Effect from "../Effect/Effect";
 import styles from "./Effects.module.scss";
 
 function Effects({points}) {
-	console.log('adler', points);
   return (
     <div className={styles.effectsContainer}>
       <div className={styles.iconContainer}>

@@ -1,42 +1,61 @@
-.stage {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  height: 100vh;
-  max-width: 540px;
-  min-width: 375px;
+@import "../../common.scss";
 
-  .answerContainer {
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  
+  .stage {
+    position: relative;
     display: flex;
-    flex-direction: row-reverse;
+    flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    width: 70vh;
+    height: 100vh;
+    max-width: 540px;
+    min-width: 375px;
+    z-index: 1;
 
-    .answer {
-      height: 24px;
-      line-height: 1.2;
-      margin-bottom: 60px;
+    .header, .footer {
+      position: relative;
+      z-index: 0;
+      width: 100%;
+    }
 
-      &:first {
-          color: red;
-      }
+    .deck {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+    }
+  }
+
+  .strip {
+    z-index: -1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: $stripColor;
+    height: $headerHeight;
+
+    &.footer {
+      top: unset;
+      bottom: 0;
     }
   }
 }
 
 @media all and (orientation: portrait) {
-    .stage .answerContainer {
-        width: 70vw;
-    }
+  .stage .answerContainer {
+    width: 70vw;
+  }
 }
 
 @media all and (max-width: 768px) {
-    .stage .answerContainer {
-        .answer {
-            font-size: 12px;
-            margin-bottom: 10px;
-          }
+  .stage .answerContainer {
+    .answer {
+      font-size: 12px;
+      margin-bottom: 10px;
     }
+  }
 }

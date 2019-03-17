@@ -1,7 +1,9 @@
+@import '../../common.scss';
+
 .footer {
-  width: 100vw;
-  height: 10vh;
+  width: 100%;
+  height: $footerHeight;
   max-height: 100px;
-  background-color: #5c7f90;
+  background-color: $stripColor;
 }
 

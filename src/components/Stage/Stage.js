@@ -13,7 +13,13 @@ import styles from "./Stage.module.scss";
 
 class Stage extends React.PureComponent {
     render() {
-        return this._getContent();
+        return (
+            <div className={styles.wrapper}>
+                {this._getFauxHeader()}
+                {this._getContent()}
+                {this._getFauxHeader(true)}
+            </div>
+        );
     }
 
     _getContent() {
@@ -34,12 +40,12 @@ class Stage extends React.PureComponent {
             case SCREENS.CREDITS:
                 content = (
                     <React.Fragment>
-                        <Header metrics={metrics}/>
-                        <DeckContainer card={card} 
-                                                     interactions={interactions}
-                                                     onSelectAnswer={selectAnswer}
-                                                     onMoveCard={moveCard} />
-                        <Footer />
+                        <div className={styles.header}><Header metrics={metrics}/></div>
+                        <div className={styles.deck}><DeckContainer card={card} 
+                                       interactions={interactions}
+                                       onSelectAnswer={selectAnswer}
+                                       onMoveCard={moveCard} /></div>
+                        <div className={styles.footer}><Footer /></div>
                     </React.Fragment>
                 );
                 break;
@@ -48,6 +54,11 @@ class Stage extends React.PureComponent {
         }
 
         return <div className={styles.stage}>{content}</div>;
+    }
+
+    _getFauxHeader(isFooter) {
+        const { screen } = this.props;
+        return screen === SCREENS.GAME ? <div className={`${styles.strip} ${isFooter ? styles.footer : ''}`} /> : null;
     }
 }
 
