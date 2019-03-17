@@ -22,15 +22,17 @@ export default class Deck extends React.PureComponent {
         const { card, interactions, onMoveCard } = this.props;
 
         return (
-            <div className={styles.deck}>
-                <div className={styles.back} />
-                <div className={styles.card}>
-                    {card ? <Card key={card.id}
-                        prevDir={prevFlipDirection}
-                        card={card}
-                        cardSide={interactions.moveCardSide}
-                        onCardMove={onMoveCard}
-                        onSelectAnswer={this._onSelectAnswer} /> : null}
+            <div className={styles.wrapper}>
+                <div className={styles.deck}>
+                    <div className={styles.back} />
+                    <div className={styles.card}>
+                        {card ? <Card key={card.id}
+                            prevDir={prevFlipDirection}
+                            card={card}
+                            cardSide={interactions.moveCardSide}
+                            onCardMove={onMoveCard}
+                            onSelectAnswer={this._onSelectAnswer} /> : null}
+                    </div>
                 </div>
             </div>
         );

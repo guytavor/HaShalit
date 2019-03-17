@@ -4,6 +4,9 @@
   display: flex;
   justify-content: center;
   align-items: flex-start;
+  max-width: $maxWidth;
+  min-width: $minWidth;
+  width: 100%;
   
   .stage {
     position: relative;
@@ -11,10 +14,9 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    height: 100vh;
-    max-width: 540px;
-    min-width: 375px;
     z-index: 1;
+    width: 100%;
+    height: 100%;
 
     .header, .footer {
       position: relative;
@@ -22,15 +24,24 @@
       width: 100%;
     }
 
-    .deck {
+    .header {
+      height: $headerHeight;
+    }
+
+    .footer {
+      height: $footerHeight;
+    }
+
+    .content {
       position: relative;
       z-index: 1;
       width: 100%;
+      flex: 1;
     }
   }
 
   .strip {
-    z-index: -1;
+    z-index: 0;
     position: fixed;
     top: 0;
     left: 0;
@@ -41,6 +52,7 @@
     &.footer {
       top: unset;
       bottom: 0;
+      height: $footerHeight;
     }
   }
 }

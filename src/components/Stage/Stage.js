@@ -41,7 +41,7 @@ class Stage extends React.PureComponent {
                 content = (
                     <React.Fragment>
                         <div className={styles.header}><Header metrics={metrics}/></div>
-                        <div className={styles.deck}><DeckContainer card={card} 
+                        <div className={styles.content}><DeckContainer card={card} 
                                        interactions={interactions}
                                        onSelectAnswer={selectAnswer}
                                        onMoveCard={moveCard} /></div>

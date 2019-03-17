@@ -1,8 +1,10 @@
+@import "../../common.scss";
+
 .wrapper {
-    max-height: 160px;
-    max-width: 160px;
+    height: 45px;
+    width: 45px;
     position: relative;
-    background-color: #503b3b;
+    background-color: $meterBgColor;
 
     .bg {
         z-index: 1;
@@ -11,7 +13,7 @@
         left: 0;
         width: 100%;
         height: 0%;
-        background-color: rgba(255, 255, 255, 0.3);
+        background-color: $meterFgColor;
         transition: all .6s ease;
 
         &.grow {

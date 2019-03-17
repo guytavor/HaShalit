@@ -1,6 +1,6 @@
 import React from "react";
 
-function ReligionIconInverse({color = '#5c7f90'}) {
+function ReligionIconInverse({color = 'rgb(27, 16, 4)'}) {
   return (
     <svg version="1.1" x="0px" y="0px" viewBox="0 0 200 200">
       <g>

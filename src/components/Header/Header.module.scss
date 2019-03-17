@@ -2,8 +2,10 @@
 
 .headerContainer {
   width: 100%;
-  height: $headerHeight;
-  max-height: 100px;
+  height: 100%;
   background-color: $stripColor;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
