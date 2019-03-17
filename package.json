@@ -9,6 +9,7 @@
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
+    "predeploy": "rm -rf build && npm run build",
     "deploy": "gcloud app deploy"
   },
   "dependencies": {
