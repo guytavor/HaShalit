@@ -29,4 +29,34 @@
         position: relative;
         z-index: 2;
     }
+
+    .ball {
+        position: absolute;
+        display: block;
+        top: -100px;
+        left: 50%;
+        border-radius: 50%;
+        background-color: $meterBgColor;
+        transition: all .2s ease-in-out;
+
+        &.smallBall {
+            width: 6px;
+            height: 6px;
+            margin-left: -3px;
+
+            &.show {
+                top: -16px;
+            }
+        }
+
+        &.bigBall {
+            width: 8px;
+            height: 8px;
+            margin-left: -4px;
+
+            &.show {
+                top: -18px;
+            }
+        }
+    }
 }

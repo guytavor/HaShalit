@@ -40,7 +40,7 @@ class Stage extends React.PureComponent {
             case SCREENS.CREDITS:
                 content = (
                     <React.Fragment>
-                        <div className={styles.header}><Header metrics={metrics}/></div>
+                        <div className={styles.header}><Header metrics={metrics} card={card} interactions={interactions}/></div>
                         <div className={styles.content}><DeckContainer card={card} 
                                        interactions={interactions}
                                        onSelectAnswer={selectAnswer}
