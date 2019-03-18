@@ -65,10 +65,9 @@ export default handleActions({
         console.log('Select answer', state);
         const { side } = payload;
         const nextLevel = gameManager.getNextLevel(state.level, side);
-        const cardId = get(nextLevel, 'card.id');
         let screen = state.screen;
 
-        if (cardId === 'victory') {
+        if (nextLevel.hasWon) {
             screen = SCREENS.WON;
         } else if (nextLevel.hasLost) {
             screen = SCREENS.LOST;
