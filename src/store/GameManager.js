@@ -71,7 +71,7 @@ export default class GameManager {
         state.cardsUnlocked.clear();
         state.playedCards.clear();
 
-        state.boosters = [];
+        state.boosters = {};
         return state;
     }
 
