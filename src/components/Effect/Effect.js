@@ -63,7 +63,7 @@ export default class Effect extends React.PureComponent {
         let className = (willEffect ? styles.show : '') + ' ';
 
         if (!hasDifference) {
-            if (Math.abs(hasEffect) > 30) {
+            if (Math.abs(hasEffect) >= 30) {
                 className += styles.bigBall;
             } else {
                 className += styles.smallBall;
