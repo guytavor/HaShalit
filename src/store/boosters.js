@@ -22,6 +22,15 @@ export const boosters = {
     ownMediaRemove: {
         text: 'האחיזה שלנו בתקשורת התרופפה',
     },
+    war: {
+        text: 'מלחמה זה עסק יקר ומסוכן אבל הקדנציה שלך מוגנת מזוטות',
+        effects: {
+            economy: -5,
+            security: -5,
+            image: 10,
+            religion: 5,
+        },
+    },
 };
 
 export const blameBoosters = [];
