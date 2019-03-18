@@ -122,7 +122,9 @@ export default class GameManager {
                 }
             }
 
-            this._applyBoostersEffects(state);
+            if (answer.advanceTime !== false) {
+                this._applyBoostersEffects(state);
+            }
 
             if (answer.effects) {
                 GameManager._applyEffects(state, answer.effects);
