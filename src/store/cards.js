@@ -129,11 +129,11 @@ export const cards = {
         character: newGame,
         text: 'היום ה-10 באפריל. תוצאות הבחירות הגיעו ואתה נבחרת שוב',
         left: {
-            text: 'לא היה לי ספק',
+            text: 'אני?',
             advanceTime: false,
         },
         right: {
-            text: 'אני?',
+            text: 'לא היה לי ספק',
             advanceTime: false,
         },
         locked: true,
