@@ -1,10 +1,15 @@
+import get from 'lodash/get';
 import { save } from '../utils/StorageHelper';
-// import actions from './actions';
+import actions from './actions';
 
 const handlers = {
-    /*[actions.startOver]: (store) => {
-        store.dispatch(actions.init({}));
-    }*/
+    [actions.startGame]: () => {
+        const isPhone = get(window, 'isMobile.phone', false);
+
+        if (isPhone) {
+            document.body.requestFullscreen().then(() => {}).catch(() => {});
+        }
+    }
 };
 
 export default store => next => action => {

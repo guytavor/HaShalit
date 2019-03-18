@@ -1,5 +1,4 @@
 import { handleActions } from 'redux-actions';
-import get from 'lodash/get';
 import cloneDeep from 'lodash/cloneDeep';
 import actions from './actions';
 import {cards, newGameCards} from './cards';

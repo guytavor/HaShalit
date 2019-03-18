@@ -1,3 +1,5 @@
+@import "../../common.scss";
+
 .cardWrapper {
   will-change: transform;
   display: flex;
@@ -68,6 +70,26 @@
 
             &.right {
               text-align: left;
+            }
+          }
+
+          @media all and (min-height: $heightBreak) and (min-width: 570px) {
+            .answer.left {
+              text-align: left;
+            }
+
+            .answer.right {
+              text-align: right;
+            }
+          }
+
+          @media all and (max-height: $heightBreak) and (min-width: 580px) {
+            .answer.left {
+              text-align: left;
+            }
+
+            .answer.right {
+              text-align: right;
             }
           }
         }

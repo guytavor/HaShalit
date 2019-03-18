@@ -55,19 +55,16 @@
       height: $footerHeight;
     }
   }
-}
 
-@media all and (orientation: portrait) {
-  .stage .answerContainer {
-    width: 70vw;
-  }
-}
-
-@media all and (max-width: 768px) {
-  .stage .answerContainer {
-    .answer {
-      font-size: 12px;
-      margin-bottom: 10px;
+  @media all and (max-height: $heightBreak) {
+    .stage {
+      .header {
+        height: $headerLoResHeight;
+      }
+    }
+  
+    .strip:not(.footer) {
+      height: $headerLoResHeight;
     }
   }
 }
