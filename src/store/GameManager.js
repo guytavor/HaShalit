@@ -130,6 +130,8 @@ export default class GameManager {
                 GameManager._applyEffects(state, answer.effects);
             }
 
+            GameManager._clampMetrics(state);
+
             // Achievements.
             if (answer.achievement) {
                 console.log('Achievement!', answer.achievement);
@@ -233,7 +235,7 @@ export default class GameManager {
 
             for (const metric of Object.keys(state.metrics)) {
                 if (effects[metric]) {
-                    state.metrics[metric] = clamp(state.metrics[metric] + effects[metric], 0, 100)
+                    state.metrics[metric] = state.metrics[metric] + effects[metric]
                 }
             }
         }
@@ -242,7 +244,7 @@ export default class GameManager {
     static _applyEffects(state, effects) {
         for (const metric of Object.keys(state.metrics)) {
             if (effects[metric]) {
-                state.metrics[metric] = clamp(state.metrics[metric] + effects[metric], 0, 100)
+                state.metrics[metric] = state.metrics[metric] + effects[metric]
             }
         }
 
@@ -259,6 +261,12 @@ export default class GameManager {
                 const currentValue = state.parameters[parameter] || 0;
                 state.parameters[parameter] = currentValue + effect[1];
             }
+        }
+    }
+
+    static _clampMetrics(state) {
+        for (const metric of Object.keys(state.metrics)) {
+            state.metrics[metric] = clamp(state.metrics[metric], 0, 100);
         }
     }
 
