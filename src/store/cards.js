@@ -19,8 +19,6 @@ import wife from '../assets/cards/game_wife.svg';
 import tycoon from '../assets/cards/game_tycoon.svg';
 import general from '../assets/cards/game_general.svg';
 
-console.log("inbal ", president, loseImage, loseEconomy);
-
 const characters = {
     newGame: {
         img: newGame,
