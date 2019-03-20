@@ -19,6 +19,8 @@ import wife from '../assets/cards/game_wife.svg';
 import tycoon from '../assets/cards/game_tycoon.svg';
 import general from '../assets/cards/game_general.svg';
 
+console.log("inbal ", president, loseImage, loseEconomy);
+
 const characters = {
     newGame: {
         img: newGame,
@@ -26,7 +28,7 @@ const characters = {
     },
     president: {
         img: president,
-        name: 'הנשיא',
+        name: 'כבוד הנשיא',
     },
     consultant: {
         img: consultant,
@@ -70,7 +72,7 @@ const characters = {
     },
     tycoon: {
         img: tycoon,
-        name: 'רמטכ"ל',
+        name: 'הטייקון הטחון',
     },
     general: {
         img: general,
@@ -129,7 +131,7 @@ export const cards = {
         character: newGame,
         text: 'היום ה-10 באפריל. תוצאות הבחירות הגיעו ואתה נבחרת שוב',
         left: {
-            text: 'אני?',
+            text: 'באמת? אני?',
             advanceTime: false,
         },
         right: {
@@ -142,11 +144,11 @@ export const cards = {
         character: newGame,
         text: 'כל הקולות נספרו - למרות הכל, נבחרת שוב',
         left: {
-            text: 'עוד פעם?',
+            text: 'עוד הפעם?',
             advanceTime: false,
         },
         right: {
-            text: 'העם איתי',
+            text: 'ברור, העם איתי',
             advanceTime: false,
         },
         locked: true,
@@ -155,11 +157,11 @@ export const cards = {
         character: newGame,
         text: 'התוצאות הגיעו, אדוני ראש הממשלה',
         left: {
-            text: 'בוא נתחיל',
+            text: 'בואו נתחיל במלאכה',
             advanceTime: false,
         },
         right: {
-            text: 'תודה לך',
+            text: 'ראיתי את זה מגיע',
             advanceTime: false,
         },
         locked: true,
@@ -179,7 +181,7 @@ export const cards = {
     },
     'newGame04': {
         character: newGame,
-        text: 'ניצחת!',
+        text: 'ניצחת בבחירות!',
         left: {
             text: 'העם ניצח',
             advanceTime: false,
@@ -193,14 +195,14 @@ export const cards = {
     // Paste here //
     '10': {
         character: characters.president,
-        text: 'כבוד השר, תרצה להיות השליט?',
+        text: 'כבודו, אני שמח לבשר לך שנבחרת. האם תרצה להיות המלך?',
         left: {
-            text: 'לא',
+            text: 'לא ממש',
             next: '20',
             advanceTime: false,
         },
         right: {
-            text: 'כן',
+            text: 'כמובן',
             next: '30',
             advanceTime: false,
         },
@@ -210,12 +212,12 @@ export const cards = {
         character: characters.president,
         text: 'העם בחר בך! תהיה גבר',
         left: {
-            text: 'אשתדל',
+            text: 'אשתדל לשרת את העם',
             next: '30',
             advanceTime: false,
         },
         right: {
-            text: 'טוב',
+            text: 'אשתדל לעבוד על השרירים',
             next: '30',
             advanceTime: false,
         },
