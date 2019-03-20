@@ -165,6 +165,10 @@ export default class GameManager {
         if (!nextCardId) {
             console.log('Selecting a random card...');
             nextCardId = this._selectRandomCard(state);
+
+            if (!nextCardId) {
+                nextCardId = 'outOfCards';
+            }
         }
         const nextCard = this._cards[nextCardId];
         console.log('Next card:', nextCardId,
