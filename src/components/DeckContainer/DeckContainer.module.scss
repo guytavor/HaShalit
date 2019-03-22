@@ -47,4 +47,11 @@
       height: 50px;
     }
   }
+
+  @media all and (max-height: 700px) {
+    .description,
+    .name {
+      width: $cardLoResDimension;
+    }
+  }
 }
