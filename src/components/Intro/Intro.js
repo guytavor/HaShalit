@@ -5,7 +5,7 @@ import styles from './Intro.module.scss';
 export default function({startGame}) {
     return (
         <div className={styles.wrapper} onClick={startGame}>
-            <h1 className={styles.title}>המלך</h1>
+            <h1 className={styles.title}>מלך</h1>
             <div className={styles.content}>
                 <CrownOfIsrael />
             </div>
