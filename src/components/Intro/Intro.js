@@ -1,13 +1,17 @@
 import React from 'react';
+import CrownOfIsrael from './CrownOfIsrael';
 import styles from './Intro.module.scss';
 
 export default function({startGame}) {
     return (
         <div className={styles.wrapper} onClick={startGame}>
+            <h1>המלך</h1>
             <div className={styles.content}>
-                <div>Welcome to the game</div>
-                <div>click to start</div>
+                <CrownOfIsrael />
             </div>
+            <p>
+                לחץ להתחלה
+            </p>
         </div>
     );
 }
