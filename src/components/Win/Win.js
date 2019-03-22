@@ -5,7 +5,8 @@ export default function({startOver}) {
     return (
         <div className={styles.wrapper} onClick={startOver}>
             <div className={styles.content}>
-                <div>You Won</div>
+                <h1 className={styles.title}>ניצחת!</h1>
+                <p className={styles.description}>חיסלת את הדמוקרטיה</p>
             </div>
         </div>
     );
