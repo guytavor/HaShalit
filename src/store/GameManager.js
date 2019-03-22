@@ -239,7 +239,8 @@ export default class GameManager {
 
             for (const metric of Object.keys(state.metrics)) {
                 if (effects[metric]) {
-                    state.metrics[metric] = state.metrics[metric] + effects[metric]
+                    // TODO: Uncomment when boosters UI will be implemented.
+                    //state.metrics[metric] = state.metrics[metric] + effects[metric]
                 }
             }
         }
