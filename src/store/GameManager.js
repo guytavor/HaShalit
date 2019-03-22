@@ -21,7 +21,7 @@ const validationFunctions = {
     },
 };
 
-const persistentParameters = [];
+const persistentParameters = ['bad', 'madePeace', 'peaceTalks', 'tycoon'];
 
 export default class GameManager {
     constructor(cards, newGameCards, boosters, blameBoosters) {
