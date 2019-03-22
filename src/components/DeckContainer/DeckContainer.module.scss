@@ -11,9 +11,10 @@
 
   .description,
   .name {
-    width: 100%;
+    width: $cardDimension;
     text-align: center;
     padding: 20px 0;
+    line-height: 1.5;
   }
 
   .description {

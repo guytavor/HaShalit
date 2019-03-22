@@ -59,33 +59,47 @@
             user-select: none;
             -webkit-user-select: none;
             -ms-user-select: none;
-
+            font-weight: normal;
+            font-size: 18px;
+            
             &.left {
               text-align: right;
+              padding-left: 40%;
             }
-
+            
             &.right {
               text-align: left;
+              padding-right: 40%;
             }
           }
 
           @media all and (min-height: $heightBreak) and (min-width: 570px) {
             .answer.left {
               text-align: left;
+              padding-left: 0;
+              padding-right: 40%;
+
             }
 
             .answer.right {
               text-align: right;
+              padding-left: 40%;
+              padding-right: 0;
+
             }
           }
 
           @media all and (max-height: $heightBreak) and (min-width: 580px) {
             .answer.left {
               text-align: left;
+              padding-left: 0;
+              padding-right: 40%;
             }
 
             .answer.right {
               text-align: right;
+              padding-left: 40%;
+              padding-right: 0;
             }
           }
         }
