@@ -126,7 +126,7 @@ export const cards = {
         lose: true,
     },
     'afterTutorial': {
-        character: newGame,
+        character: characters.newGame,
         text: 'היום ה-10 באפריל. תוצאות הבחירות הגיעו ואתה נבחרת שוב',
         left: {
             text: 'באמת? אני?',
@@ -139,7 +139,7 @@ export const cards = {
         locked: true,
     },
     'newGame01': {
-        character: newGame,
+        character: characters.newGame,
         text: 'כל הקולות נספרו - למרות הכל, נבחרת שוב',
         left: {
             text: 'עוד הפעם?',
@@ -152,7 +152,7 @@ export const cards = {
         locked: true,
     },
     'newGame02': {
-        character: newGame,
+        character: characters.newGame,
         text: 'התוצאות הגיעו, אדוני ראש הממשלה',
         left: {
             text: 'בואו נתחיל במלאכה',
@@ -165,7 +165,7 @@ export const cards = {
         locked: true,
     },
     'newGame03': {
-        character: newGame,
+        character: characters.newGame,
         text: 'הם בחרו בך שוב! איך אתה עושה את זה??',
         left: {
             text: 'זו קללה',
@@ -178,7 +178,7 @@ export const cards = {
         locked: true,
     },
     'newGame04': {
-        character: newGame,
+        character: characters.newGame,
         text: 'ניצחת בבחירות!',
         left: {
             text: 'העם ניצח',

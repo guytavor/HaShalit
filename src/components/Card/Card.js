@@ -69,8 +69,9 @@ function Card({ card, cardSide, onSelectAnswer, onCardMove, prevDir }) {
         leave: { t: 1 },
         config: TRANSITION_CONFIG,
     });
-    const cardImg = get(card, 'character.img', '');
+    const cardImg = get(card, 'character.img', get(card, 'img', ''));
     let answer = getAnswer(card, cardSide);
+    console.log('adler', card);
 
     const actionHandlers = useGesture(({ down, delta: [xDelta, yDelta] }) => {
         const isInCenter = Math.abs(xDelta) < 5;
