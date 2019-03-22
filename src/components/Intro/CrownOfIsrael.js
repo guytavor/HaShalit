@@ -1,6 +1,7 @@
 import React from "react";
 
 const crownDimension = 30;
+const blueColor = '#214496';
 
 export default function() {
   return (
@@ -11,8 +12,8 @@ export default function() {
       width="300px"
     >
       <rect width="120" height="55" fill="white" y="0" />
-      <rect width="120" height="4" fill="#0038b8" y="2" />
-      <rect width="120" height="4" fill="#0038b8" y="49" />
+      <rect width="120" height="4" fill={blueColor} y="2" />
+      <rect width="120" height="4" fill={blueColor} y="49" />
       <g style={{transform: `translate(45px, 12px)`}}>
         <svg
           version="1.1"
