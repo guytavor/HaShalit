@@ -628,7 +628,7 @@ export const cards = {
             text: 'כן',
             afterText: '25% מהלדים בישראל מתחת לקו העוני',
             effects: {
-                security: -20,
+                economy: -20,
                 image: 30,
             },
         },
@@ -1314,6 +1314,7 @@ export const cards = {
             },
             booster: 'ownMediaRemove',
         },
+        locked: true,
     },
     '670': {
         character: characters.consultant,
