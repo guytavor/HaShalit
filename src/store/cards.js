@@ -368,7 +368,7 @@ export const cards = {
         },
         right: {
             text: 'יאללה',
-            unlockCards: ['920'],
+            unlockCardsForever: ['920','1100'],
             effects: {
                 economy: 0,
                 security: -10,
@@ -574,16 +574,17 @@ export const cards = {
         ],
     },
     '193': {
-        character: characters.consultant,
-        text: 'בשיחות השלום, פיסטוקיה דורשים התנצלות',
+        character: characters.foreignAmbassador,
+        text: 'המלך נעלב. פנייך לשלום או למלחמה?',
         left: {
-            text: 'חזור הביתה',
+            text: 'מלחמה',
+            next: '300',
             effects: {
                 image: 10,
             },
         },
         right: {
-            text: 'התנצל',
+            text: 'שלום',
             achievement: 'peace',
             effects: {
                 image: -10,
@@ -669,7 +670,7 @@ export const cards = {
     },
     '220': {
         character: characters.consultant,
-        text: 'דעת הקהל מוטה ע״י החדשות. צריך אמצעי השפעה.',
+        text: 'דעת הקהל מוטה ע״י החדשות. צריך אמצעי השפעה',
         left: {
             text: 'דאג לעיתונות החופשית',
             effects: {
@@ -726,7 +727,7 @@ export const cards = {
     },
     '250': {
         character: characters.tycoon,
-        text: 'בוא נמלא את בתי החולים בתיירים רפואים עשירים.',
+        text: 'בוא נמלא את בתי החולים בתיירים רפואים עשירים',
         left: {
             text: 'דאג לזקנה במסדרון',
             next: '253',
@@ -783,7 +784,7 @@ export const cards = {
     },
     '253': {
         character: characters.news,
-        text: 'הזקנה במסדרון: ראש הממשלה אולי סידר לי חדר אבל חיכיתי שעות בחושך שיבוא לבקר.',
+        text: 'הזקנה במסדרון: ראש הממשלה אולי סידר לי חדר אבל חיכיתי שעות בחושך שיבוא לבקר',
         left: {
             text: 'התנצל עמוקות',
             effects: {
@@ -911,9 +912,9 @@ export const cards = {
     },
     '360': {
         character: characters.consultant,
-        text: 'אדוני, מלחמה זה צילום ענק בעמוד הראשון ואתה נראה הורס באפוד קרמי',
+        text: 'אדוני, מלחמה זה צילום ענק בעמוד הראשון ואתה הורס באפוד קרמי',
         left: {
-            text: 'לא. רק מו"מ.',
+            text: 'לא. רק מו"מ',
             next: '380',
             effects: {
                 image: -10,
@@ -939,7 +940,7 @@ export const cards = {
             },
         },
         right: {
-            text: 'אז תגיד... וכנס בהם!',
+            text: 'אז תגיד. וכנס בהם!',
             effects: {
                 security: 10,
                 image: 20,
@@ -950,7 +951,7 @@ export const cards = {
     },
     '400': {
         character: characters.ministerTreasury,
-        text: 'ראש הממשלה, אין תזרים. שנקטין את סל הבריאות?',
+        text: 'אדוני, התקציב נגמר. שנקטין את סל הבריאות?',
         left: {
             text: 'אל תיגע בסל',
             effects: {
@@ -983,14 +984,104 @@ export const cards = {
             },
         },
     },
-
-
-
+    '440': {
+        character: characters.ministerTreasury,
+        text: 'הנכים מפגינים. להגדיל להם את הקצבה?',
+        left: {
+            text: 'לא היום',
+            unlockCardsForever: ['445'],
+            effects: {
+                economy: 10,
+                image: -5,
+            },
+        },
+        right: {
+            text: 'ברור',
+            effects: {
+                economy: -10,
+                image: 10,
+            },
+        },
+    },
+    '445': {
+        character: characters.ministerTreasury,
+        text: 'הקלפיות לא נגישות לנכים. מתי לטפל בזה?',
+        left: {
+            text: 'שנה הבאה',
+            effects: {
+                image: -15,
+            },
+        },
+        right: {
+            text: 'עכשיו',
+            next: '447',
+            effects: {
+                economy: -5,
+                image: 5,
+            },
+        },
+    },
+    '447': {
+        character: characters.consultant,
+        text: 'אדוני, לא הגדלת להם את הקיצבה. הם ממילא לא יצביעו עבורך. אתה בטוח?',
+        left: {
+            text: 'במחשבה שנייה...',
+            effects: {
+                image: -20,
+            },
+        },
+        right: {
+            text: 'זה הדבר הנכון',
+            effects: {
+                economy: -5,
+                image: 10,
+            },
+        },
+    },
+    '460': {
+        character: characters.opposition,
+        text: 'הטייקון בונה קניון באיזור הציד של חמוס בסכנת הכחדה. עצור אותו!',
+        left: {
+            text: 'שהחמוס יאכל בקניון',
+            unlockCardsForever: ['820'],
+            effects: {
+                economy: 20,
+                image: -10,
+            },
+        },
+        right: {
+            text: 'עצור בנייה',
+            next: '462',
+            effects: {
+                economy: -20,
+                image: 10,
+            },
+        },
+    },
+    '462': {
+        character: characters.tycoon,
+        text: 'אני חייב לבנות את הקניון כדי לנצח טייקון אחר במונפול',
+        left: {
+            text: 'חוס על החמוס',
+            effects: {
+                economy: -20,
+                image: 10,
+            },
+        },
+        right: {
+            text: 'הקשב לטייקון',
+            effects: {
+                economy: 20,
+                image: -10,
+            },
+        },
+    },
     '480': {
         character: characters.news,
         text: 'חשיפה בלעדית: ראש הממשלה קיבל וילה מהטייקון הטחון ',
         left: {
             text: 'אין פתק החלפה',
+            next: '540',
             unlockCardsForever: ['540','820'],
             effects: {
                 image: -30,
@@ -1024,11 +1115,14 @@ export const cards = {
     },
     '520': {
         character: characters.ministerEducation,
-        text: 'אדוני, עקב טעות הקלדה השקענו מיליארד שקל בפיתוח תכנית "לימודי ריבה"',
+        text: 'אדוני, עקב טעות הקלדה השקענו מיליארדים בפיתוח תכנית "לימודי ריבה"',
         left: {
             text: 'פטר את הדביל',
             effects: {
                 image: 20,
+                set: [
+                    ['education', 1],
+                ],
             },
         },
         right: {
@@ -1040,28 +1134,28 @@ export const cards = {
     },
     '540': {
         character: characters.consultant,
-        text: 'אדוני הסיפור על הוילה שקיבלת עומד להתפרסם בחדשות. מה עושים?',
+        text: 'אדוני, סיפור הוילה פותח את המהדורה. מבצע קטן בפיסטוקיה כדי להסיט פוקוס?',
         left: {
-            text: 'נצא למבצע בפיסטוקיה להסיט תשומת לב',
+            text: 'נראה לך?',
+            effects: {
+                image: -10,
+            },
+        },
+        right: {
+            text: 'רעיון טוב',
             next: '560',
             effects: {
                 security: 20,
                 image: 10,
             },
         },
-        right: {
-            text: 'מכחישים וממשיכים.',
-            effects: {
-                image: -10,
-            },
-        },
         locked: true,
     },
     '560': {
         character: characters.general,
-        text: 'רוה"מ, מטרות מבצע "חדשות טובות" הושגו תוך ארבע שעות. ממליץ לשלוף את חיילנו מהבוץ הפיסטוקיאני מיד',
+        text: 'רוה"מ, מטרות מבצע "חדשות טובות" הושגו תוך ארבע שעות. מתי לשלוף את חיילנו מהבוץ הפיסטוקיאני?',
         left: {
-            text: 'חכה שיגמרו החדשות',
+            text: 'אחרי החדשות',
             next: '580',
             unlockCardsForever: ['620'],
             effects: {
@@ -1070,7 +1164,7 @@ export const cards = {
             },
         },
         right: {
-            text: 'תחזיר אותם הביתה מיד',
+            text: 'מיד',
             effects: {
                 security: -10,
                 image: -10,
@@ -1080,15 +1174,15 @@ export const cards = {
     },
     '580': {
         character: characters.general,
-        text: 'רוה"מ, בשעה האחרונה של המבצע נקלעו חיילנו למארב. אחד עשר מלוחמנו נפלו.',
+        text: 'רוה"מ, חיילנו נקלעו למארב ואחד עשר מלוחמנו נפלו. פעולת תגמול כואבת?',
         left: {
-            text: 'מספיק אבדות. לסגת',
+            text: 'לא, לסגת',
             effects: {
                 image: -30,
             },
         },
         right: {
-            text: 'פעולת תגמול כואבת',
+            text: 'כן',
             effects: {
                 security: 10,
                 image: 20,
@@ -1099,7 +1193,7 @@ export const cards = {
         character: characters.ministerTreasury,
         text: 'אדוני, התקציב שוב מתקרב. חינוך או בטחון? והזוכה הוא... היא... הם...',
         left: {
-            text: 'מורים עם גירים',
+            text: 'מורים וגירים',
             next: '605',
             effects: {
                 economy: -10,
@@ -1107,7 +1201,7 @@ export const cards = {
             },
         },
         right: {
-            text: 'חיילים  עם טילים',
+            text: 'חיילים וטילים',
             next: '601',
             effects: {
                 economy: -20,
@@ -1116,16 +1210,16 @@ export const cards = {
     },
     '601': {
         character: characters.news,
-        text: 'חשיפה בלעדית: מורה ביום, חשפנית במועדון בלילה – כך סוגרת המורה של ילדכם את החודש',
+        text: 'מורה ביום, חשפנית במועדון בלילה: כך סוגרת המורה את החודש',
         left: {
-            text: 'איפה אמרתם המועדון?',
+            text: 'איזה מועדון?',
             effects: {
                 economy: 10,
                 image: -15,
             },
         },
         right: {
-            text: 'נעלה שכר למורים',
+            text: 'העלה שכר',
             effects: {
                 economy: -20,
                 image: 5,
@@ -1134,15 +1228,15 @@ export const cards = {
     },
     '605': {
         character: characters.general,
-        text: 'רוה"מ, אין תקציב למיגון בתי אזרחים על הגבול הפיסטוקי. ',
+        text: 'רוה"מ, אין תקציב למיגון בתי אזרחים על הגבול הפיסטוקי. כדי לקבל הגנה מירבית התושבים שמים קוטקס על הגגות',
         left: {
-            text: 'שישימו קוטקס להגנה מירבית',
+            text: 'שישבו בשקט',
             effects: {
                 image: -20,
             },
         },
         right: {
-            text: 'הכי חשוב ביטחון האזרים',
+            text: 'אזרים מיד',
             effects: {
                 economy: -20,
             },
@@ -1159,7 +1253,7 @@ export const cards = {
             },
         },
         right: {
-            text: 'טיפול פסיכולוגי לנפגעים',
+            text: 'ממן להם פסיכולוג',
             effects: {
                 economy: -30,
                 image: 10,
@@ -1168,17 +1262,17 @@ export const cards = {
     },
     '640': {
         character: characters.rabi,
-        text: 'כבודו, התלמידים לומדים רק תנ"ך, תושב"ע, תרבות יהודית ותולדות עם ישראל. מה עם קצת תכנים יותר יהודיים?',
+        text: 'כבודו, התלמידים לומדים רק תנ"ך, תושב"ע, תרבות יהודית ותולדות עם ישראל. מה עם תכנים יהודיים?',
         left: {
-            text: 'נוסיף משהו במקום אזרחות',
+            text: 'זה מספיק',
             effects: {
-                religion: 30,
+                religion: -20,
             },
         },
         right: {
-            text: 'זה מספיק תכנים יהודים',
+            text: 'צודק',
             effects: {
-                religion: -20,
+                religion: 30,
             },
         },
     },
@@ -1194,7 +1288,7 @@ export const cards = {
             },
         },
         right: {
-            text: 'ממש לא.',
+            text: 'ממש לא',
             afterText: 'ערוץ הטלוויזיה נסגר עקב "חובות המשקיעים". מדורי הרכילות מדווחים שהטייקון הזמין את יושב ראש האופוזיציה לבריתה של נכדתו...',
             effects: {
                 security: 10,
@@ -1206,13 +1300,13 @@ export const cards = {
         character: characters.news,
         text: 'הטילים "המתקדמים" של הטייקון מדויקים פחות מטיל שקנינו בעלי אקספרס',
         left: {
-            text: 'דיוק זה לא הכל בחיים',
+            text: 'דיוק זה לא הכל',
             effects: {
                 security: -20,
             },
         },
         right: {
-            text: 'בטל את העסקה',
+            text: 'בטל עסקה',
             afterText: 'ערוץ הטלוויזיה נסגר עקב "חובות המשקיעים". מדורי הרכילות מדווחים שהטייקון הזמין את יושב ראש האופוזיציה לבריתה של נכדתו...',
             effects: {
                 security: 10,
@@ -1223,7 +1317,7 @@ export const cards = {
     },
     '670': {
         character: characters.consultant,
-        text: 'אדוני, אני ממליץ לעודד תיירות דת ללא הבדל דת, גזע ומין. ',
+        text: 'אדוני, אני ממליץ לעודד תיירות דת ללא הבדל דת, גזע ומין',
         left: {
             text: 'כן, אבל רק ליהודים',
             effects: {
@@ -1258,9 +1352,9 @@ export const cards = {
     },
     '681': {
         character: characters.wife,
-        text: 'אני לא יכולה להגיע לראיון בסמרטוטים שעלו רק עשרים אלף ש"ח. מאיפה לשלם?',
+        text: 'אני לא אגיע לראיון בסמרטוט שעלה רק עשיריה. מאיפה לשלם?',
         left: {
-            text: 'מתקציב נגישות לבוחר',
+            text: 'מתקציב המשרד',
             next: '682',
             unlockCardsForever: ['690'],
             effects: {
@@ -1280,13 +1374,13 @@ export const cards = {
         character: characters.news,
         text: 'אשת רוה"מ: מבינה מעולה את מצוקת האזרח הקטן. לכן הצעתי לבעלי תוכנית "קוויאר שחור לכל פועל"',
         left: {
-            text: 'ציטוט שהוצא מהקשרו',
+            text: 'התקשורת עוינת',
             effects: {
                 image: 10,
             },
         },
         right: {
-            text: 'רעיון מבריק',
+            text: 'האשה צודקת',
             effects: {
                 economy: -10,
                 image: -10,
@@ -1311,7 +1405,7 @@ export const cards = {
     },
     '700': {
         character: characters.rabi,
-        text: 'תמורת כמה שקלים הרבנות תתגייס למאבק בסרטן: מילא שזו מחלה סופנית, אבל סרטן זה לא כשר ',
+        text: 'הרבנות צריכה כסף כדי להתגייס למאבק בסרטן. מילא שזו מחלה סופנית, אבל סרטן זה לא כשר',
         left: {
             text: 'כמה תרצה?',
             unlockCardsForever: ['705',' 1000'],
@@ -1329,18 +1423,18 @@ export const cards = {
     },
     '705': {
         character: characters.rabi,
-        text: 'הרבנות רוצה להילחם במחלות לא כשרות נוספות: חזרת, כלבת וכמובן דלקת אוזניים. אצל שרימפס.',
+        text: 'כבודו, אני רוצה תקציב להילחם במחלות לא כשרות נוספות: חזרת, כלבת וכמובן דלקת אוזניים. אצל שרימפס',
         left: {
-            text: 'תשים על זה רבנים',
+            text: 'לא',
             effects: {
-                economy: -20,
-                religion: 10,
+                religion: -20,
             },
         },
         right: {
-            text: 'תשאיר את זה למדענים',
+            text: 'כן',
             effects: {
-                religion: -20,
+                economy: -20,
+                religion: 10,
             },
         },
     },
@@ -1348,7 +1442,7 @@ export const cards = {
         character: characters.ministerTreasury,
         text: 'מס ירושה ישפר את התזרים ויפגע רק בטייקונים',
         left: {
-            text: 'מיטב חברי הם טייקונים',
+            text: 'ממש לא',
             effects: {
                 image: -10,
             },
@@ -1362,7 +1456,7 @@ export const cards = {
     },
     '720': {
         character: characters.consultant,
-        text: 'שנהפוך את הערים שלנו לערים חכמות ובטוחות? ',
+        text: 'שנהפוך את הערים שלנו לערים חכמות ובטוחות?',
         left: {
             text: 'לא',
             unlockCardsForever: ['960'],
@@ -1428,7 +1522,7 @@ export const cards = {
         },
         right: {
             text: 'העבירו להם מעטפות כסף',
-            afterText: 'חדש בספרייה: ״הטרור: כיצד יוכל המערב לנצח״. רב מכר.',
+            afterText: 'חדש בספרייה: ״הטרור: כיצד יוכל המערב לנצח״. רב מכר',
             effects: {
                 security: 10,
                 image: 20,
@@ -1445,7 +1539,7 @@ export const cards = {
             },
         },
         right: {
-            text: 'היועמ״ש, פרקליט המדינה והתקשורת עושים פוטש.',
+            text: 'עושים לי פוטש!',
             next: '830',
             effects: {
                 economy: -5,
@@ -1467,7 +1561,7 @@ export const cards = {
         },
         right: {
             text: '״האם אתה בעד לבטל את הבחירות?״',
-            afterText: 'העם החליט לתת לדמוקרטיה עוד צ׳אנס.',
+            afterText: 'העם החליט לתת לדמוקרטיה עוד צ׳אנס',
             effects: {
                 image: -30,
             },
@@ -1528,9 +1622,9 @@ export const cards = {
     },
     '880': {
         character: characters.consultant,
-        text: 'המצביעים הצעירים רוצים לגאליזציה. תחליט לאן אתה שייך.',
+        text: 'המצביעים הצעירים רוצים לגאליזציה. לאיזה דור אתה שייך?',
         left: {
-            text: 'דור הטלגרף',
+            text: 'הטלגרף',
             unlockCardsForever: ['1060'],
             effects: {
                 economy: -5,
@@ -1538,7 +1632,7 @@ export const cards = {
             },
         },
         right: {
-            text: 'דור הטלגראס',
+            text: 'הטלגראס',
             effects: {
                 economy: 20,
                 security: -10,
@@ -1649,6 +1743,224 @@ export const cards = {
             effects: {
                 religion: -20,
             },
+        },
+    },
+    '1020': {
+        character: characters.protest,
+        text: 'לא לילדי עובדים זרים בגנים שלנו! (אלא אם הם באו לנקות את הבית מקוביות)',
+        left: {
+            text: 'גנים מעורבים',
+            effects: {
+                economy: 5,
+                image: -10,
+            },
+        },
+        right: {
+            text: 'צודקים',
+            effects: {
+                image: -10,
+                religion: 20,
+            },
+        },
+    },
+    '1040': {
+        character: characters.protest,
+        text: 'הירוקים שוטפים את הרחובות: העם דורש רכב חשמלי!',
+        left: {
+            text: 'עקב חקיקה',
+            effects: {
+                image: -20,
+            },
+        },
+        right: {
+            text: 'תמוך ביוזמה',
+            effects: {
+                economy: 10,
+                image: 10,
+            },
+        },
+    },
+    '1060': {
+        character: characters.protest,
+        text: 'אלפי סטלנים היו אמורים לצאת להפגין אבל אז הם עישנו משהו. ארבעה מפגינים הגיעו',
+        left: {
+            text: 'גלגל אשמה',
+            effects: {
+                image: 10,
+                religion: 10,
+            },
+        },
+        right: {
+            text: 'קדם חקיקה',
+            effects: {
+                economy: 20,
+                image: -10,
+            },
+        },
+    },
+    '1070': {
+        character: characters.news,
+        text: 'תלמידי המדינה במקום האחרון ב- OECD במתמטיקה, אנגלית והיגיינה אישית',
+        left: {
+            text: 'האשם את ההורים',
+            effects: {
+                image: -10,
+            },
+        },
+        right: {
+            text: 'אטפל בהקדם',
+            effects: {
+                economy: -10,
+                image: 20,
+            },
+        },
+    },
+
+
+    '1100': {
+        character: characters.foreignKing,
+        text: 'פיסטוקיה מושיטה את ידה לשלום',
+        left: {
+            text: 'הגב בביטול',
+            next: '193',
+            unlockCardsForever: ['1105'],
+            effects: {
+                security: -20,
+            },
+        },
+        right: {
+            text: 'הזמן לביקור',
+            next: '1110',
+            afterText: 'מלך פיסטוקיה מגיע לביקור היסטורי',
+            effects: {
+                economy: -5,
+                security: 10,
+                image: 5,
+            },
+        },
+    },
+    '1105': {
+        character: characters.consultant,
+        text: 'ערוצי החדשות טוענים שקברת כל סיכוי לשלום. תגובתך?',
+        left: {
+            text: 'נגד הכתב ההיסטרי',
+            effects: {
+                image: -10,
+            },
+        },
+        right: {
+            text: 'בעד הסכם היסטורי',
+            unlockCardsForever: ['1110'],
+            effects: {
+                security: -10,
+                image: 20,
+            },
+        },
+    },
+    '1110': {
+        character: characters.foreignKing,
+        text: 'לחיצת יד היסטורית?',
+        left: {
+            text: 'יבש אותו',
+            next: '193',
+            effects: {
+                security: -10,
+                image: 15,
+            },
+        },
+        right: {
+            text: 'בשמחה',
+            unlockCardsForever: ['1115'],
+            effects: {
+                economy: 10,
+                image: 10,
+            },
+        },
+    },
+    '1115': {
+        character: characters.protest,
+        text: 'לא לא לא מצביעים למי שליקק למלך הרוצחים!',
+        left: {
+            text: 'התעלם',
+            unlockCardsForever: ['1130'],
+            effects: {
+                image: -10,
+            },
+        },
+        right: {
+            text: 'בטל שיחות שלום',
+            unlockCardsForever: ['1120'],
+            effects: {
+                security: -20,
+                image: 15,
+            },
+        },
+    },
+    '1120': {
+        character: characters.general,
+        text: 'רוה"מ, מבחינה ביטחונית עדיף להגיע להסכם',
+        left: {
+            text: 'לא, אני אנווט',
+            unlockCardsForever: ['1140'],
+            effects: {
+                security: -10,
+            },
+        },
+        right: {
+            text: 'כן, אתה צודק',
+            unlockCardsForever: ['1130'],
+            effects: {
+                security: 10,
+            },
+        },
+    },
+    '1130': {
+        character: characters.consultant,
+        text: 'צוותי המו"מ הגיעו להסכם שלום אבל המלך דורש התנצלות על שנות הלחימה',
+        left: {
+            text: 'שימשיך לחלום',
+            effects: {
+                security: -10,
+                image: 20,
+            },
+        },
+        right: {
+            text: 'רק בשביל השלום',
+            unlockCardsForever: ['1150'],
+            effects: {
+                security: 20,
+                image: -10,
+            },
+        },
+    },
+    '1140': {
+        character: characters.news,
+        text: 'גורם במטכ"ל: ראש הממשלה לא קשוב לראשי כוחות הביטחון',
+        left: {
+            text: 'החלף מטכ"ל',
+            effects: {
+                security: -20,
+                image: 15,
+            },
+        },
+        right: {
+            text: 'הודה בטעות',
+            effects: {
+                security: 15,
+                image: -10,
+            },
+        },
+    },
+    '1150': {
+        character: characters.news,
+        text: 'הסכם שלום היסטורי. ראש הממשלה: העתיד מתחיל היום!',
+        left: {
+            text: 'נקווה שיחזיק',
+            achievement: 'peace',
+        },
+        right: {
+            text: 'הנובל בדרך?',
+            achievement: 'peace',
         },
     },
 };
