@@ -12,3 +12,12 @@ $bgColor: rgb(175, 153, 85);
 $stripColor: #23160D;
 $meterBgColor: rgb(120, 104, 61);
 $meterFgColor: rgb(245, 243, 179);
+
+@mixin backCard() {
+    background-image: url("../../assets/Star_of_David.svg");
+    background-position: center center;
+    background-size: 26px 30px;
+    background-repeat: repeat;
+    background-color: #1c59b5;
+    border: 4px solid white;
+}

@@ -20,11 +20,7 @@
     }
 
     .back {
-      background-image: url("../../assets/cards/back.jpg");
-      background-position: center center;
-      background-size: 400px 400px;
-      background-repeat: no-repeat;
-      background-color: black;
+      @include backCard();
       border-radius: 10px;
     }
   }
