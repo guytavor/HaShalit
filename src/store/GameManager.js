@@ -77,7 +77,7 @@ export default class GameManager {
     }
 
     getNextLevel(state, selectedSide) {
-        let nextCardId = '10';
+        let nextCardId = '1';
         const card = state ? state.card : null;
 
         if (!card) {

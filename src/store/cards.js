@@ -191,6 +191,135 @@ export const cards = {
         locked: true,
     },
     // Paste here //
+    '1': {
+        character: characters.consultant,
+        text: 'ברוכים הבאים! גרור את הקלף ימינה או שמאלה כדי לראות את התשובות',
+        left: {
+            text: 'מעניין. ומה בצד השני?',
+            next: '2',
+            advanceTime: false,
+        },
+        right: {
+            text: 'בדקת גם את הצד האחר?',
+            next: '2',
+            advanceTime: false,
+        },
+        locked: true,
+    },
+    '2': {
+        character: characters.consultant,
+        text: 'מעולה. אתה יודע איך לשחק?',
+        left: {
+            text: 'כן',
+            next: '3',
+            advanceTime: false,
+        },
+        right: {
+            text: 'לא ממש',
+            next: '4',
+            advanceTime: false,
+        },
+        locked: true,
+    },
+    '3': {
+        character: characters.consultant,
+        text: 'אולי בכל זאת אזכיר לך?',
+        left: {
+            text: 'אוקיי יאללה',
+            next: '4',
+            advanceTime: false,
+        },
+        right: {
+            text: 'תן לשחק כבר!',
+            next: '9',
+            advanceTime: false,
+        },
+        locked: true,
+    },
+    '4': {
+        character: characters.consultant,
+        text: 'כל בחירה משנה את המדדים שלמעלה',
+        left: {
+            text: 'העלה תדמית',
+            next: '6',
+            effects: {
+                image: 30,
+                religion: -30,
+            },
+            advanceTime: false,
+        },
+        right: {
+            text: 'העלה רבנות',
+            next: '5',
+            effects: {
+                image: -30,
+                religion: 30,
+            },
+            advanceTime: false,
+        },
+        locked: true,
+    },
+    '5': {
+        character: characters.consultant,
+        text: 'כשאחד המדדים מתרוקן, אתה תאבד את השלטון',
+        left: {
+            text: 'אשמור על איזון',
+            next: '9',
+            effects: {
+                image: 30,
+                religion: -30,
+            },
+            advanceTime: false,
+        },
+        right: {
+            text: 'אשפץ את התדמית',
+            next: '9',
+            effects: {
+                image: 30,
+                religion: -30,
+            },
+            advanceTime: false,
+        },
+        locked: true,
+    },
+    '6': {
+        character: characters.consultant,
+        text: 'כשאחד המדדים מתרוקן, אתה תאבד את השלטון',
+        left: {
+            text: 'אשמור על איזון',
+            next: '9',
+            effects: {
+                image: -30,
+                religion: 30,
+            },
+            advanceTime: false,
+        },
+        right: {
+            text: 'אתחנף לרבנות',
+            next: '9',
+            effects: {
+                image: -30,
+                religion: 30,
+            },
+            advanceTime: false,
+        },
+        locked: true,
+    },
+    '9': {
+        character: characters.consultant,
+        text: 'יאללה! מתחילים! כמה שנים תוכל להשאר בשלטון?',
+        left: {
+            text: 'אני מדהים במשחק הזה',
+            next: '10',
+            advanceTime: false,
+        },
+        right: {
+            text: 'בוא אני אראה לך',
+            next: '10',
+            advanceTime: false,
+        },
+        locked: true,
+    },
     '10': {
         character: characters.president,
         text: 'כבודו, אני שמח לבשר לך שנבחרת. האם תרצה להיות המלך?',
