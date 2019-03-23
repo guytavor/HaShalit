@@ -1342,6 +1342,7 @@ export const cards = {
                 economy: -10,
             },
         },
+        locked: true,
     },
     '447': {
         character: characters.consultant,
@@ -1359,6 +1360,7 @@ export const cards = {
                 image: 5,
             },
         },
+        locked: true,
     },
     '460': {
         character: characters.opposition,
@@ -2375,6 +2377,7 @@ export const cards = {
                 equals: 0,
             }],
         ],
+        locked: true,
     },
     '1105': {
         character: characters.consultant,
@@ -2608,7 +2611,7 @@ function validateAnswer(answer) {
     }
     if (answer.next) {
         if (!cards[answer.next].locked) {
-            log('WARN: Next card is not locked:', answer.next);
+            log('WARN: Next card is not locked (could be OK):', answer.next);
         }
     }
 }
