@@ -744,7 +744,7 @@ export const cards = {
         character: characters.consultant,
         text: 'אביב הגיע פסח בא. איפה תרצה לנפוש עם המשפחה?',
         left: {
-            text: 'באילת',
+            text: 'בטבריה',
             effects: {
                 image: 5,
                 add: [
@@ -753,7 +753,7 @@ export const cards = {
             },
         },
         right: {
-            text: 'בחו"ל',
+            text: 'בריביירה',
             effects: {
                 economy: -5,
                 image: 15,
@@ -881,6 +881,9 @@ export const cards = {
             ['bad', {
                 greaterThan: 1,
             }],
+            ['education', {
+                equals: 0,
+            }],
         ],
     },
     '210': {
@@ -911,6 +914,9 @@ export const cards = {
                 equals: 0,
             }],
             ['peaceTalks', {
+                equals: 0,
+            }],
+            ['education', {
                 equals: 0,
             }],
         ],
@@ -966,7 +972,7 @@ export const cards = {
     },
     '240': {
         character: characters.tycoon,
-        text: 'אקנה לך ערוץ טלוויזיה בכיף. לשלוף ארנק? ',
+        text: 'אקנה לך ערוץ טלוויזיה בכיף. לשלוף ארנק?',
         left: {
             text: 'לא',
             effects: {
@@ -992,7 +998,8 @@ export const cards = {
         left: {
             text: 'דאג לזקנה במסדרון',
             next: '253',
-            unlockCardsForever: ['253','400'],
+            unlockCards: ['400'],
+            unlockCardsForever: ['253'],
             effects: {
                 economy: -10,
                 image: 5,
@@ -1032,7 +1039,7 @@ export const cards = {
     },
     '252': {
         character: characters.news,
-        text: 'בית החולים פינה ישיש, עני ומסכן לטובת תיירת צעירה, עשירה ולא מסכנה מפיסטוקיה ',
+        text: 'בית החולים פינה ישיש, עני ומסכן לטובת תיירת צעירה, עשירה ולא מסכנה מפיסטוקיה',
         left: {
             text: 'תחשוב על הבקשיש',
             unlockCardsForever: ['254'],
@@ -1132,6 +1139,7 @@ export const cards = {
             effects: {
                 image: -10,
             },
+            advanceTime: false,
         },
         right: {
             text: 'כנס בהם',
@@ -1163,6 +1171,7 @@ export const cards = {
             effects: {
                 image: -10,
             },
+            advanceTime: false,
         },
         right: {
             text: 'אז כנס בהם',
@@ -1184,6 +1193,7 @@ export const cards = {
             effects: {
                 image: -10,
             },
+            advanceTime: false,
         },
         right: {
             text: 'נכון! כנס בהם',
@@ -1208,6 +1218,7 @@ export const cards = {
             effects: {
                 image: -10,
             },
+            advanceTime: false,
         },
         right: {
             text: 'אני נכנס בהם!',
@@ -1393,7 +1404,7 @@ export const cards = {
     },
     '480': {
         character: characters.news,
-        text: 'חשיפה בלעדית: ראש הממשלה קיבל וילה מהטייקון הטחון ',
+        text: 'חשיפה בלעדית: ראש הממשלה קיבל וילה מהטייקון הטחון',
         left: {
             text: 'אין פתק החלפה',
             next: '540',
@@ -1440,7 +1451,7 @@ export const cards = {
         character: characters.ministerEducation,
         text: 'אדוני, עקב טעות הקלדה השקענו מיליארדים בפיתוח תכנית "לימודי ריבה"',
         left: {
-            text: 'פטר את הדביל',
+            text: 'איך מאייתים "מפוטר"?',
             effects: {
                 economy: -20,
                 image: 10,
@@ -1450,11 +1461,16 @@ export const cards = {
             },
         },
         right: {
-            text: 'קורה',
+            text: 'לך הכל מותר',
             effects: {
                 image: -10,
             },
         },
+        conditions: [
+            ['education', {
+                equals: 0,
+            }],
+        ],
     },
     '540': {
         character: characters.consultant,
@@ -1541,6 +1557,7 @@ export const cards = {
             next: '601',
             effects: {
                 economy: -20,
+                security: 20,
             },
         },
     },
@@ -1568,7 +1585,7 @@ export const cards = {
     },
     '605': {
         character: characters.general,
-        text: 'רוה"מ, אין תקציב למיגון בתי אזרחים על הגבול הפיסטוקי. כדי לקבל הגנה מירבית התושבים שמים קוטקס על הגגות ',
+        text: 'רוה"מ, אין תקציב למיגון בתי אזרחים על הגבול הפיסטוקי. כדי לקבל הגנה מירבית התושבים שמים קוטקס על הגגות',
         left: {
             text: 'שישבו בשקט',
             effects: {
@@ -1601,7 +1618,7 @@ export const cards = {
             },
         },
         right: {
-            text: 'ממן להם פסיכולוג ',
+            text: 'ממן להם פסיכולוג',
             effects: {
                 economy: -20,
                 image: 5,
@@ -1778,10 +1795,10 @@ export const cards = {
     },
     '700': {
         character: characters.rabi,
-        text: 'הרבנות צריכה כסף כדי להתגייס למאבק בסרטן. מילא שזו מחלה סופנית, אבל סרטן זה לא כשר ',
+        text: 'הרבנות צריכה כסף כדי להתגייס למאבק בסרטן. מילא שזו מחלה סופנית, אבל סרטן זה לא כשר',
         left: {
             text: 'כמה תרצה?',
-            unlockCardsForever: ['705','1000'],
+            unlockCards: ['705','1000'],
             effects: {
                 economy: -10,
                 religion: 20,
@@ -1812,12 +1829,28 @@ export const cards = {
         },
         locked: true,
     },
+    '710': {
+        character: characters.ministerTreasury,
+        text: 'מס ירושה ישפר את התזרים ויפגע רק בטייקונים',
+        left: {
+            text: 'ממש לא',
+            effects: {
+                image: -5,
+            },
+        },
+        right: {
+            text: 'רעיון מעולה',
+            effects: {
+                economy: 5,
+            },
+        },
+    },
     '720': {
         character: characters.consultant,
-        text: 'שנהפוך את הערים שלנו לערים חכמות ובטוחות? ',
+        text: 'שנהפוך את הערים שלנו לערים חכמות ובטוחות?',
         left: {
             text: 'לא',
-            unlockCardsForever: ['960'],
+            unlockCards: ['960'],
             effects: {
                 economy: 10,
                 image: -10,
@@ -1837,7 +1870,7 @@ export const cards = {
         text: 'שנפחית משמעותית את עלות החינוך הגבוה?',
         left: {
             text: 'לא כרגע',
-            unlockCardsForever: ['940'],
+            unlockCards: ['940'],
             effects: {
                 economy: 20,
                 image: -5,
@@ -1850,6 +1883,35 @@ export const cards = {
                 image: 20,
             },
         },
+        conditions: [
+            ['education', {
+                equals: 0,
+            }],
+        ],
+    },
+    '731': {
+        character: characters.consultant,
+        text: 'שנפחית משמעותית את עלות החינוך הגבוה?',
+        left: {
+            text: 'לא כרגע',
+            unlockCards: ['940'],
+            effects: {
+                economy: 20,
+                image: -5,
+            },
+        },
+        right: {
+            text: 'מקובל עליי',
+            effects: {
+                economy: -10,
+                image: 20,
+            },
+        },
+        conditions: [
+            ['education', {
+                equals: 1,
+            }],
+        ],
     },
     '800': {
         character: characters.news,
@@ -1932,7 +1994,7 @@ export const cards = {
         text: 'צהרונים חינם לאוכלוסיות חלשות?',
         left: {
             text: 'מוותר',
-            unlockCardsForever: ['980'],
+            unlockCards: ['980'],
             effects: {
                 economy: 10,
             },
@@ -1944,13 +2006,41 @@ export const cards = {
                 image: 5,
             },
         },
+        conditions: [
+            ['education', {
+                equals: 0,
+            }],
+        ],
+    },
+    '841': {
+        character: characters.consultant,
+        text: 'צהרונים חינם לאוכלוסיות חלשות?',
+        left: {
+            text: 'מוותר',
+            unlockCards: ['980'],
+            effects: {
+                economy: 10,
+            },
+        },
+        right: {
+            text: 'מאשר',
+            effects: {
+                economy: -10,
+                image: 5,
+            },
+        },
+        conditions: [
+            ['education', {
+                equals: 1,
+            }],
+        ],
     },
     '850': {
         character: characters.ministerEducation,
         text: 'פתיחת גני עירייה לילדי עובדים זרים?',
         left: {
             text: 'לא',
-            unlockCardsForever: ['1020'],
+            unlockCards: ['1020'],
             effects: {
                 religion: 10,
             },
@@ -1961,13 +2051,40 @@ export const cards = {
                 economy: -5,
             },
         },
+        conditions: [
+            ['education', {
+                equals: 0,
+            }],
+        ],
+    },
+    '851': {
+        character: characters.consultant,
+        text: 'פתיחת גני עירייה לילדי עובדים זרים?',
+        left: {
+            text: 'לא',
+            unlockCards: ['1020'],
+            effects: {
+                religion: 10,
+            },
+        },
+        right: {
+            text: 'כן',
+            effects: {
+                economy: -5,
+            },
+        },
+        conditions: [
+            ['education', {
+                equals: 1,
+            }],
+        ],
     },
     '860': {
         character: characters.opposition,
         text: 'תחבורה ירוקה זה חשוב. מתי נתקדם לכיוון?',
         left: {
             text: 'נדחה למחר',
-            unlockCardsForever: ['1040'],
+            unlockCards: ['1040'],
             effects: {
                 economy: 5,
             },
@@ -1984,7 +2101,7 @@ export const cards = {
         text: 'המצביעים הצעירים רוצים לגאליזציה. לאיזה דור אתה שייך?',
         left: {
             text: 'הטלגרף',
-            unlockCardsForever: ['1060'],
+            unlockCards: ['1060'],
             effects: {
                 economy: -5,
                 image: 30,
@@ -2059,6 +2176,7 @@ export const cards = {
                 image: 10,
             },
         },
+        locked: true,
         conditions: [
             ['bad', {
                 greaterThan: 0,
@@ -2084,6 +2202,7 @@ export const cards = {
                 security: 5,
             },
         },
+        locked: true,
         conditions: [
             ['bad', {
                 greaterThan: 1,
@@ -2110,6 +2229,7 @@ export const cards = {
                 image: 10,
             },
         },
+        locked: true,
         conditions: [
             ['bad', {
                 greaterThan: 1,
@@ -2134,6 +2254,7 @@ export const cards = {
                 religion: -20,
             },
         },
+        locked: true,
         conditions: [
             ['bad', {
                 greaterThan: 2,
@@ -2160,6 +2281,7 @@ export const cards = {
                 religion: 20,
             },
         },
+        locked: true,
     },
     '1040': {
         character: characters.protest,
@@ -2180,6 +2302,7 @@ export const cards = {
                 economy: -10,
             },
         },
+        locked: true,
     },
     '1060': {
         character: characters.protest,
@@ -2201,6 +2324,7 @@ export const cards = {
                 image: -10,
             },
         },
+        locked: true,
     },
     '1070': {
         character: characters.news,
@@ -2431,7 +2555,7 @@ export const cards = {
             },
         },
         right: {
-            text: 'הכרז על מצב חירום ',
+            text: 'הכרז על מצב חירום',
             next: 'victory',
             effects: {
                 security: 100,
