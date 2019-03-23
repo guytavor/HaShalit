@@ -210,13 +210,13 @@ export const cards = {
         character: characters.consultant,
         text: 'מעולה. אתה יודע איך לשחק?',
         left: {
-            text: 'כן',
-            next: '3',
+            text: 'לא ממש',
+            next: '4',
             advanceTime: false,
         },
         right: {
-            text: 'לא ממש',
-            next: '4',
+            text: 'כן',
+            next: '3',
             advanceTime: false,
         },
         locked: true,
@@ -225,13 +225,13 @@ export const cards = {
         character: characters.consultant,
         text: 'אולי בכל זאת אזכיר לך?',
         left: {
-            text: 'אוקיי יאללה',
-            next: '4',
+            text: 'תן לשחק כבר!',
+            next: '9',
             advanceTime: false,
         },
         right: {
-            text: 'תן לשחק כבר!',
-            next: '9',
+            text: 'אוקיי יאללה',
+            next: '4',
             advanceTime: false,
         },
         locked: true,
@@ -263,7 +263,7 @@ export const cards = {
         character: characters.consultant,
         text: 'כשאחד המדדים מתרוקן, אתה תאבד את השלטון',
         left: {
-            text: 'אשמור על איזון',
+            text: 'אשפץ את התדמית',
             next: '9',
             effects: {
                 image: 30,
@@ -272,7 +272,7 @@ export const cards = {
             advanceTime: false,
         },
         right: {
-            text: 'אשפץ את התדמית',
+            text: 'אשמור על איזון',
             next: '9',
             effects: {
                 image: 30,
@@ -286,7 +286,7 @@ export const cards = {
         character: characters.consultant,
         text: 'כשאחד המדדים מתרוקן, אתה תאבד את השלטון',
         left: {
-            text: 'אשמור על איזון',
+            text: 'אתחנף לרבנות',
             next: '9',
             effects: {
                 image: -30,
@@ -295,7 +295,7 @@ export const cards = {
             advanceTime: false,
         },
         right: {
-            text: 'אתחנף לרבנות',
+            text: 'אשמור על איזון',
             next: '9',
             effects: {
                 image: -30,
@@ -309,12 +309,12 @@ export const cards = {
         character: characters.consultant,
         text: 'יאללה! מתחילים! כמה שנים תוכל להשאר בשלטון?',
         left: {
-            text: 'אני מדהים במשחק הזה',
+            text: 'בוא אני אראה לך',
             next: '10',
             advanceTime: false,
         },
         right: {
-            text: 'בוא אני אראה לך',
+            text: 'אני מדהים במשחק הזה',
             next: '10',
             advanceTime: false,
         },
