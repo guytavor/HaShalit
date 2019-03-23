@@ -1,1 +1,107 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500"><defs><style>.cls-1{fill:#ed1c24;}.cls-2{fill:#fcee21;}.cls-3,.cls-4{fill:none;stroke:#fcee21;stroke-miterlimit:10;}.cls-3{stroke-width:2.25px;}.cls-4{stroke-width:2.27px;}.cls-5{fill:#fff;}</style></defs><title>Reigns game</title><g id="BG"><rect class="cls-1" width="500" height="500"/><polygon class="cls-2" points="396.43 160 400.87 172.79 413.65 177.22 400.87 181.65 396.43 194.44 392 181.65 379.21 177.22 392 172.79 396.43 160"/><polygon class="cls-2" points="104.63 166.35 109.11 179.24 122 183.71 109.11 188.18 104.63 201.08 100.16 188.18 87.27 183.71 100.16 179.24 104.63 166.35"/><polygon class="cls-2" points="435.83 224.11 438.72 232.43 447.04 235.32 438.72 238.2 435.83 246.53 432.95 238.2 424.62 235.32 432.95 232.43 435.83 224.11"/><circle class="cls-3" cx="394.62" cy="349.98" r="9.02"/><circle class="cls-4" cx="58.36" cy="141.09" r="9.09"/><circle class="cls-4" cx="113.11" cy="402.91" r="9.09"/></g><g id="Layer_1" data-name="Layer 1"><path class="cls-5" d="M260.54,134v21.35L343,165.63V273.48c0,29.19-5.95,70.82-58.12,97.58l-4.06,1.62L280,373a89.54,89.54,0,0,1-19.46,4.6V398.9A94.35,94.35,0,0,0,287,393a62.39,62.39,0,0,0,7.57-3c47-24.06,69.74-62.17,69.74-116.5V146.7Z"/><path class="cls-5" d="M239.19,377.55a69.66,69.66,0,0,1-18.92-4.6l-.81-.27a25.07,25.07,0,0,1-4.06-1.62C190.26,358.35,157,334.3,157,273.48V165.63l82.18-10V134L135.66,146.7V273.48c0,54.33,22.71,92.44,69.74,116.5a36.77,36.77,0,0,0,7.57,3,103,103,0,0,0,25.95,5.68V377.55Z"/><polygon class="cls-5" points="293.25 291.59 267.84 266.18 293.25 240.77 275.41 222.93 250 248.34 224.59 222.93 207.02 240.77 232.43 266.18 207.02 291.59 224.59 309.16 250 283.75 275.41 309.16 293.25 291.59"/></g></svg>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 23.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 500 500" style="enable-background:new 0 0 500 500;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#FBB03B;}
+	.st1{fill:#A2BC53;}
+	.st2{fill:#E56575;}
+	.st3{fill:#F2D453;}
+	.st4{fill:#F2F2F2;}
+	.st5{fill:#65C4E5;stroke:#0071BC;stroke-miterlimit:10;}
+	.st6{fill:#EF97AA;}
+	.st7{fill:#29ABE2;}
+	.st8{fill:#44AD5C;}
+	.st9{fill:#EF525E;}
+	.st10{fill:#FCEE21;}
+	.st11{fill:none;stroke:#FCEE21;stroke-width:2.2538;stroke-miterlimit:10;}
+	.st12{fill:none;stroke:#FCEE21;stroke-width:2.273;stroke-miterlimit:10;}
+	.st13{fill:#29ABE2;stroke:#0071BC;stroke-miterlimit:10;}
+	.st14{fill:#FFFFFF;}
+	.st15{fill:none;stroke:#FFFFFF;stroke-width:2.2538;stroke-miterlimit:10;}
+	.st16{fill:none;stroke:#FFFFFF;stroke-width:2.273;stroke-miterlimit:10;}
+	.st17{fill:#F7931E;}
+	.st18{fill:#63703A;}
+	.st19{fill:#50592A;}
+	.st20{fill:#8C9663;}
+	.st21{fill:#848964;}
+	.st22{fill:#AA8465;}
+	.st23{fill:#736357;}
+	.st24{fill:#332823;}
+	.st25{fill:#666666;}
+	.st26{fill:#333333;}
+	.st27{fill:#F43122;}
+	.st28{fill:#C93C35;}
+	.st29{fill:#F44E45;}
+	.st30{fill:#E2AAB7;}
+	.st31{fill:#E593A3;}
+	.st32{fill:#40A4BF;}
+	.st33{fill:#1A8DB5;}
+	.st34{fill:#ACB5BC;}
+	.st35{fill:#939BA0;}
+	.st36{fill:#E8E8E8;}
+	.st37{fill:#C9C7C7;}
+	.st38{fill:none;stroke:#35302D;stroke-width:5;stroke-miterlimit:10;}
+	.st39{fill:#ED1C24;}
+	.st40{fill:#493C38;}
+	.st41{fill:#F4D9BD;}
+	.st42{fill:#EBA288;}
+	.st43{opacity:0.4;fill:#E4847C;}
+	.st44{fill:#5B5B5B;}
+	.st45{fill:#303030;}
+	.st46{fill:#F7F2F2;}
+	.st47{fill:#AFAFAF;}
+	.st48{fill:#FFDDBB;}
+	.st49{fill:#FFCCAA;}
+	.st50{fill:#AA663F;}
+	.st51{fill:#9C4C2E;}
+	.st52{fill:#EA7DB1;}
+	.st53{fill:#ED5AA7;}
+	.st54{fill:#F4E65D;}
+	.st55{fill:#F2D34E;}
+	.st56{fill:#ED1E79;}
+	.st57{fill:#543D34;}
+	.st58{fill:#C4A58A;}
+	.st59{fill:#A67C52;}
+	.st60{fill:#F15A24;}
+	.st61{fill:#42210B;}
+	.st62{fill:#949494;}
+	.st63{fill:#E0E2E2;}
+	.st64{fill:#F2715B;}
+	.st65{fill:#D1D3D5;}
+	.st66{fill:#3B444F;}
+	.st67{fill:#E6E6E6;}
+	.st68{fill:#B3B3B3;}
+	.st69{fill:#1C8FB7;}
+	.st70{fill-rule:evenodd;clip-rule:evenodd;fill:#FCEE21;}
+	.st71{opacity:0.5;fill:#FFFFFF;}
+	.st72{fill:none;stroke:#F7931E;stroke-width:8.2777;stroke-miterlimit:10;}
+	.st73{fill:#FFFFFF;stroke:#FFFFFF;stroke-width:7.468;stroke-miterlimit:10;}
+	.st74{fill:#65C4E5;}
+	.st75{fill:none;stroke:#29ABE2;stroke-width:2;stroke-miterlimit:10;}
+	.st76{fill:none;stroke:#29ABE2;stroke-width:2;stroke-miterlimit:10;stroke-dasharray:8.5707,5.3567;}
+	.st77{fill:none;stroke:#1D8EB5;stroke-width:2;stroke-miterlimit:10;}
+	.st78{fill:none;stroke:#1D8EB5;stroke-width:2;stroke-miterlimit:10;stroke-dasharray:8.5707,5.3567;}
+</style>
+<g id="BG">
+	<rect x="0" class="st9" width="500" height="500"/>
+	<polygon class="st10" points="396.4,207 400.9,219.8 413.7,224.2 400.9,228.7 396.4,241.4 392,228.7 379.2,224.2 392,219.8 	"/>
+	<polygon class="st10" points="104.6,213.3 109.1,226.2 122,230.7 109.1,235.2 104.6,248.1 100.2,235.2 87.3,230.7 100.2,226.2 	"/>
+	<polygon class="st10" points="435.8,271.1 438.7,279.4 447,282.3 438.7,285.2 435.8,293.5 432.9,285.2 424.6,282.3 432.9,279.4 	
+		"/>
+	<circle class="st11" cx="394.6" cy="397" r="9"/>
+	<circle class="st12" cx="58.4" cy="188.1" r="9.1"/>
+	<circle class="st12" cx="113.1" cy="449.9" r="9.1"/>
+</g>
+<g id="Layer_1">
+	<g>
+		<path class="st14" d="M260.5,181v21.4l82.4,10.3v107.9c0,29.2-5.9,70.8-58.1,97.6c-1.4,0.5-2.7,1.1-4.1,1.6L280,420
+			c-5.9,2.2-12.7,3.8-19.5,4.6v21.4c9.2-0.8,18.4-2.7,26.5-5.9c2.7-0.8,5.1-1.9,7.6-3c47-24.1,69.7-62.2,69.7-116.5V193.7L260.5,181
+			z"/>
+		<path class="st14" d="M239.2,424.5c-6.8-0.8-13.2-2.2-18.9-4.6l-0.8-0.3c-1.4-0.5-2.7-0.8-4.1-1.6c-25.1-12.7-58.4-36.8-58.4-97.6
+			V212.6l82.2-10V181l-103.5,12.7v126.8c0,54.3,22.7,92.4,69.7,116.5c2.4,1.4,4.9,2.2,7.6,3c8.1,3,17,4.9,25.9,5.7v-21.1H239.2z"/>
+		<polygon class="st14" points="293.2,338.6 267.8,313.2 293.2,287.8 275.4,269.9 250,295.3 224.6,269.9 207,287.8 232.4,313.2 
+			207,338.6 224.6,356.2 250,330.7 275.4,356.2 		"/>
+	</g>
+</g>
+</svg>

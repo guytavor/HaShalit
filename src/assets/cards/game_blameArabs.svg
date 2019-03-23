@@ -1,1 +1,113 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500"><defs><style>.cls-1{fill:#f7931e;}.cls-2{fill:#fff;}.cls-3{fill:none;stroke:#f7931e;stroke-miterlimit:10;stroke-width:8.28px;}</style></defs><title>Reigns game</title><g id="BG"><rect class="cls-1" width="500" height="500"/><path class="cls-2" d="M442.25,52,368,148.94h41.25L390.69,217,467,120.06H425.75Z"/></g><g id="Layer_1" data-name="Layer 1"><polygon class="cls-2" points="139.84 330.97 142.49 338.63 150.15 341.28 142.49 343.94 139.84 351.59 137.18 343.94 129.53 341.28 137.18 338.63 139.84 330.97"/><polygon class="cls-2" points="172.12 232.05 172.12 343.37 247.59 397.93 323.07 343.37 323.07 232.05 172.12 232.05"/><rect class="cls-2" x="154.48" y="210.39" width="186.94" height="10.93" rx="5.47"/><polygon class="cls-2" points="331.3 160.37 313.43 144 180.89 144 163.45 162.21 163.45 181.85 331.3 181.85 331.3 160.37"/><polygon class="cls-2" points="333.75 233.6 392 397.61 265.84 397.61 334.65 347.14 333.75 233.6"/><polygon class="cls-2" points="161.45 234.17 103.2 398.18 229.36 398.18 160.54 347.71 161.45 234.17"/><rect class="cls-2" x="154.48" y="191.99" width="186.94" height="10.93" rx="5.47"/><rect class="cls-1" x="268.75" y="256.37" width="6.44" height="41.39"/><rect class="cls-1" x="221.85" y="256.37" width="6.44" height="41.39"/><polyline class="cls-3" points="167.58 330.87 216.33 330.87 228.28 316.16 268.75 316.16 277.95 330.87 323.07 330.87"/></g></svg>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 23.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 500 500" style="enable-background:new 0 0 500 500;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#FBB03B;}
+	.st1{fill:#A2BC53;}
+	.st2{fill:#E56575;}
+	.st3{fill:#F2D453;}
+	.st4{fill:#F2F2F2;}
+	.st5{fill:#65C4E5;stroke:#0071BC;stroke-miterlimit:10;}
+	.st6{fill:#EF97AA;}
+	.st7{fill:#29ABE2;}
+	.st8{fill:#44AD5C;}
+	.st9{fill:#EF525E;}
+	.st10{fill:#FCEE21;}
+	.st11{fill:none;stroke:#FCEE21;stroke-width:2.2538;stroke-miterlimit:10;}
+	.st12{fill:none;stroke:#FCEE21;stroke-width:2.273;stroke-miterlimit:10;}
+	.st13{fill:#29ABE2;stroke:#0071BC;stroke-miterlimit:10;}
+	.st14{fill:#FFFFFF;}
+	.st15{fill:none;stroke:#FFFFFF;stroke-width:2.2538;stroke-miterlimit:10;}
+	.st16{fill:none;stroke:#FFFFFF;stroke-width:2.273;stroke-miterlimit:10;}
+	.st17{fill:#F7931E;}
+	.st18{fill:#63703A;}
+	.st19{fill:#50592A;}
+	.st20{fill:#8C9663;}
+	.st21{fill:#848964;}
+	.st22{fill:#AA8465;}
+	.st23{fill:#736357;}
+	.st24{fill:#332823;}
+	.st25{fill:#666666;}
+	.st26{fill:#333333;}
+	.st27{fill:#F43122;}
+	.st28{fill:#C93C35;}
+	.st29{fill:#F44E45;}
+	.st30{fill:#E2AAB7;}
+	.st31{fill:#E593A3;}
+	.st32{fill:#40A4BF;}
+	.st33{fill:#1A8DB5;}
+	.st34{fill:#ACB5BC;}
+	.st35{fill:#939BA0;}
+	.st36{fill:#E8E8E8;}
+	.st37{fill:#C9C7C7;}
+	.st38{fill:none;stroke:#35302D;stroke-width:5;stroke-miterlimit:10;}
+	.st39{fill:#ED1C24;}
+	.st40{fill:#493C38;}
+	.st41{fill:#F4D9BD;}
+	.st42{fill:#EBA288;}
+	.st43{opacity:0.4;fill:#E4847C;}
+	.st44{fill:#5B5B5B;}
+	.st45{fill:#303030;}
+	.st46{fill:#F7F2F2;}
+	.st47{fill:#AFAFAF;}
+	.st48{fill:#FFDDBB;}
+	.st49{fill:#FFCCAA;}
+	.st50{fill:#AA663F;}
+	.st51{fill:#9C4C2E;}
+	.st52{fill:#EA7DB1;}
+	.st53{fill:#ED5AA7;}
+	.st54{fill:#F4E65D;}
+	.st55{fill:#F2D34E;}
+	.st56{fill:#ED1E79;}
+	.st57{fill:#543D34;}
+	.st58{fill:#C4A58A;}
+	.st59{fill:#A67C52;}
+	.st60{fill:#F15A24;}
+	.st61{fill:#42210B;}
+	.st62{fill:#949494;}
+	.st63{fill:#E0E2E2;}
+	.st64{fill:#F2715B;}
+	.st65{fill:#D1D3D5;}
+	.st66{fill:#3B444F;}
+	.st67{fill:#E6E6E6;}
+	.st68{fill:#B3B3B3;}
+	.st69{fill:#1C8FB7;}
+	.st70{fill-rule:evenodd;clip-rule:evenodd;fill:#FCEE21;}
+	.st71{opacity:0.5;fill:#FFFFFF;}
+	.st72{fill:none;stroke:#F7931E;stroke-width:8.2777;stroke-miterlimit:10;}
+	.st73{fill:#FFFFFF;stroke:#FFFFFF;stroke-width:7.468;stroke-miterlimit:10;}
+	.st74{fill:#65C4E5;}
+	.st75{fill:none;stroke:#29ABE2;stroke-width:2;stroke-miterlimit:10;}
+	.st76{fill:none;stroke:#29ABE2;stroke-width:2;stroke-miterlimit:10;stroke-dasharray:8.5707,5.3567;}
+	.st77{fill:none;stroke:#1D8EB5;stroke-width:2;stroke-miterlimit:10;}
+	.st78{fill:none;stroke:#1D8EB5;stroke-width:2;stroke-miterlimit:10;stroke-dasharray:8.5707,5.3567;}
+</style>
+<g id="BG">
+	<rect x="0" class="st0" width="500" height="500"/>
+	<g transform="translate(0,-952.36218)">
+		<path class="st17" d="M442.2,1004.4l-74.2,96.9h41.2l-18.6,68.1l76.3-96.9h-41.2L442.2,1004.4z"/>
+	</g>
+</g>
+<g id="Layer_1">
+	<g>
+		<polygon class="st14" points="139.8,331 142.5,338.6 150.1,341.3 142.5,343.9 139.8,351.6 137.2,343.9 129.5,341.3 137.2,338.6 		
+			"/>
+		<g>
+			<polygon class="st14" points="172.1,232 172.1,343.4 247.6,397.9 323.1,343.4 323.1,232 			"/>
+			<path class="st14" d="M335.9,221.3h-176c-3,0-5.5-2.4-5.5-5.5v0c0-3,2.4-5.5,5.5-5.5h176c3,0,5.5,2.4,5.5,5.5v0
+				C341.4,218.9,339,221.3,335.9,221.3z"/>
+			<polygon class="st14" points="331.3,160.4 313.4,144 180.9,144 163.4,162.2 163.4,181.8 331.3,181.8 			"/>
+			<polygon class="st14" points="333.7,233.6 392,397.6 265.8,397.6 334.7,347.1 			"/>
+			<polygon class="st14" points="161.5,234.2 103.2,398.2 229.4,398.2 160.5,347.7 			"/>
+			<path class="st14" d="M335.9,202.9h-176c-3,0-5.5-2.4-5.5-5.5v0c0-3,2.4-5.5,5.5-5.5h176c3,0,5.5,2.4,5.5,5.5v0
+				C341.4,200.5,339,202.9,335.9,202.9z"/>
+		</g>
+		<g>
+			<rect x="268.8" y="256.4" class="st17" width="6.4" height="41.4"/>
+			<rect x="221.8" y="256.4" class="st17" width="6.4" height="41.4"/>
+		</g>
+		<polyline class="st72" points="167.6,330.9 216.3,330.9 228.3,316.2 268.8,316.2 278,330.9 323.1,330.9 		"/>
+	</g>
+</g>
+</svg>

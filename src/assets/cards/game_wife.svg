@@ -1,1 +1,119 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500"><defs><style>.cls-1{fill:#f4a2b1;}.cls-2{fill:#ea7db1;}.cls-3{fill:#ed5aa7;}.cls-4{fill:#fdb;}.cls-5{fill:#fca;}.cls-6{fill:#332823;}.cls-7{fill:#f4e65d;}.cls-8{fill:#f2d34e;}.cls-9{fill:#ed1e79;}</style></defs><title>Reigns game</title><g id="BG"><rect class="cls-1" width="500" height="500"/></g><g id="Layer_1" data-name="Layer 1"><polygon class="cls-2" points="250 297.12 406 367 376 500 250 500 250 297.12"/><polygon class="cls-3" points="250 297.12 94 367 124 500 250 500 250 297.12"/><polygon class="cls-4" points="204 366.38 172.45 430 251.9 460 251.9 389 204 366.38"/><polygon class="cls-5" points="298.45 366.38 330 430 250.55 460 250.55 389 298.45 366.38"/><polygon class="cls-4" points="333 349 250 389 250 140 333 190 333 349"/><polygon class="cls-5" points="167 349 250 389 250 140 167 190 167 349"/><rect class="cls-6" x="272" y="234" width="7" height="45"/><rect class="cls-6" x="221" y="234" width="7" height="45"/><polygon class="cls-7" points="348.28 270.55 253.11 182.25 253.11 112.58 315.42 130.34 351 157.61 359.07 199.91 348.28 270.55"/><polygon class="cls-7" points="332.53 335.93 333.53 225.41 356.09 197.94 404.75 275.94 367.87 351 332.53 335.93"/><polygon class="cls-8" points="152.59 269 249.59 179 249.59 108 186.09 126.1 149.82 153.89 141.59 197 152.59 269"/><polygon class="cls-8" points="166.61 335.64 165.59 223 142.59 195 93 274.5 130.59 351 166.61 335.64"/><circle class="cls-9" cx="345" cy="285" r="12"/><circle class="cls-9" cx="154" cy="285" r="12"/><circle class="cls-7" cx="284.38" cy="138.09" r="32.38"/><circle class="cls-7" cx="389.49" cy="244.06" r="25.51"/><circle class="cls-7" cx="398.5" cy="283.5" r="32.5"/><circle class="cls-7" cx="319.34" cy="163.11" r="34.83"/><circle class="cls-7" cx="352.7" cy="209.23" r="34.83"/><circle class="cls-8" cx="217.13" cy="134" r="33"/><circle class="cls-8" cx="110" cy="242" r="26"/><circle class="cls-8" cx="100.5" cy="283.5" r="32.5"/><circle class="cls-8" cx="181.5" cy="159.5" r="35.5"/><circle class="cls-8" cx="147.5" cy="206.5" r="35.5"/><path class="cls-7" d="M248.5,149a35.5,35.5,0,0,0,0-71"/><path class="cls-8" d="M248.5,78a35.5,35.5,0,0,0,0,71"/></g></svg>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 23.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 500 500" style="enable-background:new 0 0 500 500;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#FBB03B;}
+	.st1{fill:#A2BC53;}
+	.st2{fill:#E56575;}
+	.st3{fill:#F2D453;}
+	.st4{fill:#F2F2F2;}
+	.st5{fill:#65C4E5;stroke:#0071BC;stroke-miterlimit:10;}
+	.st6{fill:#EF97AA;}
+	.st7{fill:#29ABE2;}
+	.st8{fill:#44AD5C;}
+	.st9{fill:#EF525E;}
+	.st10{fill:#FCEE21;}
+	.st11{fill:none;stroke:#FCEE21;stroke-width:2.2538;stroke-miterlimit:10;}
+	.st12{fill:none;stroke:#FCEE21;stroke-width:2.273;stroke-miterlimit:10;}
+	.st13{fill:#29ABE2;stroke:#0071BC;stroke-miterlimit:10;}
+	.st14{fill:#FFFFFF;}
+	.st15{fill:none;stroke:#FFFFFF;stroke-width:2.2538;stroke-miterlimit:10;}
+	.st16{fill:none;stroke:#FFFFFF;stroke-width:2.273;stroke-miterlimit:10;}
+	.st17{fill:#F7931E;}
+	.st18{fill:#63703A;}
+	.st19{fill:#50592A;}
+	.st20{fill:#8C9663;}
+	.st21{fill:#848964;}
+	.st22{fill:#AA8465;}
+	.st23{fill:#736357;}
+	.st24{fill:#332823;}
+	.st25{fill:#666666;}
+	.st26{fill:#333333;}
+	.st27{fill:#F43122;}
+	.st28{fill:#C93C35;}
+	.st29{fill:#F44E45;}
+	.st30{fill:#E2AAB7;}
+	.st31{fill:#E593A3;}
+	.st32{fill:#40A4BF;}
+	.st33{fill:#1A8DB5;}
+	.st34{fill:#ACB5BC;}
+	.st35{fill:#939BA0;}
+	.st36{fill:#E8E8E8;}
+	.st37{fill:#C9C7C7;}
+	.st38{fill:none;stroke:#35302D;stroke-width:5;stroke-miterlimit:10;}
+	.st39{fill:#ED1C24;}
+	.st40{fill:#493C38;}
+	.st41{fill:#F4D9BD;}
+	.st42{fill:#EBA288;}
+	.st43{opacity:0.4;fill:#E4847C;}
+	.st44{fill:#5B5B5B;}
+	.st45{fill:#303030;}
+	.st46{fill:#F7F2F2;}
+	.st47{fill:#AFAFAF;}
+	.st48{fill:#FFDDBB;}
+	.st49{fill:#FFCCAA;}
+	.st50{fill:#AA663F;}
+	.st51{fill:#9C4C2E;}
+	.st52{fill:#EA7DB1;}
+	.st53{fill:#ED5AA7;}
+	.st54{fill:#F4E65D;}
+	.st55{fill:#F2D34E;}
+	.st56{fill:#ED1E79;}
+	.st57{fill:#543D34;}
+	.st58{fill:#C4A58A;}
+	.st59{fill:#A67C52;}
+	.st60{fill:#F15A24;}
+	.st61{fill:#42210B;}
+	.st62{fill:#949494;}
+	.st63{fill:#E0E2E2;}
+	.st64{fill:#F2715B;}
+	.st65{fill:#D1D3D5;}
+	.st66{fill:#3B444F;}
+	.st67{fill:#E6E6E6;}
+	.st68{fill:#B3B3B3;}
+	.st69{fill:#1C8FB7;}
+	.st70{fill-rule:evenodd;clip-rule:evenodd;fill:#FCEE21;}
+	.st71{opacity:0.5;fill:#FFFFFF;}
+	.st72{fill:none;stroke:#F7931E;stroke-width:8.2777;stroke-miterlimit:10;}
+	.st73{fill:#FFFFFF;stroke:#FFFFFF;stroke-width:7.468;stroke-miterlimit:10;}
+	.st74{fill:#65C4E5;}
+	.st75{fill:none;stroke:#29ABE2;stroke-width:2;stroke-miterlimit:10;}
+	.st76{fill:none;stroke:#29ABE2;stroke-width:2;stroke-miterlimit:10;stroke-dasharray:8.5707,5.3567;}
+	.st77{fill:none;stroke:#1D8EB5;stroke-width:2;stroke-miterlimit:10;}
+	.st78{fill:none;stroke:#1D8EB5;stroke-width:2;stroke-miterlimit:10;stroke-dasharray:8.5707,5.3567;}
+</style>
+<g id="BG">
+	<rect x="0" class="st6" width="500" height="500"/>
+</g>
+<g id="Layer_1">
+	<polygon class="st52" points="250,317.1 406,387 376,520 250,520 	"/>
+	<polygon class="st53" points="250,317.1 94,387 124,520 250,520 	"/>
+	<polygon class="st48" points="204,386.4 172.4,450 251.9,480 251.9,409 	"/>
+	<polygon class="st49" points="298.4,386.4 330,450 250.6,480 250.6,409 	"/>
+	<g>
+		<polygon class="st48" points="333,369 250,409 250,160 333,210 		"/>
+		<polygon class="st49" points="167,369 250,409 250,160 167,210 		"/>
+	</g>
+	<rect x="272" y="254" class="st24" width="7" height="45"/>
+	<rect x="221" y="254" class="st24" width="7" height="45"/>
+	<polygon class="st54" points="348.3,290.5 253.1,202.2 253.1,132.6 315.4,150.3 351,177.6 359.1,219.9 	"/>
+	<polygon class="st54" points="332.5,355.9 333.5,245.4 356.1,217.9 404.7,295.9 367.9,371 	"/>
+	<polygon class="st55" points="152.6,289 249.6,199 249.6,128 186.1,146.1 149.8,173.9 141.6,217 	"/>
+	<polygon class="st55" points="166.6,355.6 165.6,243 142.6,215 93,294.5 130.6,371 	"/>
+	<circle class="st56" cx="345" cy="305" r="12"/>
+	<circle class="st56" cx="154" cy="305" r="12"/>
+	<circle class="st54" cx="284.4" cy="158.1" r="32.4"/>
+	<circle class="st54" cx="389.5" cy="264.1" r="25.5"/>
+	<circle class="st54" cx="398.5" cy="303.5" r="32.5"/>
+	<circle class="st54" cx="319.3" cy="183.1" r="34.8"/>
+	<circle class="st54" cx="352.7" cy="229.2" r="34.8"/>
+	<circle class="st55" cx="217.1" cy="154" r="33"/>
+	<circle class="st55" cx="110" cy="262" r="26"/>
+	<circle class="st55" cx="100.5" cy="303.5" r="32.5"/>
+	<circle class="st55" cx="181.5" cy="179.5" r="35.5"/>
+	<circle class="st55" cx="147.5" cy="226.5" r="35.5"/>
+	<path class="st54" d="M248.5,169c19.6,0,35.5-15.9,35.5-35.5S268.1,98,248.5,98"/>
+	<path class="st55" d="M248.5,98c-19.6,0-35.5,15.9-35.5,35.5s15.9,35.5,35.5,35.5"/>
+</g>
+</svg>

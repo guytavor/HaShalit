@@ -13,7 +13,7 @@ import ministerEducation from '../assets/cards/game_ministerEducation.svg';
 import ministerTreasury from '../assets/cards/game_ministerTreasury.svg';
 import foreignAmbassador from '../assets/cards/game_foreignAmbassador.svg';
 import foreignKing from '../assets/cards/game_foreignKing.svg';
-import protest from '../assets/cards/game_loseImage.svg'; // TODO
+import protest from '../assets/cards/game_protestBoost.svg'; // TODO
 import news from '../assets/cards/game_news.svg';
 import opposition from '../assets/cards/game_opposition.svg';
 import rabi from '../assets/cards/game_rabi.svg';

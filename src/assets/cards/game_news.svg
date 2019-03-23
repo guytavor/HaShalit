@@ -1,1 +1,115 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500"><defs><style>.cls-1{fill:#8cc63f;}.cls-2{fill:#949494;}.cls-3{fill:#fff;}.cls-4{fill:#e0e2e2;}.cls-5{fill:#f2715b;}.cls-6{fill:#d1d3d5;}.cls-7{fill:#3b444f;}</style></defs><title>Reigns game</title><g id="BG"><rect class="cls-1" width="500" height="500"/></g><g id="Layer_1" data-name="Layer 1"><rect class="cls-2" x="73" y="160" width="56" height="220"/><polygon class="cls-3" points="433 365 412.6 380 72 380 92 362.84 92 328 92 130 433 130 433 365"/><rect class="cls-4" x="124" y="215" width="123" height="90"/><rect class="cls-4" x="261" y="215" width="119" height="12"/><rect class="cls-4" x="261" y="235" width="147" height="12"/><rect class="cls-4" x="261" y="255" width="64" height="12"/><rect class="cls-4" x="261" y="275" width="121" height="12"/><rect class="cls-4" x="261" y="295" width="136" height="12"/><rect class="cls-5" x="124" y="317" width="284" height="12"/><rect class="cls-2" x="124" y="193" width="284" height="12"/><rect class="cls-4" x="124" y="149" width="284" height="36"/><rect class="cls-6" x="124" y="337" width="284" height="5.31"/><rect class="cls-6" x="124" y="347.85" width="284" height="5.31"/><rect class="cls-6" x="124" y="358.69" width="284" height="5.31"/><path class="cls-7" d="M193.91,170.81l-.55-14.46h6.89l-.55,14.46Zm0,7.52v-5.41h5.85v5.41Z"/><path class="cls-7" d="M224.63,178.33V165.21h-5.3l0,9.57L217,178.33h-7v-6.41h2.44V158.84h19v19.49Z"/><path class="cls-7" d="M241.76,178.33V158.84h6.81v19.49Z"/><path class="cls-7" d="M278.64,178.33H258.56V158.84h6.57V172h2.69V158.84h6.51v13.08h1.55l1.21-1.34V158.84h6.61v14Z"/><path class="cls-7" d="M309.09,165.25v13.08h-6.85V165.25H294v-6.41h17.68v6.41Z"/><path class="cls-7" d="M334,178.37V165.25h-5.33v13.12H321.8V158.84h19.05v19.53Z"/></g></svg>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 23.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 500 500" style="enable-background:new 0 0 500 500;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#FBB03B;}
+	.st1{fill:#A2BC53;}
+	.st2{fill:#E56575;}
+	.st3{fill:#F2D453;}
+	.st4{fill:#F2F2F2;}
+	.st5{fill:#65C4E5;stroke:#0071BC;stroke-miterlimit:10;}
+	.st6{fill:#EF97AA;}
+	.st7{fill:#29ABE2;}
+	.st8{fill:#44AD5C;}
+	.st9{fill:#EF525E;}
+	.st10{fill:#FCEE21;}
+	.st11{fill:none;stroke:#FCEE21;stroke-width:2.2538;stroke-miterlimit:10;}
+	.st12{fill:none;stroke:#FCEE21;stroke-width:2.273;stroke-miterlimit:10;}
+	.st13{fill:#29ABE2;stroke:#0071BC;stroke-miterlimit:10;}
+	.st14{fill:#FFFFFF;}
+	.st15{fill:none;stroke:#FFFFFF;stroke-width:2.2538;stroke-miterlimit:10;}
+	.st16{fill:none;stroke:#FFFFFF;stroke-width:2.273;stroke-miterlimit:10;}
+	.st17{fill:#F7931E;}
+	.st18{fill:#63703A;}
+	.st19{fill:#50592A;}
+	.st20{fill:#8C9663;}
+	.st21{fill:#848964;}
+	.st22{fill:#AA8465;}
+	.st23{fill:#736357;}
+	.st24{fill:#332823;}
+	.st25{fill:#666666;}
+	.st26{fill:#333333;}
+	.st27{fill:#F43122;}
+	.st28{fill:#C93C35;}
+	.st29{fill:#F44E45;}
+	.st30{fill:#E2AAB7;}
+	.st31{fill:#E593A3;}
+	.st32{fill:#40A4BF;}
+	.st33{fill:#1A8DB5;}
+	.st34{fill:#ACB5BC;}
+	.st35{fill:#939BA0;}
+	.st36{fill:#E8E8E8;}
+	.st37{fill:#C9C7C7;}
+	.st38{fill:none;stroke:#35302D;stroke-width:5;stroke-miterlimit:10;}
+	.st39{fill:#ED1C24;}
+	.st40{fill:#493C38;}
+	.st41{fill:#F4D9BD;}
+	.st42{fill:#EBA288;}
+	.st43{opacity:0.4;fill:#E4847C;}
+	.st44{fill:#5B5B5B;}
+	.st45{fill:#303030;}
+	.st46{fill:#F7F2F2;}
+	.st47{fill:#AFAFAF;}
+	.st48{fill:#FFDDBB;}
+	.st49{fill:#FFCCAA;}
+	.st50{fill:#AA663F;}
+	.st51{fill:#9C4C2E;}
+	.st52{fill:#EA7DB1;}
+	.st53{fill:#ED5AA7;}
+	.st54{fill:#F4E65D;}
+	.st55{fill:#F2D34E;}
+	.st56{fill:#ED1E79;}
+	.st57{fill:#543D34;}
+	.st58{fill:#C4A58A;}
+	.st59{fill:#A67C52;}
+	.st60{fill:#F15A24;}
+	.st61{fill:#42210B;}
+	.st62{fill:#949494;}
+	.st63{fill:#E0E2E2;}
+	.st64{fill:#F2715B;}
+	.st65{fill:#D1D3D5;}
+	.st66{fill:#3B444F;}
+	.st67{fill:#E6E6E6;}
+	.st68{fill:#B3B3B3;}
+	.st69{fill:#1C8FB7;}
+	.st70{fill-rule:evenodd;clip-rule:evenodd;fill:#FCEE21;}
+	.st71{opacity:0.5;fill:#FFFFFF;}
+	.st72{fill:none;stroke:#F7931E;stroke-width:8.2777;stroke-miterlimit:10;}
+	.st73{fill:#FFFFFF;stroke:#FFFFFF;stroke-width:7.468;stroke-miterlimit:10;}
+	.st74{fill:#65C4E5;}
+	.st75{fill:none;stroke:#29ABE2;stroke-width:2;stroke-miterlimit:10;}
+	.st76{fill:none;stroke:#29ABE2;stroke-width:2;stroke-miterlimit:10;stroke-dasharray:8.5707,5.3567;}
+	.st77{fill:none;stroke:#1D8EB5;stroke-width:2;stroke-miterlimit:10;}
+	.st78{fill:none;stroke:#1D8EB5;stroke-width:2;stroke-miterlimit:10;stroke-dasharray:8.5707,5.3567;}
+</style>
+<g id="BG">
+	<rect x="0" class="st5" width="500" height="500"/>
+</g>
+<g id="Layer_1">
+	<g>
+		<rect x="73" y="160" class="st62" width="56" height="220"/>
+		<polygon class="st14" points="433,365 412.6,380 72,380 92,362.8 92,328 92,130 433,130 		"/>
+		<rect x="124" y="215" class="st63" width="123" height="90"/>
+		<rect x="261" y="215" class="st63" width="119" height="12"/>
+		<rect x="261" y="235" class="st63" width="147" height="12"/>
+		<rect x="261" y="255" class="st63" width="64" height="12"/>
+		<rect x="261" y="275" class="st63" width="121" height="12"/>
+		<rect x="261" y="295" class="st63" width="136" height="12"/>
+		<rect x="124" y="317" class="st64" width="284" height="12"/>
+		<rect x="124" y="193" class="st62" width="284" height="12"/>
+		<rect x="124" y="149" class="st63" width="284" height="36"/>
+		<rect x="124" y="337" class="st65" width="284" height="5.3"/>
+		<rect x="124" y="347.8" class="st65" width="284" height="5.3"/>
+		<rect x="124" y="358.7" class="st65" width="284" height="5.3"/>
+		<g>
+			<path class="st66" d="M193.9,170.8l-0.6-14.5h6.9l-0.6,14.5H193.9z M193.9,178.3v-5.4h5.9v5.4H193.9z"/>
+			<path class="st66" d="M224.6,178.3v-13.1h-5.3l0,9.6l-2.4,3.5h-7v-6.4h2.4v-13.1h19v19.5H224.6z"/>
+			<path class="st66" d="M241.8,178.3v-19.5h6.8v19.5H241.8z"/>
+			<path class="st66" d="M278.6,178.3h-20.1v-19.5h6.6V172h2.7v-13.1h6.5v13.1h1.5l1.2-1.3v-11.7h6.6v14L278.6,178.3z"/>
+			<path class="st66" d="M309.1,165.2v13.1h-6.8v-13.1H294v-6.4h17.7v6.4H309.1z"/>
+			<path class="st66" d="M334,178.4v-13.1h-5.3v13.1h-6.9v-19.5h19.1v19.5H334z"/>
+		</g>
+	</g>
+</g>
+</svg>
