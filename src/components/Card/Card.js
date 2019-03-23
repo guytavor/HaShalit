@@ -155,7 +155,7 @@ function Card({ card, cardSide, onSelectAnswer, onCardMove, prevDir }) {
                                     t => `translateX(${flipTranslateX(item, t, prevDir)}px) rotateY(${flipRotateY(item, t, prevDir, true)}deg) scale(${flipScale(item, t)})`),
                                 backgroundImage: `url(${cardImg})`
                             }}>
-                                <div className={`${styles[cardSide]} ${styles.answerFixer}`}>
+                                <div className={`${answer && cardSide ? styles[cardSide] : ''} ${styles.answerFixer}`}>
                                     <animated.div className={styles.answerContainer} style={{ transform: interpolate([props.rot, props.scale], negTrans) }}>
                                         <animated.h2 className={styles.answer} style={{transform: interpolate([props.rot], textTrans)}}>{answer}</animated.h2>
                                     </animated.div>
