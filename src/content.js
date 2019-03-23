@@ -10,5 +10,8 @@ export default {
     lose: {
         title: 'הפסדת',
         description: 'לחץ על מנת לנסות שוב'
+    },
+    footer: {
+        yearsInPower: '${years} שנים בשלטון'
     }
 };

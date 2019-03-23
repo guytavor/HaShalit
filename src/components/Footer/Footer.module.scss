@@ -5,5 +5,23 @@
   height: $footerHeight;
   max-height: 100px;
   background-color: $stripColor;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 0 40px 20px;
+
+  .year, .yearsInPower {
+    font-size: 24px;
+    color: $meterFgColor;
+  }
+
+  .year {
+    text-align: right;
+  }
+
+  .yearsInPower {
+    text-align: left;
+  }
 }
 
