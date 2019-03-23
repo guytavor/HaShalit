@@ -1,3 +1,5 @@
+import { log } from '../utils/Logger';
+
 import loseEconomy from '../assets/cards/game_loseEconomy.svg';
 import loseSecurity from '../assets/cards/game_loseSecurity.svg';
 import loseImage from '../assets/cards/game_loseImage.svg';
@@ -2589,9 +2591,40 @@ export const cards = {
 
 export const newGameCards = [];
 
+function validateAnswer(answer) {
+    if (answer.unlockCards) {
+        for (const unlockedCard of answer.unlockCards) {
+            if (!cards[unlockedCard].locked) {
+                log('WARN: Unlocked card is not locked:', unlockedCard);
+            }
+        }
+    }
+    if (answer.unlockCardsForever) {
+        for (const unlockedCard of answer.unlockCardsForever) {
+            if (!cards[unlockedCard].locked) {
+                log('WARN: Unlocked card is not locked:', unlockedCard);
+            }
+        }
+    }
+    if (answer.next) {
+        if (!cards[answer.next].locked) {
+            log('WARN: Next card is not locked:', answer.next);
+        }
+    }
+}
+
 for (const id of Object.keys(cards)) {
-    cards[id].id = id;
+    const card = cards[id];
+    card.id = id;
     if (id.startsWith('newGame')) {
         newGameCards.push(id);
+    }
+    if (process.env.NODE_ENV === 'development') {
+        if (card.left) {
+            validateAnswer(card.left);
+        }
+        if (card.right) {
+            validateAnswer(card.right);
+        }
     }
 }
