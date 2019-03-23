@@ -6,7 +6,7 @@ import styles from "./Footer.module.scss";
 
 class Footer extends React.PureComponent {
   static propTypes = {
-    currentYear: PropTypes.string,
+    currentYear: PropTypes.number,
     yearsInPower: PropTypes.number,
   };
 
