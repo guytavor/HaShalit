@@ -21,7 +21,7 @@ export default function() {
           width={crownDimension}
           height={crownDimension}
           viewBox="0 0 168.528 168.528"
-          style={{'enable-background': 'new 0 0 168.528 168.528'}}
+          style={{enableBackground: 'new 0 0 168.528 168.528'}}
         >
           <g fill="gold" >
             <path

@@ -1,5 +1,6 @@
 import { handleActions } from 'redux-actions';
 import cloneDeep from 'lodash/cloneDeep';
+import { log } from '../utils/Logger';
 import actions from './actions';
 import {cards, newGameCards} from './cards';
 import {boosters, blameBoosters} from './boosters';
@@ -49,7 +50,7 @@ const INITIAL_STATE = {
 
 export default handleActions({
     [actions.init]: (state, {payload}) => {
-        console.log('Init', state);
+        log('Init', state);
         // TODO: Start with the intro, then if loading a save, go to the timeline.
         const { saved } = payload;
         const nextLevel = gameManager.getNextLevel(saved ? saved.level : state.level);
@@ -61,7 +62,7 @@ export default handleActions({
     },
 
     [actions.selectAnswer]: (state, {payload}) => {
-        console.log('Select answer', state);
+        log('Select answer', state);
         const { side } = payload;
         const nextLevel = gameManager.getNextLevel(state.level, side);
         let screen = state.screen;
@@ -92,7 +93,7 @@ export default handleActions({
     },
 
     [actions.startGame]: (state) => {
-        console.log('Start game', state);
+        log('Start game', state);
         return {
             ...state,
             screen: SCREENS.GAME,
@@ -100,7 +101,7 @@ export default handleActions({
     },
 
     [actions.startOver]: (state) => {
-        console.log('Start over', state);
+        log('Start over', state);
         const nextLevel = gameManager.startNewGame(state.level);
 
         return {

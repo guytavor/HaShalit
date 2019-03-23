@@ -1,3 +1,4 @@
+import { log } from '../utils/Logger';
 import {DEFAULT_METRICS_POINTS} from "./reducer";
 
 const validationFunctions = {
@@ -88,13 +89,13 @@ export default class GameManager {
 
         if (card.lose) {
             state.hasLost = true;
-            console.log('Game Over');
+            log('Game Over');
             return state;
         }
 
         if (card.win) {
             state.hasWon = true;
-            console.log('Victory');
+            log('Victory');
             return {
                 ...state,
                 card: null,
@@ -111,13 +112,13 @@ export default class GameManager {
             // Unlock cards.
             if (answer.unlockCards) {
                 for (const unlockedCardId of answer.unlockCards) {
-                    console.log('Unlocked card:', unlockedCardId);
+                    log('Unlocked card:', unlockedCardId);
                     state.cardsUnlocked.add(unlockedCardId);
                 }
             }
             if (answer.unlockCardsForever) {
                 for (const unlockedCardId of answer.unlockCardsForever) {
-                    console.log('Unlocked card:', unlockedCardId);
+                    log('Unlocked card:', unlockedCardId);
                     state.cardsUnlockedForever.add(unlockedCardId);
                 }
             }
@@ -134,7 +135,7 @@ export default class GameManager {
 
             // Achievements.
             if (answer.achievement) {
-                console.log('Achievement!', answer.achievement);
+                log('Achievement!', answer.achievement);
                 if (!state.achievements[answer.achievement]) {
                     state.achievements[answer.achievement] = state.year;
                     // TODO: Show achievement UI.
@@ -143,7 +144,7 @@ export default class GameManager {
 
             // Boosters.
             if (answer.booster) {
-                console.log('Booster!', answer.booster);
+                log('Booster!', answer.booster);
                 this._enableBooster(state, answer.booster);
                 // TODO: Show booster UI.
             }
@@ -163,7 +164,7 @@ export default class GameManager {
 
         // If the next card is not predetermined, select a random card.
         if (!nextCardId) {
-            console.log('Selecting a random card...');
+            log('Selecting a random card...');
             nextCardId = this._selectRandomCard(state);
 
             if (!nextCardId) {
@@ -171,7 +172,7 @@ export default class GameManager {
             }
         }
         const nextCard = this._cards[nextCardId];
-        console.log('Next card:', nextCardId,
+        log('Next card:', nextCardId,
             'Name:', nextCard.character && nextCard.character.name,
             'Text:', nextCard.text);
         if (!nextCard.character && !nextCard.name) {
