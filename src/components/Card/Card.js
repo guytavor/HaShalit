@@ -6,7 +6,8 @@ import styles from './Card.module.scss'
 
 const from = { x: 0, y: 0, rot: 0, scale: 1 };
 const trans = (r, s) => `rotateZ(${r}deg) scale(${s})`;
-const negTrans = (r, s) => `rotateZ(${-r}deg) scale(${s}) skewX(${-r}deg) translateY(-10px)`;
+const negTrans = (r, s) => `rotateZ(${-r}deg) scale(${s}) skewX(${-r}deg)`;
+const textTrans = r => `skewX(${r}deg)`;
 const SIDES = {
     '-1': 'left',
     '1': 'right'
@@ -154,9 +155,9 @@ function Card({ card, cardSide, onSelectAnswer, onCardMove, prevDir }) {
                                     t => `translateX(${flipTranslateX(item, t, prevDir)}px) rotateY(${flipRotateY(item, t, prevDir, true)}deg) scale(${flipScale(item, t)})`),
                                 backgroundImage: `url(${cardImg})`
                             }}>
-                                <div className={styles.answerFixer}>
+                                <div className={`${styles[cardSide]} ${styles.answerFixer}`}>
                                     <animated.div className={styles.answerContainer} style={{ transform: interpolate([props.rot, props.scale], negTrans) }}>
-                                        <h2 className={`${styles[cardSide]} ${styles.answer}`}>{answer}</h2>
+                                        <animated.h2 className={styles.answer} style={{transform: interpolate([props.rot], textTrans)}}>{answer}</animated.h2>
                                     </animated.div>
                                 </div>
                             </animated.div>
