@@ -107,7 +107,7 @@ function Card({ card, cardSide, onSelectAnswer, onCardMove, prevDir }) {
                 springData.rot = dir * 200;
                 setTimeout(() => onSelectAnswer(dir), 600);
             } else if (down) {
-                springData.y = -10 + yDelta / 10;
+                springData.y = -5 + yDelta / 10;
                 if (!isInCenter) {
                     const dragSensitivity = 2;
                     const absDelta = Math.abs(xDelta);
