@@ -14,9 +14,10 @@ $loLoResHeightBreak: 580px;
 
 $bgColor: #0071bc;
 $bgColorIntro: #29abe2;
-$stripColor: #23160D;
-$meterBgColor: rgb(120, 104, 61);
-$meterFgColor: rgb(245, 243, 179);
+$stripColor: #10212b;
+$meterBgColor: #5783a0;
+$meterFgColor: white;
+// $meterFgColor: rgb(245, 243, 179);
 
 @mixin backCard() {
     background-image: url("../../assets/cards/game_cardBack.svg");
@@ -24,4 +25,12 @@ $meterFgColor: rgb(245, 243, 179);
     background-repeat: no-repeat;
     background-color: #1c59b5;
     border: 10px solid #75cff2;
+}
+
+:export {
+    bgColor: $bgColor;
+    bgColorIntro: $bgColorIntro;
+    stripColor: $stripColor;
+    meterBgColor: $meterBgColor;
+    meterFgColor: $meterFgColor;
 }
