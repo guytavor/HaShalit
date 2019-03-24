@@ -195,7 +195,7 @@ export const cards = {
     // Paste here //
     '1': {
         character: characters.consultant,
-        text: 'ברוכים הבאים! גרור את הקלף ימינה או שמאלה כדי לראות את התשובות',
+        text: 'שלום לך! זהו משחק בחירות. גרור את הקלף כדי לראות את האופציות ושחרר כדי לבצע בחירה',
         left: {
             text: 'מעניין. ומה בצד השני?',
             next: '2',
@@ -217,7 +217,7 @@ export const cards = {
             advanceTime: false,
         },
         right: {
-            text: 'כן',
+            text: 'אני יודע הכל',
             next: '3',
             advanceTime: false,
         },
@@ -263,7 +263,7 @@ export const cards = {
     },
     '5': {
         character: characters.consultant,
-        text: 'כשאחד המדדים מתרוקן, אתה תאבד את השלטון',
+        text: 'יפה! ראית מה קרה למעלה?? שים לב! כשאחד המדדים מתרוקן, תאבד את השלטון',
         left: {
             text: 'אשפץ את התדמית',
             next: '9',
@@ -286,7 +286,7 @@ export const cards = {
     },
     '6': {
         character: characters.consultant,
-        text: 'כשאחד המדדים מתרוקן, אתה תאבד את השלטון',
+        text: 'יפה! ראית מה קרה למעלה?? שים לב! כשאחד המדדים מתרוקן, תאבד את השלטון',
         left: {
             text: 'אתחנף לרבנות',
             next: '9',
@@ -309,7 +309,7 @@ export const cards = {
     },
     '9': {
         character: characters.consultant,
-        text: 'יאללה! מתחילים! כמה שנים תוכל להשאר בשלטון?',
+        text: 'יאללה מתחילים! כמה שנים תוכל להשאר בשלטון?',
         left: {
             text: 'בוא אני אראה לך',
             next: '10',
@@ -1926,7 +1926,7 @@ export const cards = {
             }],
         ],
     },
-    '800': {
+    /*'800': {
         character: characters.news,
         text: 'יש התפרעויות בהר הבית',
         left: {
@@ -1942,7 +1942,7 @@ export const cards = {
                 security: 30,
             },
         },
-    },
+    },*/
     '810': {
         character: characters.news,
         text: 'התפרעויות של מלפפונים חמוצים בשכנתינו כבושיה',
@@ -2120,8 +2120,8 @@ export const cards = {
             text: 'הטלגרף',
             unlockCards: ['1060'],
             effects: {
-                economy: -5,
-                image: 30,
+                economy: -10,
+                image: 10,
             },
         },
         right: {
