@@ -21,7 +21,7 @@ const INITIAL_STATE = {
             religion: DEFAULT_METRICS_POINTS,
         },
         parameters: {},
-        year: 2017,
+        year: 2019,
         yearsInPower: 0,
         hasWon: false,
         hasLost: false,
