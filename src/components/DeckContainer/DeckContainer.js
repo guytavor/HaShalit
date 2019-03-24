@@ -35,7 +35,7 @@ export default class DeckContainer extends React.PureComponent {
     _getName() {
         const { card } = this.props;
         return (
-            <div className={styles.name}>{get(card, 'character.name', '')}</div>
+            <div className={styles.name}>{get(card, 'character.name', get(card, 'name', ''))}</div>
         );
     }
 }
