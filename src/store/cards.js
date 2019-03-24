@@ -123,7 +123,7 @@ export const cards = {
     'outOfCards': {
         img: outOfCards,
         name: 'הפסדת את השלטון',
-        text: 'כל כך הרבה שנים בשלטון ומה אתה עשית בשביל מדינה? העם מאס בך ודורש בחירות',
+        text: 'הקדנציה שלך נגמרה מבלי שהשארת חותם. הולכים לבחירות',
         locked: true,
         lose: true,
     },
