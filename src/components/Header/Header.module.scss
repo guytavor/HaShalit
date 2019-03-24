@@ -7,5 +7,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @media (max-height: $loLoResHeightBreak) {
+    padding-top: 10px;
+  }
 }
 

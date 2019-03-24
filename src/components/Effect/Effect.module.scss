@@ -59,4 +59,9 @@
             }
         }
     }
+
+    @media (max-height: $loLoResHeightBreak) {
+        width: 30px;
+        height: 30px;
+    }
 }

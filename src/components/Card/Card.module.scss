@@ -110,43 +110,18 @@
             }
           }
 
-          @media all and (min-height: $heightBreak) and (min-width: 570px) {
-            &.left {
-              .answerContainer {
-                .answer {
-                  // text-align: left;
-                }
-              }
-            }
-
-            &.right {
-              .answerContainer {
-                .answer {
-                  // text-align: right;
-                }
-              }
-            }
-          }
-
           @media all and (max-height: $heightBreak) and (min-width: 580px) {
             .answerContainer {
               .answer {
                 bottom: 20px;
               }
             }
-            &.left {
-              .answerContainer {
-                .answer {
-                  // text-align: left;
-                }
-              }
-            }
+          }
 
-            &.right {
+          @media (max-width: $loLoResHeightBreak) {
+            &.left, &.right {
               .answerContainer {
-                .answer {
-                  // text-align: right;
-                }
+                top: -160%;
               }
             }
           }

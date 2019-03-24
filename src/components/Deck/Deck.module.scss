@@ -29,4 +29,9 @@
     width: $cardLoResDimension;
     height: $cardLoResDimension;
   }
+
+  @media all and (max-height: $loLoResHeightBreak) {
+    width: $cardLoLoResDimension;
+    height: $cardLoLoResDimension;
+  }
 }

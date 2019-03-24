@@ -61,7 +61,7 @@
     }
   }
 
-  @media all and (max-height: $heightBreak) {
+  @media (max-height: $heightBreak) {
     .stage {
       .header {
         height: $headerLoResHeight;
@@ -70,6 +70,26 @@
   
     .strip:not(.footer) {
       height: $headerLoResHeight;
+    }
+  }
+
+  @media (max-height: $loLoResHeightBreak) {
+    .stage {
+      .header {
+        height: $headerLoLoResHeight;
+      }
+
+      .footer {
+        height: $footerLoResHeight;
+      }
+    }
+
+    .strip:not(.footer) {
+      height: $headerLoLoResHeight;
+    }
+  
+    .strip.footer {
+      height: $footerLoResHeight;
     }
   }
 }
