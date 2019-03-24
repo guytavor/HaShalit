@@ -387,7 +387,7 @@ export const cards = {
             text: 'פזר הפגנות בכח',
             next: '50',
             effects: {
-                economy: -5,
+                economy: -15,
                 security: 20,
                 image: -40,
                 add: [
@@ -487,15 +487,15 @@ export const cards = {
             text: 'נתק את הקשרים',
             next: '82',
             effects: {
-                economy: -15,
-                image: 20,
+                economy: -25,
+                image: 30,
             },
         },
         right: {
             text: 'בוא נדבר איתם',
             unlockCardsForever: ['90'],
             effects: {
-                image: -20,
+                image: -30,
                 set: [
                     ['peaceTalks', 1],
                 ],
@@ -514,9 +514,9 @@ export const cards = {
             text: 'לחדש את הקשרים',
             unlockCardsForever: ['90'],
             effects: {
-                economy: 10,
-                security: -10,
-                image: -10,
+                economy: 20,
+                security: -20,
+                image: -20,
                 set: [
                     ['peaceTalks', 1],
                 ],
@@ -525,9 +525,9 @@ export const cards = {
         right: {
             text: 'נכבוש את השדות!',
             effects: {
-                economy: -5,
-                security: 10,
-                image: 10,
+                economy: -15,
+                security: 20,
+                image: 20,
             },
         },
         locked: true,
@@ -538,8 +538,8 @@ export const cards = {
         left: {
             text: 'לא, תודה',
             effects: {
-                economy: -15,
-                image: 20,
+                economy: -25,
+                image: 30,
                 set: [
                     ['peaceTalks', 0],
                 ],
@@ -550,8 +550,8 @@ export const cards = {
             unlockCardsForever: ['920','1100'],
             effects: {
                 economy: 0,
-                security: -10,
-                image: -10,
+                security: -20,
+                image: -20,
             },
         },
         locked: true,
@@ -563,18 +563,18 @@ export const cards = {
             text: 'נושיט יד לשלום',
             next: '193',
             effects: {
-                economy: 10,
+                economy: 20,
                 security: -30,
-                image: -10,
+                image: -20,
             },
         },
         right: {
             text: 'נחסל את אויבנו',
             unlockCardsForever: ['1200'],
             effects: {
-                economy: -5,
-                security: 10,
-                image: 10,
+                economy: -15,
+                security: 20,
+                image: 20,
             },
             booster: 'war',
         },
@@ -590,7 +590,8 @@ export const cards = {
         left: {
             text: 'קרא להם בוגדים',
             effects: {
-                image: 20,
+                security: -10,
+                image: 30,
                 add: [
                     ['bad', 1],
                 ],
@@ -662,8 +663,8 @@ export const cards = {
             text: 'גייס חרדים',
             achievement: 'giyus',
             effects: {
-                economy: -10,
-                image: 10,
+                economy: -20,
+                image: 20,
                 religion: -50,
             },
         },
@@ -674,15 +675,17 @@ export const cards = {
         left: {
             text: 'הערבים אזרחים',
             effects: {
-                image: -10,
+                economy: 30,
+                image: -30,
+                religion: -30,
             },
         },
         right: {
             text: 'הערבים נוהרים',
             afterText: 'שוטרים יורים במחמד אלחפ-מפשעי. השב״כ: לא היה איום, היה בדרכו לעבודה. החקירה נסגרת מחוסר עניין לציבור',
             effects: {
-                security: -10,
-                image: 20,
+                security: -20,
+                image: 30,
                 add: [
                     ['bad', 1],
                 ],
@@ -701,16 +704,17 @@ export const cards = {
         left: {
             text: 'החרדים אזרחים',
             effects: {
-                economy: 10,
-                image: -30,
-                religion: 10,
+                economy: 30,
+                image: -50,
+                religion: 20,
             },
         },
         right: {
             text: 'החרדים טפילים',
             effects: {
+                economy: 30,
                 image: 30,
-                religion: -30,
+                religion: -40,
                 add: [
                     ['bad', 1],
                 ],
@@ -729,14 +733,15 @@ export const cards = {
         left: {
             text: 'לא',
             effects: {
-                image: -10,
+                economy: 20,
+                image: -20,
             },
         },
         right: {
             text: 'כן',
             effects: {
-                economy: -10,
-                image: 20,
+                economy: -30,
+                image: 30,
             },
         },
     },
@@ -766,8 +771,8 @@ export const cards = {
         left: {
             text: 'אין פרטנר',
             effects: {
-                security: -10,
-                image: 10,
+                security: 20,
+                image: 20,
                 add: [
                     ['hafganot', 1],
                 ],
@@ -777,7 +782,8 @@ export const cards = {
             text: 'כנס ועידה',
             next: '193',
             effects: {
-                image: -10,
+                security: -20,
+                image: -20,
             },
         },
         conditions: [
@@ -793,7 +799,7 @@ export const cards = {
             text: 'מלחמה',
             next: '300',
             effects: {
-                image: 10,
+                image: 30,
                 set: [
                     ['peaceTalks', 0],
                 ],
@@ -802,7 +808,7 @@ export const cards = {
         right: {
             text: 'שלום',
             effects: {
-                image: -10,
+                image: -30,
                 set: [
                     ['madePeace', 1],
                 ],
@@ -816,6 +822,7 @@ export const cards = {
         left: {
             text: 'לא',
             effects: {
+                security: -10,
                 image: 10,
                 religion: -30,
             },
@@ -823,8 +830,8 @@ export const cards = {
         right: {
             text: 'דארווין מי?',
             effects: {
-                economy: -10,
-                image: -10,
+                economy: -20,
+                image: -20,
                 religion: 40,
             },
         },
@@ -840,8 +847,8 @@ export const cards = {
         left: {
             text: 'לא',
             effects: {
-                economy: 10,
-                image: -10,
+                economy: 20,
+                image: -20,
             },
         },
         right: {
@@ -867,14 +874,16 @@ export const cards = {
         left: {
             text: 'אני',
             effects: {
-                image: 5,
+                image: 30,
+                religion: -30,
             },
         },
         right: {
             text: 'הם!',
             effects: {
-                image: -10,
-                religion: 20,
+                security: 20,
+                image: -20,
+                religion: 30,
             },
         },
         conditions: [
@@ -892,15 +901,16 @@ export const cards = {
         left: {
             text: 'הפרדת רשויות',
             effects: {
-                security: -10,
-                religion: -20,
+                security: -30,
+                religion: -30,
             },
         },
         right: {
             text: 'כנס בשופטים',
             effects: {
-                image: 10,
-                religion: 10,
+                security: 30,
+                image: 30,
+                religion: 30,
                 add: [
                     ['bad', 1],
                 ],
@@ -927,14 +937,14 @@ export const cards = {
         left: {
             text: 'דאג לעיתונות החופשית',
             effects: {
-                image: -30,
+                image: -40,
             },
         },
         right: {
             text: 'הקם ערוץ טלויזיה',
             unlockCardsForever: ['230'],
             effects: {
-                economy: -20,
+                economy: -30,
             },
             booster: 'ownMedia',
         },
@@ -955,7 +965,7 @@ export const cards = {
             next: '240',
             unlockCardsForever: ['250'],
             effects: {
-                economy: 10,
+                economy: 30,
                 set: [
                     ['tycoon', 1],
                 ],
@@ -964,8 +974,8 @@ export const cards = {
         right: {
             text: 'משרד התקשורת',
             effects: {
-                economy: -10,
-                image: -10,
+                economy: -20,
+                image: -20,
             },
         },
         locked: true,
@@ -976,15 +986,15 @@ export const cards = {
         left: {
             text: 'לא',
             effects: {
-                economy: -10,
+                economy: -30,
             },
             booster: 'ownMediaRemove',
         },
         right: {
             text: 'כן',
             effects: {
-                economy: 20,
-                image: 20,
+                economy: 30,
+                image: 30,
                 set: [
                     ['tycoon', 2],
                 ],
@@ -1001,16 +1011,15 @@ export const cards = {
             unlockCards: ['400'],
             unlockCardsForever: ['253'],
             effects: {
-                economy: -10,
-                image: 5,
+                economy: -30,
+                image: 10,
             },
         },
         right: {
             text: 'גזור קופון',
             unlockCardsForever: ['251','252'],
             effects: {
-                economy: 20,
-                image: 10,
+                economy: 30,
             },
         },
         locked: true,
@@ -1044,8 +1053,8 @@ export const cards = {
             text: 'תחשוב על הבקשיש',
             unlockCardsForever: ['254'],
             effects: {
-                economy: 20,
-                image: -5,
+                economy: 30,
+                image: -10,
             },
         },
         right: {
@@ -1062,13 +1071,14 @@ export const cards = {
         left: {
             text: 'התנצל עמוקות',
             effects: {
-                image: -5,
+                economy: -20,
+                image: -30,
             },
         },
         right: {
             text: 'לכלך חזרה',
             effects: {
-                image: 10,
+                image: 30,
             },
         },
         locked: true,
@@ -1079,15 +1089,15 @@ export const cards = {
         left: {
             text: 'שילך להאכיל יונים',
             effects: {
-                image: -10,
+                image: -20,
             },
         },
         right: {
             text: 'התנצל והצטלם',
             effects: {
-                economy: -10,
-                security: -10,
-                image: 10,
+                economy: -20,
+                security: -20,
+                image: 20,
             },
         },
         locked: true,
@@ -1108,8 +1118,8 @@ export const cards = {
         right: {
             text: 'פרגן לשר',
             effects: {
-                economy: 20,
-                image: -10,
+                economy: 30,
+                image: -30,
             },
         },
     },
@@ -1119,15 +1129,15 @@ export const cards = {
         left: {
             text: 'תשכח מזה',
             effects: {
-                image: 10,
-                religion: -20,
+                image: 20,
+                religion: -30,
             },
         },
         right: {
             text: 'צודק',
             effects: {
-                economy: -5,
-                religion: 20,
+                economy: -10,
+                religion: 30,
             },
         },
     },
@@ -1138,7 +1148,7 @@ export const cards = {
             text: 'בוא נדבר איתם',
             next: '320',
             effects: {
-                image: -10,
+                image: -20,
             },
             advanceTime: false,
         },
@@ -1146,8 +1156,8 @@ export const cards = {
             text: 'כנס בהם',
             unlockCardsForever: ['1200'],
             effects: {
-                security: 10,
-                image: 10,
+                security: 20,
+                image: 20,
             },
             booster: 'war',
         },
@@ -1170,7 +1180,7 @@ export const cards = {
             text: 'נשב לדבר איתם',
             next: '340',
             effects: {
-                image: -10,
+                image: -20,
             },
             advanceTime: false,
         },
@@ -1178,8 +1188,8 @@ export const cards = {
             text: 'אז כנס בהם',
             unlockCardsForever: ['1200'],
             effects: {
-                security: 10,
-                image: 10,
+                security: 20,
+                image: 20,
             },
             booster: 'war',
         },
@@ -1192,7 +1202,7 @@ export const cards = {
             text: 'רק מו"מ',
             next: '360',
             effects: {
-                image: -10,
+                image: -20,
             },
             advanceTime: false,
         },
@@ -1200,8 +1210,8 @@ export const cards = {
             text: 'נכון! כנס בהם',
             unlockCardsForever: ['1200'],
             effects: {
-                security: 10,
-                image: 10,
+                security: 20,
+                image: 20,
                 add: [
                     ['bad', 1],
                 ],
@@ -1217,7 +1227,7 @@ export const cards = {
             text: 'לא. רק מו"מ',
             next: '380',
             effects: {
-                image: -10,
+                image: -30,
             },
             advanceTime: false,
         },
@@ -1225,8 +1235,8 @@ export const cards = {
             text: 'אני נכנס בהם!',
             unlockCardsForever: ['1200'],
             effects: {
-                security: 10,
-                image: 20,
+                security: 20,
+                image: 30,
                 add: [
                     ['bad', 1],
                 ],
@@ -1241,15 +1251,15 @@ export const cards = {
         left: {
             text: 'מו"מ איתם ועם אשתך',
             effects: {
-                image: -10,
+                image: -30,
             },
         },
         right: {
             text: 'אז תגיד. וכנס בהם!',
             unlockCardsForever: ['1200'],
             effects: {
-                security: 10,
-                image: 20,
+                security: 20,
+                image: 30,
                 add: [
                     ['bad', 1],
                 ],
@@ -1264,15 +1274,15 @@ export const cards = {
         left: {
             text: 'אל תיגע בסל',
             effects: {
-                economy: -10,
-                image: 10,
+                economy: -30,
+                image: 30,
             },
         },
         right: {
             text: 'הפוך אותו לסלסלה',
             effects: {
-                economy: 20,
-                image: -10,
+                economy: 30,
+                image: -20,
                 add: [
                     ['bad', 1],
                 ],
@@ -1313,15 +1323,15 @@ export const cards = {
             text: 'לא היום',
             unlockCardsForever: ['445'],
             effects: {
-                economy: 10,
-                image: -5,
+                economy: 20,
+                image: -15,
             },
         },
         right: {
             text: 'ברור',
             effects: {
-                economy: -10,
-                image: 10,
+                economy: -30,
+                image: 30,
             },
         },
     },
@@ -1338,25 +1348,25 @@ export const cards = {
             text: 'עכשיו',
             next: '447',
             effects: {
-                economy: -10,
+                economy: -20,
             },
         },
         locked: true,
     },
     '447': {
         character: characters.consultant,
-        text: 'אדוני, לא הגדלת להם את הקיצבה. הם ממילא לא יצביעו עבורך. אתה בטוח?',
+        text: 'אדוני, לא הגדלת לנכים את הקיצבה. הם ממילא לא יצביעו עבורך. אתה בטוח?',
         left: {
             text: 'במחשבה שנייה...',
             effects: {
-                image: -5,
+                image: -10,
             },
         },
         right: {
             text: 'זה הדבר הנכון',
             effects: {
-                economy: -5,
-                image: 5,
+                economy: -10,
+                image: 10,
             },
         },
         locked: true,
@@ -1368,16 +1378,16 @@ export const cards = {
             text: 'שהחמוס יאכל בקניון',
             unlockCardsForever: ['820'],
             effects: {
-                economy: 20,
-                image: -10,
+                economy: 30,
+                image: -20,
             },
         },
         right: {
             text: 'עצור בנייה',
             next: '462',
             effects: {
-                economy: -20,
-                image: 10,
+                economy: -30,
+                image: 20,
             },
         },
         conditions: [
@@ -1392,15 +1402,15 @@ export const cards = {
         left: {
             text: 'חוס על החמוס',
             effects: {
-                economy: -20,
-                image: 10,
+                economy: -30,
+                image: 20,
             },
         },
         right: {
             text: 'הקשב לטייקון',
             effects: {
-                economy: 20,
-                image: -10,
+                economy: 30,
+                image: -20,
             },
         },
         locked: true,
@@ -1439,7 +1449,7 @@ export const cards = {
         left: {
             text: 'לא, תודה',
             effects: {
-                religion: -10,
+                religion: -30,
             },
         },
         right: {
@@ -1490,9 +1500,6 @@ export const cards = {
             effects: {
                 security: 20,
                 image: 10,
-                add: [
-                    ['bad', 1],
-                ],
                 set: [
                     ['peaceTalks', 0],
                 ],
@@ -2623,6 +2630,175 @@ export const cards = {
                 greaterThan: 3,
             }],
         ],
+    },
+    '1400': {
+        character: characters.news,
+        text: 'הפגנת ענק בשישי: אלפים קראו להחלפת השלטון',
+        left: {
+            text: 'גולף עם חברים',
+            next: '1410',
+            effects: {
+                image: -5,
+                add: [
+                    ['hafganot', 1],
+                ],
+            },
+        },
+        right: {
+            text: 'פגוש את המפגינים',
+            next: '1450',
+            effects: {
+                image: -20,
+            },
+        },
+        conditions: [
+            ['hafganot', {
+                greaterThan: 2,
+            }],
+        ],
+    },
+    '1410': {
+        character: characters.consultant,
+        text: 'אדוני, העיתונים השונים מלבים את המחאה. מה לעשות עם התקשורת?',
+        left: {
+            text: 'סגור אותה',
+            next: '1420',
+            unlockCardsForever: ['1420'],
+            effects: {
+                image: 30,
+            },
+        },
+        right: {
+            text: 'פגוש אותה',
+            effects: {
+                economy: 5,
+                image: -15,
+            },
+        },
+        locked: true,
+    },
+    '1420': {
+        character: characters.news,
+        text: 'בג"צ: ההחלטה של ראש הממשלה לסגור עיתונים - לא חוקית',
+        left: {
+            text: 'החלף שופטים',
+            unlockCardsForever: ['1430'],
+            afterText: 'בכנס של לשכת עורכי הדין נשמעים לחשושים מודאגים על מותו המתקרב של שלטון החוק במדינה.',
+            effects: {
+                image: 5,
+            },
+        },
+        right: {
+            text: 'אפשר תקשורת חופשית',
+            effects: {
+                image: -5,
+            },
+        },
+        locked: true,
+    },
+    '1430': {
+        character: characters.consultant,
+        text: 'אדוני,  אתה לא פופולארי בפרקליטות בימים אלה ומתבצעת חקירה על קשריך עם הטייקון',
+        left: {
+            text: 'הכל שטויות',
+            next: '1440',
+            effects: {
+                image: 5,
+            },
+        },
+        right: {
+            text: 'הודה באשמה',
+            effects: {
+                image: -100,
+            },
+        },
+    },
+    '1440': {
+        character: characters.president,
+        text: 'החקירה הפכה לכתב אישום. התפטר עכשיו',
+        left: {
+            text: 'חבק את הכסא',
+            next: '1445',
+        },
+        right: {
+            text: 'צודק',
+            effects: {
+                image: -100,
+            },
+        },
+    },
+    '1445': {
+        character: characters.news,
+        text: 'ראש הממשלה הורשע בקבלת שוחד',
+        left: {
+            text: 'איך...',
+            afterText: 'אתה מורשע ונשלח לכלא לעשרים שנה. השותף שלך לתא, חביב "המקצץ" ברזאני, מכין אחלה פסטה.',
+            effects: {
+                image: -100,
+            },
+        },
+        right: {
+            text: 'מה...',
+            afterText: 'אתה מורשע ונשלח לכלא לעשרים שנה. השותף שלך לתא, חביב "המקצץ" ברזאני, מכין אחלה פסטה.',
+            effects: {
+                image: -100,
+            },
+        },
+    },
+    '1450': {
+        character: characters.news,
+        text: 'ראשי המפגינים לראש הממשלה: הורד את עלות המחייה!',
+        left: {
+            text: 'הבטח ושכח',
+            effects: {
+                economy: 15,
+                add: [
+                    ['hafganot', 1],
+                ],
+            },
+        },
+        right: {
+            text: 'הורד מחירים',
+            unlockCardsForever: ['1460'],
+            effects: {
+                economy: -15,
+            },
+        },
+    },
+    '1460': {
+        character: characters.tycoon,
+        text: 'הורדת המחירים פוגעת בי ובחברים',
+        left: {
+            text: 'צודק. שיחנקו',
+            effects: {
+                economy: 15,
+            },
+        },
+        right: {
+            text: 'מצטער. העם נחנק',
+            next: '1470',
+            effects: {
+                image: 5,
+            },
+        },
+    },
+    '1470': {
+        character: characters.news,
+        text: 'הבחירות יוקדמו בעקבות לחץ בעלי הממון',
+        left: {
+            text: 'איך...',
+            afterText: 'הבחירות מתקיימות כחודש מאוחר יותר. מפלגת "כחול לבן ומלא זהב" של הטייקון הטחון מדיחה אותך מהשלטון',
+            effects: {
+                economy: -100,
+            },
+        },
+        right: {
+            text: 'מה...',
+            afterText: 'הבחירות מתקיימות כחודש מאוחר יותר. מפלגת "כחול לבן ומלא זהב" של הטייקון הטחון מדיחה אותך מהשלטון',
+            effects: {
+                economy: -100,
+            },
+        },
     },
 };
 
