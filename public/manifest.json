@@ -3,8 +3,18 @@
   "name": "השליט",
   "icons": [
     {
-      "src": "favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
+      "src": "favi_48.ico",
+      "sizes": "64x64 48x48",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "favi_32.ico",
+      "sizes": "32x32",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "favi_16.ico",
+      "sizes": "16x16",
       "type": "image/x-icon"
     }
   ],
