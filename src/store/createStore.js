@@ -5,7 +5,10 @@ import middleware from './middleware';
 import { load } from '../utils/StorageHelper';
 
 function shouldLoadFromStorage() {
-    return window.location.search.replace('?', '').split('&').find(query => query.indexOf('load=') > -1);
+    const hasLoadParam = window.location.search.replace('?', '').split('&').find(query => query.indexOf('load=') > -1);
+    // Default in development is don't load.
+    const loadIfHasParam = process.env.NODE_ENV === 'development';
+    return loadIfHasParam === hasLoadParam
 }
 
 export default function() {
