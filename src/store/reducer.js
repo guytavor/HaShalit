@@ -12,6 +12,7 @@ const gameManager = new GameManager(cards, newGameCards, boosters, blameBoosters
 
 const INITIAL_STATE = {
     screen: SCREENS.INTRO,
+    highScore: 0,
     level: {
         card: null,
         metrics: {
@@ -45,19 +46,26 @@ const INITIAL_STATE = {
     interactions: {
         moveCardSide: null,
     },
-    settings: {},
+    settings: {
+        showTutorial: true,
+    },
 };
 
 export default handleActions({
     [actions.init]: (state, {payload}) => {
         log('Init', state);
         // TODO: Start with the intro, then if loading a save, go to the timeline.
-        const { saved } = payload;
-        const nextLevel = gameManager.getNextLevel(saved ? saved.level : state.level);
+        const { saved, highScore, showTutorial } = payload;
+        const nextLevel = gameManager.getNextLevel(saved ? saved.level : state.level, null, showTutorial);
 
         return {
             ...state,
+            highScore,
             level: cloneDeep(nextLevel),
+            settings: {
+                ...state.settings,
+                showTutorial,
+            }
         }
     },
 
@@ -103,9 +111,12 @@ export default handleActions({
     [actions.startOver]: (state) => {
         log('Start over', state);
         const nextLevel = gameManager.startNewGame(state.level);
+        const score = state.level.yearsInPower;
+        const highScore = Math.max(score, state.highScore);
 
         return {
             ...state,
+            highScore,
             screen: SCREENS.GAME,
             level: cloneDeep(nextLevel),
         }

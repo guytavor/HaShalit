@@ -15,12 +15,15 @@ export default function() {
     const store = createStore(reducer, applyMiddleware(middleware));
     const initGame = bindActionCreators(actions.init, store.dispatch);
     let savedState = null;
+    const highScore = load('highScore');
+    const showTutorial = !load('sawTutorial');
+
 
     if (shouldLoadFromStorage()) {
         savedState = load('state');
     }
 
-    initGame({saved: savedState});
+    initGame({saved: savedState, highScore, showTutorial});
 
     return store;
 }
