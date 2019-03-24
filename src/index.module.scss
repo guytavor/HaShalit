@@ -15,7 +15,7 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     direction: rtl;
-    font-family: Shals-Regular, "Courier New", Courier, monospace, sans-serif;
+    font-family: "Shals-Regular", "Courier New", Courier, monospace, sans-serif;
     font-weight: bold;
   }
 
@@ -31,40 +31,5 @@
     justify-content: center;
     overflow: hidden;
     background-color: $bgColor;
-  }
-
-  @font-face {
-    font-family: "MiriamLibre-Bold";
-    src: url("./assets/fonts/MiriamLibre-Bold.ttf") format("truetype");
-    font-weight: bold;
-    font-style: normal;
-  }
-
-  @font-face {
-    font-family: "MiriamLibre-Regular";
-    src: url("./assets/fonts/MiriamLibre-Regular.ttf") format("truetype");
-    font-weight: normal;
-    font-style: normal;
-  }
-
-  @font-face {
-    font-family: "Shals-Black";
-    src: url("./assets/fonts/Shals-Black.ttf") format("opentype");
-    font-weight: bolder;
-    font-style: normal;
-  }
-
-  @font-face {
-    font-family: "Shals-Bold";
-    src: url("./assets/fonts/Shals-Bold.ttf") format("opentype");
-    font-weight: bold;
-    font-style: normal;
-  }
-
-  @font-face {
-    font-family: "Shals-Regular";
-    src: url("./assets/fonts/Shals-Regular.ttf") format("opentype");
-    font-weight: normal;
-    font-style: normal;
   }
 }
