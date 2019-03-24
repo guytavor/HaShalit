@@ -69,26 +69,26 @@
             background-color: rgba(0, 0, 0, 0.15);
             top: -250%;
             right: -50%;
-            transition: top .2s ease; 
+            transition: top .25s ease; 
 
             .answer {
-              bottom: 0;
+              bottom: 20px;
               position: absolute;
-              color: yellow;
               color: $meterFgColor;
               width: 50%;
               right: 25%;
               user-select: none;
               -ms-user-select: none;
               -webkit-user-select: none;
-              padding: 0 30px;
+              padding: 0 25px;
               font-size: 18px;
+              font-weight: normal;
             }
           }
 
           &.left, &.right {
             .answerContainer {
-              top: -176%;
+              top: -180%;
             }
           }
 
@@ -96,6 +96,7 @@
             .answerContainer {
               .answer {
                 text-align: right;
+                padding-left: 25%;
               }
             }
           }
@@ -104,6 +105,7 @@
             .answerContainer {
               .answer {
                 text-align: left;
+                padding-right: 25%;
               }
             }
           }
@@ -112,7 +114,7 @@
             &.left {
               .answerContainer {
                 .answer {
-                  text-align: left;
+                  // text-align: left;
                 }
               }
             }
@@ -120,7 +122,7 @@
             &.right {
               .answerContainer {
                 .answer {
-                  text-align: right;
+                  // text-align: right;
                 }
               }
             }
@@ -130,7 +132,7 @@
             &.left {
               .answerContainer {
                 .answer {
-                  text-align: left;
+                  // text-align: left;
                 }
               }
             }
@@ -138,7 +140,7 @@
             &.right {
               .answerContainer {
                 .answer {
-                  text-align: right;
+                  // text-align: right;
                 }
               }
             }
