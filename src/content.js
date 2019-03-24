@@ -2,14 +2,15 @@
 export default {
     intro: {
         title: 'מלך',
-        description: 'לחץ להתחלה'
+        subTitle: 'כמה שנים תוכל לשמור על השלטון?',
+        description: 'התחל במשחק'
     },
     win: {
-        title: 'ניצחת!',
+        title: 'ניצחת! השלטון שלך לעד!',
         description: 'חיסלת את הדמוקרטיה'
     },
     lose: {
-        title: 'הפסדת',
+        title: 'הודחת מן הכס',
         description: 'לחץ על מנת לנסות שוב'
     },
     footer: {

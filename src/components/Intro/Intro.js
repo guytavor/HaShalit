@@ -8,6 +8,9 @@ export default function({startGame}) {
         <div className={styles.wrapper} onClick={startGame}>
             <div className={styles.content}>
                 <MelechLogo />
+                <p className={styles.subTitle}>
+                    {content.intro.subTitle}
+                </p>
                 <p className={styles.description}>
                     {content.intro.description}
                 </p>
