@@ -17,6 +17,6 @@ export default {
         description: 'לחץ על מנת לנסות שוב'
     },
     footer: {
-        yearsInPower: '${years} שנים בשלטון'
+        yearsInPower: 'שנים בשלטון'
     }
 };

@@ -15,7 +15,10 @@ class Footer extends React.PureComponent {
 
     return (
       <div className={styles.footer}>
-        <div className={styles.yearsInPower}>{content.footer.yearsInPower.replace('${years}', yearsInPower)}</div>
+        <div className={styles.yearsInPower}>
+          <div className={styles.yearNumber}>{yearsInPower}</div>
+          <div className={styles.yearText}>{content.footer.yearsInPower}</div>
+        </div>
         <div className={styles.year}>{currentYear}</div>
       </div>
     );
