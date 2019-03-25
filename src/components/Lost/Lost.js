@@ -1,3 +1,4 @@
+/* eslint-disable no-template-curly-in-string */
 import React from 'react';
 import content from '../../content';
 import styles from './Lost.module.scss';
