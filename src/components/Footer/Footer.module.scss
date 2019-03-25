@@ -12,30 +12,34 @@
   padding: 20px 40px;
 
   .year, .yearsInPower {
-    font-size: 24px;
     color: #f96bb6;
-
-    .yearNumber {
-      font-size: 36px;
-      margin-left: 18px; 
-    }
   }
 
   .year {
     text-align: left;
+    font-size: 32px;
   }
 
   .yearsInPower {
+    font-size: 20px;
     text-align: right;
     display: flex;
     align-items: baseline;
+
+    .yearNumber {
+      font-size: 32px;
+      margin-left: 16px; 
+    }
   }
 
   @media (max-width: $loLoResHeightBreak) { 
     padding: 10px 20px;
     align-items: center;
 
-    .year, .yearsInPower {
+    .year {
+      font-size: 24px;
+    }
+    .yearsInPower {
       font-size: 18px;
 
       .yearNumber {
@@ -46,7 +50,10 @@
   }
   @media (max-width: $tinyScreenBreakpoint) { 
 
-    .year, .yearsInPower {
+    .year {
+      font-size: 18px;
+    }
+    .yearsInPower {
       font-size: 12px;
 
       .yearNumber {
