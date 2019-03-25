@@ -10,8 +10,10 @@ export default {
         description: 'חיסלת את הדמוקרטיה'
     },
     lose: {
-        title: 'הודחת מן הכס. שרדת ${years} שנים',
+        title: 'הולכים לבחירות',
+        subTitle: 'שרדת ${years} שנים',
         highScore: 'שיא חדש!',
+        oldHighScore: 'שיא: ${highScore}',
         description: 'לחץ על מנת לנסות שוב'
     },
     footer: {
