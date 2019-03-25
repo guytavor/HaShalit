@@ -101,13 +101,13 @@ export const cards = {
         // Cards can specify either a character or an image and name.
         img: loseEconomy,
         name: 'הפסדת את השלטון',
-        text: 'הפסדת. המדינה בפשיטת רגל, הבנק העולמי משתלט על ניהול המדינה',
+        text: 'הודחת. המדינה בפשיטת רגל, הבנק העולמי משתלט על ניהול המדינה',
         left: {
-            text: 'איך...?',
+            text: 'תקנו עוגות',
             advanceTime: false,
         },
         right: {
-            text: 'מה...',
+            text: 'אין לחם?',
             advanceTime: false,
         },
         // A locked card can only appear if it is the 'nextCard' of the previous choice or
@@ -118,7 +118,7 @@ export const cards = {
     'securityLose': {
         img: loseSecurity,
         name: 'הפסדת את השלטון',
-        text: 'הפסדת. אתה. חלש. הלכה המדינה',
+        text: 'הודחת. אתה. חלש. הלכה המדינה',
         left: {
             text: 'חלש?',
             advanceTime: false,
@@ -133,7 +133,7 @@ export const cards = {
     'imageLose': {
         img: loseImage,
         name: 'הפסדת את השלטון',
-        text: 'הפסדת. מחאה חברתית - אזלו האוהלים מריקושט',
+        text: 'הודחת. מחאה חברתית - אזלו האוהלים מריקושט',
         left: {
             text: 'איך...?',
             advanceTime: false,
@@ -148,7 +148,7 @@ export const cards = {
     'religionLose': {
         img: loseReligion,
         name: 'הפסדת את השלטון',
-        text: 'הפסדת. החרדים מפילים את הממשלה',
+        text: 'הודחת. החרדים מפילים את הממשלה',
         left: {
             text: 'שמע ישראל...',
             advanceTime: false,
@@ -163,7 +163,7 @@ export const cards = {
     'outOfCards': {
         img: outOfCards,
         name: 'הפסדת את השלטון',
-        text: 'הפסדת. הקדנציה שלך נגמרה מבלי שהשארת חותם. הולכים לבחירות',
+        text: 'זהו. הקדנציה שלך נגמרה מבלי שהשארת חותם. הולכים לבחירות',
         left: {
             text: 'איך...?',
             advanceTime: false,
