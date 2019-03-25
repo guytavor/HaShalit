@@ -19,10 +19,10 @@ function Effects({ points, willEffect = {} }) {
     <div className={styles.effectsContainer}>
       {
         Object.keys(EFFECTS).map(type => (
-          <div className={styles.iconContainer}>
-          <Effect points={points[type]} willEffect={willEffect[type]}>
-            {React.createElement(EFFECTS[type], {color: colors.stripColor})}
-          </Effect>
+          <div className={styles.iconContainer} key={type}>
+            <Effect points={points[type]} willEffect={willEffect[type]}>
+              {React.createElement(EFFECTS[type], {color: colors.stripColor})}
+            </Effect>
         </div>
         ))
       }
