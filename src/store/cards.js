@@ -86,6 +86,14 @@ export const cards = {
         img: victory,
         name: 'ניצחון!',
         text: 'הבחירות בוטלו! השלטון שלך לעולמים!',
+        left: {
+            text: 'יש!',
+            advanceTime: false,
+        },
+        right: {
+            text: 'יש!',
+            advanceTime: false,
+        },
         locked: true,
         win: true,
     },
@@ -93,7 +101,15 @@ export const cards = {
         // Cards can specify either a character or an image and name.
         img: loseEconomy,
         name: 'הפסדת את השלטון',
-        text: 'המדינה בפשיטת רגל, הבנק העולמי משתלט על ניהול המדינה',
+        text: 'הפסדת. המדינה בפשיטת רגל, הבנק העולמי משתלט על ניהול המדינה',
+        left: {
+            text: 'איך...?',
+            advanceTime: false,
+        },
+        right: {
+            text: 'מה...',
+            advanceTime: false,
+        },
         // A locked card can only appear if it is the 'nextCard' of the previous choice or
         // if it is unlocked at 'unlockCards' (or if it is hard coded like the lose cards).
         locked: true,
@@ -102,28 +118,60 @@ export const cards = {
     'securityLose': {
         img: loseSecurity,
         name: 'הפסדת את השלטון',
-        text: 'אתה. חלש. הלכה המדינה',
+        text: 'הפסדת. אתה. חלש. הלכה המדינה',
+        left: {
+            text: 'חלש?',
+            advanceTime: false,
+        },
+        right: {
+            text: 'אני?',
+            advanceTime: false,
+        },
         locked: true,
         lose: true,
     },
     'imageLose': {
         img: loseImage,
         name: 'הפסדת את השלטון',
-        text: 'מחאה חברתית - אזלו האוהלים מריקושט',
+        text: 'הפסדת. מחאה חברתית - אזלו האוהלים מריקושט',
+        left: {
+            text: 'איך...?',
+            advanceTime: false,
+        },
+        right: {
+            text: 'מה...',
+            advanceTime: false,
+        },
         locked: true,
         lose: true,
     },
     'religionLose': {
         img: loseReligion,
         name: 'הפסדת את השלטון',
-        text: 'החרדים מפילים את הממשלה',
+        text: 'הפסדת. החרדים מפילים את הממשלה',
+        left: {
+            text: 'שמע ישראל...',
+            advanceTime: false,
+        },
+        right: {
+            text: 'אוי ויי...',
+            advanceTime: false,
+        },
         locked: true,
         lose: true,
     },
     'outOfCards': {
         img: outOfCards,
         name: 'הפסדת את השלטון',
-        text: 'הקדנציה שלך נגמרה מבלי שהשארת חותם. הולכים לבחירות',
+        text: 'הפסדת. הקדנציה שלך נגמרה מבלי שהשארת חותם. הולכים לבחירות',
+        left: {
+            text: 'איך...?',
+            advanceTime: false,
+        },
+        right: {
+            text: 'מה...',
+            advanceTime: false,
+        },
         locked: true,
         lose: true,
     },
@@ -447,6 +495,7 @@ export const cards = {
         text: 'ביטול הבחירות עד לשיקום הדמוקרטיה?',
         left: {
             text: 'הגזמת',
+            unlockCardsForever: ['1500','1600'],
             effects: {
                 image: -10,
             },
@@ -699,7 +748,7 @@ export const cards = {
         character: characters.consultant,
         text: 'אם תאשים את החרדים במה שקורה במדינה, יהיה קל יותר למשול',
         left: {
-            text: 'החרדים אזרחים',
+            text: 'לא, החרדים הם אחים',
             effects: {
                 economy: 30,
                 image: -50,
@@ -707,7 +756,7 @@ export const cards = {
             },
         },
         right: {
-            text: 'החרדים טפילים',
+            text: 'נו, שויין...',
             effects: {
                 economy: 30,
                 image: 30,
@@ -1005,7 +1054,6 @@ export const cards = {
         left: {
             text: 'דאג לזקנה במסדרון',
             next: '253',
-            unlockCards: ['400'],
             unlockCardsForever: ['253'],
             effects: {
                 economy: -30,
@@ -1596,13 +1644,15 @@ export const cards = {
         left: {
             text: 'שישבו בשקט',
             effects: {
-                image: -25,
+                economy: 30,
+                security: -20,
             },
         },
         right: {
             text: 'אזרים מיד',
             effects: {
-                economy: -5,
+                economy: -30,
+                security: 20,
             },
         },
         locked: true,
@@ -1926,40 +1976,23 @@ export const cards = {
             }],
         ],
     },
-    /*'800': {
+    '800': {
         character: characters.news,
-        text: 'יש התפרעויות בהר הבית',
+        text: 'צעירים ממוצא פיסטוקי מוחים על הזנחת הכפרים שלהם. חלק מההפגנות גלשו להפרות סדר',
         left: {
-            text: 'טפלו בזה',
+            text: 'טפל בתשתיות',
             effects: {
-                security: 30,
+                economy: -20,
+                security: 10,
                 image: -30,
             },
         },
         right: {
-            text: 'הווקף אשם!',
+            text: 'הוואקף הסית אותם!',
             effects: {
+                economy: 10,
                 security: 30,
-            },
-        },
-    },*/
-    '810': {
-        character: characters.news,
-        text: 'התפרעויות של מלפפונים חמוצים בשכנתינו כבושיה',
-        left: {
-            text: 'נפיל את שלטון הטרור',
-            afterText: 'ארגון הטרור של כבושיה חוסל. הנשק נאסף, ונראה שיש סיכוי לשלום',
-            effects: {
-                security: -30,
-                image: -30,
-            },
-        },
-        right: {
-            text: 'העבירו להם מעטפות כסף',
-            afterText: 'חדש בספרייה: ״הטרור: כיצד יוכל המערב לנצח״. רב מכר',
-            effects: {
-                security: 20,
-                image: 30,
+                image: 20,
             },
         },
     },
@@ -2354,7 +2387,7 @@ export const cards = {
         character: characters.news,
         text: 'תלמידי המדינה במקום האחרון ב- OECD במתמטיקה, אנגלית והיגיינה אישית',
         left: {
-            text: 'מטומטמים לא צריכים לעשות הרבה ילדים',
+            text: 'אשמתי שמטומטמים עושים הרבה ילדים?',
             effects: {
                 economy: 10,
                 image: -10,
@@ -2609,7 +2642,7 @@ export const cards = {
         },
         conditions: [
             ['bad', {
-                greaterThan: 1,
+                greaterThan: 0,
             }],
         ],
     },
@@ -2811,6 +2844,67 @@ export const cards = {
             afterText: 'הבחירות מתקיימות כחודש מאוחר יותר. מפלגת "כחול לבן ומלא זהב" של הטייקון הטחון מדיחה אותך מהשלטון',
             effects: {
                 economy: -100,
+            },
+        },
+        locked: true,
+    },
+    '1500': {
+        character: characters.foreignAmbassador,
+        text: 'כבודו, המודיעין של פיסטוקיה מזהיר מפני הפיכה אפשרית אצלכם',
+        left: {
+            text: 'התעלם מהדברים',
+            effects: {
+                security: -20,
+            },
+        },
+        right: {
+            text: 'בצע מעצרים',
+            effects: {
+                security: 20,
+                image: 20,
+            },
+        },
+        locked: true,
+        conditions: [
+            ['madePeace ', {
+                greaterThan: 0,
+            }],
+        ],
+    },
+    '1600': {
+        character: characters.general,
+        text: 'רוה"מ, אני מסיים תפקיד בקרוב ובמפלגה שלך יש רק 423 גנרלים. אצטרף תמורת הבטחה להיות היורש ',
+        left: {
+            text: 'לא. פוליטית אתה טוראי',
+            next: '1700',
+            effects: {
+                security: -20,
+            },
+        },
+        right: {
+            text: 'יש! עוד גנרל!',
+            effects: {
+                security: 10,
+                image: 10,
+            },
+        },
+        locked: true,
+    },
+    '1700': {
+        character: characters.news,
+        text: 'המפכ"ל: הרמטכ"ל הבהיר לי שהצבא איתי.יחד נשים קץ לשלטון ראש הממשלה!',
+        left: {
+            text: 'איך...',
+            afterText: 'כוחות הצבא מבצעים הפיכה ומשתלטים על מוקדי הכוח במדינה. הפסדת את השלטון. המפכ"ל שם אותך על מטוס לרואנדה ומבקש יפה שלא תחזור אף פעם',
+            effects: {
+                security: -100,
+            },
+        },
+        right: {
+            text: 'מה...',
+            afterText: 'כוחות הצבא מבצעים הפיכה ומשתלטים על מוקדי הכוח במדינה. הפסדת את השלטון. המפכ"ל שם אותך על מטוס לרואנדה ומבקש יפה שלא תחזור אף פעם',
+            effects: {
+                security: -100,
             },
         },
         locked: true,
