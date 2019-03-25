@@ -79,7 +79,7 @@ function Card({ card, cardSide, onSelectAnswer, onCardMove, prevDir }) {
         const isMovedToAnswer = Math.abs(xDelta) > 20;
         const dir = Math.sign(xDelta);
 
-        if (isMovedToAnswer) {
+        if (!isInCenter && down) {
             onCardMove({side: SIDES[dir]});
         } else {
             onCardMove({side: null});
