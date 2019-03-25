@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { useSpring, useTransition, animated, interpolate } from 'react-spring'
 import { useGesture } from 'react-with-gesture'
 import get from 'lodash/get';
+import cardFrontBg from '../../assets/cards/card_front_bright.svg';
 import styles from './Card.module.scss'
 
 const from = { x: 0, y: 0, rot: 0, scale: 1 };
@@ -71,7 +72,7 @@ function Card({ card, cardSide, onSelectAnswer, onCardMove, prevDir, afterText }
         leave: { t: 1 },
         config: TRANSITION_CONFIG,
     });
-    const cardImg = afterText ? undefined : get(card, 'character.img', get(card, 'img', ''));
+    const cardImg = afterText ? cardFrontBg : get(card, 'character.img', get(card, 'img', ''));
     let answer = getAnswer(card, cardSide);
 
     const actionHandlers = useGesture(({ down, delta: [xDelta, yDelta] }) => {
