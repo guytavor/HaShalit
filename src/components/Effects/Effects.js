@@ -7,29 +7,25 @@ import Effect from "../Effect/Effect";
 import styles from "./Effects.module.scss";
 import colors from "../../common.scss";
 
+const EFFECTS = {
+  religion: ReligionIcon,
+  image: ImageIcon,
+  security: SecurityIcon,
+  economy: EconomyIcon,
+}
+
 function Effects({ points, willEffect = {} }) {
   return (
     <div className={styles.effectsContainer}>
-      <div className={styles.iconContainer}>
-        <Effect points={points.religion} willEffect={willEffect.religion}>
-          <ReligionIcon color={colors.stripColor} />
-        </Effect>
-      </div>
-      <div className={styles.iconContainer}>
-        <Effect points={points.image} willEffect={willEffect.image}>
-          <ImageIcon color={colors.stripColor} />
-        </Effect>
-      </div>
-      <div className={styles.iconContainer}>
-        <Effect points={points.security} willEffect={willEffect.security}>
-          <SecurityIcon color={colors.stripColor} />
-        </Effect>
-      </div>
-      <div className={styles.iconContainer}>
-        <Effect points={points.economy} willEffect={willEffect.economy}>
-          <EconomyIcon color={colors.stripColor} />
-        </Effect>
-      </div>
+      {
+        Object.keys(EFFECTS).map(type => (
+          <div className={styles.iconContainer}>
+          <Effect points={points[type]} willEffect={willEffect[type]}>
+            {React.createElement(EFFECTS[type], {color: colors.stripColor})}
+          </Effect>
+        </div>
+        ))
+      }
     </div>
   );
 }

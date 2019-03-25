@@ -61,7 +61,7 @@ function flipScale(item, t) {
     return value * 0.25 + 1;
 }
 
-function Card({ card, cardSide, onSelectAnswer, onCardMove, prevDir }) {
+function Card({ card, cardSide, onSelectAnswer, onCardMove, prevDir, afterText }) {
     const [gone] = useState(() => new Set());
     const [enter] = useState(true);
     const [props, set] = useSpring(() => ({ from }));
@@ -71,7 +71,7 @@ function Card({ card, cardSide, onSelectAnswer, onCardMove, prevDir }) {
         leave: { t: 1 },
         config: TRANSITION_CONFIG,
     });
-    const cardImg = get(card, 'character.img', get(card, 'img', ''));
+    const cardImg = afterText ? undefined : get(card, 'character.img', get(card, 'img', ''));
     let answer = getAnswer(card, cardSide);
 
     const actionHandlers = useGesture(({ down, delta: [xDelta, yDelta] }) => {
@@ -155,11 +155,12 @@ function Card({ card, cardSide, onSelectAnswer, onCardMove, prevDir }) {
                                     t => `translateX(${flipTranslateX(item, t, prevDir)}px) rotateY(${flipRotateY(item, t, prevDir, true)}deg) scale(${flipScale(item, t)})`),
                                 backgroundImage: `url(${cardImg})`
                             }}>
-                                <div className={`${answer && cardSide ? styles[cardSide] : ''} ${styles.answerFixer}`}>
+                                <div className={`${!afterText && answer && cardSide ? styles[cardSide] : ''} ${styles.answerFixer}`}>
                                     <animated.div className={styles.answerContainer} style={{ transform: interpolate([props.rot, props.scale], negTrans) }}>
                                         <animated.h2 className={styles.answer} style={{transform: interpolate([props.rot], textTrans)}}>{answer}</animated.h2>
                                     </animated.div>
                                 </div>
+                                <div className={styles.afterText}>{afterText}</div>
                             </animated.div>
                         ]
                     ))}

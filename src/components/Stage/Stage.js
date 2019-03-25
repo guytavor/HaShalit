@@ -24,7 +24,7 @@ class Stage extends React.PureComponent {
     }
 
     _getContent() {
-        const { screen, card, metrics, interactions, selectAnswer, moveCard, startGame, startOver, currentYear, yearsInPower, highScore } = this.props;
+        const { screen, card, metrics, interactions, afterText, selectAnswer, moveCard, startGame, startOver, currentYear, yearsInPower, highScore } = this.props;
         let content = null;
 
         switch(screen) {
@@ -43,6 +43,7 @@ class Stage extends React.PureComponent {
                     <React.Fragment>
                         <div className={styles.header}><Header metrics={metrics} card={card} interactions={interactions}/></div>
                         <div className={styles.content}><DeckContainer card={card} 
+                                        afterText={afterText}
                                        interactions={interactions}
                                        onSelectAnswer={selectAnswer}
                                        onMoveCard={moveCard} /></div>
@@ -72,6 +73,7 @@ const mapStateToProps = state => {
         interactions: state.interactions,
         currentYear: state.level.year,
         yearsInPower: state.level.yearsInPower,
+        afterText: state.level.afterText,
     };
 };
 

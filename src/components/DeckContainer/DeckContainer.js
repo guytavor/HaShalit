@@ -7,6 +7,7 @@ import styles from './DeckContainer.module.scss';
 export default class DeckContainer extends React.PureComponent {
     static propTypes = {
         card: PropTypes.object,
+        afterText: PropTypes.string,
         interactions: PropTypes.object,
         onSelectAnswer: PropTypes.func,
         onMoveCard: PropTypes.func,

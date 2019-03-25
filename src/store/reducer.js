@@ -1,4 +1,5 @@
 import { handleActions } from 'redux-actions';
+import set from 'lodash/set';
 import cloneDeep from 'lodash/cloneDeep';
 import { log } from '../utils/Logger';
 import actions from './actions';
@@ -6,6 +7,13 @@ import {cards, newGameCards} from './cards';
 import {boosters, blameBoosters} from './boosters';
 import GameManager from './GameManager';
 import { SCREENS } from '../utils/constants';
+
+const ZERO_METRICS = {
+    economy: 0,
+    security: 0,
+    image: 0,
+    religion: 0,
+};
 
 export const DEFAULT_METRICS_POINTS = 50;
 const gameManager = new GameManager(cards, newGameCards, boosters, blameBoosters);
@@ -42,6 +50,7 @@ const INITIAL_STATE = {
             //peace: 2023,
         },
         games: 0,
+        afterText: null,
     },
     interactions: {
         moveCardSide: null,
@@ -72,20 +81,44 @@ export default handleActions({
     [actions.selectAnswer]: (state, {payload}) => {
         log('Select answer', state);
         const { side } = payload;
+        const answer = state.level.card[side];
         const nextLevel = gameManager.getNextLevel(state.level, side);
-        let screen = state.screen;
+        let newState = state;
 
-        if (nextLevel.hasWon) {
-            screen = SCREENS.WON;
-        } else if (nextLevel.hasLost) {
-            screen = SCREENS.LOST;
+        if (!state.level.afterText && answer && answer.afterText) {
+            const clonedLevel = cloneDeep(state.level);
+            clonedLevel.card.id += 'afterText';
+            set(clonedLevel, 'card.left.effects', ZERO_METRICS);
+            set(clonedLevel, 'card.right.effects', ZERO_METRICS);
+            clonedLevel.metrics = nextLevel.metrics;
+
+            newState = {
+                ...state,
+                level: {
+                    ...clonedLevel,
+                    afterText: answer.afterText
+                }
+            }
+        } else {
+            let screen = state.screen;
+    
+            if (nextLevel.hasWon) {
+                screen = SCREENS.WON;
+            } else if (nextLevel.hasLost) {
+                screen = SCREENS.LOST;
+            }
+
+            newState = {
+                ...state,
+                screen,
+                level: {
+                    ...cloneDeep(nextLevel),
+                    afterText: null,
+                },
+            }
         }
         
-        return {
-            ...state,
-            screen,
-            level: cloneDeep(nextLevel),
-        }
+        return newState;
     },
 
     [actions.moveCard]: (state, {payload}) => {

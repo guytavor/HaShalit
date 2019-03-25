@@ -12,6 +12,7 @@ export default class Deck extends React.PureComponent {
 
     static propTypes = {
         card: PropTypes.object,
+        afterText: PropTypes.string,
         interactions: PropTypes.object, 
         onSelectAnswer: PropTypes.func, 
         onMoveCard: PropTypes.func
@@ -19,7 +20,7 @@ export default class Deck extends React.PureComponent {
 
     render() {
         const { prevFlipDirection } = this.state;
-        const { card, interactions, onMoveCard } = this.props;
+        const { card, interactions, onMoveCard, afterText } = this.props;
 
         return (
             <div className={styles.wrapper}>
@@ -29,6 +30,7 @@ export default class Deck extends React.PureComponent {
                         {card ? <Card key={card.id}
                             prevDir={prevFlipDirection}
                             card={card}
+                            afterText={afterText}
                             cardSide={interactions.moveCardSide}
                             onCardMove={onMoveCard}
                             onSelectAnswer={this._onSelectAnswer} /> : null}
