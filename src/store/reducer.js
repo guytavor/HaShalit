@@ -2,6 +2,7 @@ import { handleActions } from 'redux-actions';
 import set from 'lodash/set';
 import cloneDeep from 'lodash/cloneDeep';
 import { log } from '../utils/Logger';
+import { getQueryParam } from '../utils/common';
 import actions from './actions';
 import {cards, newGameCards} from './cards';
 import {boosters, blameBoosters} from './boosters';
@@ -16,7 +17,7 @@ const ZERO_METRICS = {
 };
 
 export const DEFAULT_METRICS_POINTS = 50;
-const gameManager = new GameManager(cards, newGameCards, boosters, blameBoosters);
+const gameManager = new GameManager({cards, newGameCards, boosters, blameBoosters, startAt: getQueryParam('start')});
 
 const INITIAL_STATE = {
     screen: SCREENS.INTRO,

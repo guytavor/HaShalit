@@ -25,7 +25,8 @@ const validationFunctions = {
 const persistentParameters = ['bad', 'madePeace', 'peaceTalks', 'tycoon'];
 
 export default class GameManager {
-    constructor(cards, newGameCards, boosters, blameBoosters) {
+    constructor({cards, newGameCards, boosters, blameBoosters, startAt}) {
+        this._startAt = startAt;
         this._cards = cards;
         this._newGameCards = newGameCards;
         this._boosters = boosters;
@@ -77,7 +78,7 @@ export default class GameManager {
     }
 
     getNextLevel(state, selectedSide, showTutorial) {
-        let nextCardId = showTutorial ? '1' : '10';
+        let nextCardId = this._startAt || (showTutorial ? '1' : '10');
         const card = state ? state.card : null;
 
         if (!card) {
