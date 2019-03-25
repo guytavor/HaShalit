@@ -85,7 +85,7 @@ export const cards = {
     'victory': {
         img: victory,
         name: 'ניצחון!',
-        text: 'הבחירות בוטלו! השלטון שלך לעולמים!',
+        text: 'ניצחת! הבחירות בוטלו! השלטון שלך לעולמים!',
         left: {
             text: 'יש!',
             advanceTime: false,
@@ -103,7 +103,7 @@ export const cards = {
         name: 'הפסדת את השלטון',
         text: 'הודחת. המדינה בפשיטת רגל, הבנק העולמי משתלט על ניהול המדינה',
         left: {
-            text: 'תקנו עוגות',
+            text: 'תזמיני להם פיצות!',
             advanceTime: false,
         },
         right: {
