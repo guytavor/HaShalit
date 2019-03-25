@@ -8,7 +8,7 @@
   justify-content: center;
   align-items: center;
 
-  @media (max-height: $loLoResHeightBreak) {
+  @media all and (max-height: $loLoResHeightBreak) {
     padding-top: 10px;
   }
 }

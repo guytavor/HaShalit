@@ -64,4 +64,20 @@
         width: 30px;
         height: 30px;
     }
+
+    @media (max-height: $loLoLoResHeightBreak) {
+        width: 20px;
+        height: 20px;
+
+        .ball {
+            &.smallBall {
+                width: 4px;
+                height: 4px;
+            }
+            &.bigBall {
+                width: 6px;
+                height: 6px;
+            }
+        }
+    }
 }

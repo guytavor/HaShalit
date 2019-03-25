@@ -6,6 +6,7 @@
   align-items: flex-start;
   width: 100%;
   background-color: $bgColor;
+  position: relative;
   
   &.intro {
     background-color: $bgColorIntro;
@@ -47,7 +48,7 @@
 
   .strip {
     z-index: 0;
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
@@ -86,6 +87,26 @@
 
     .strip:not(.footer) {
       height: $headerLoLoResHeight;
+    }
+  
+    .strip.footer {
+      height: $footerLoResHeight;
+    }
+  }
+
+  @media (max-height: $loLoLoResHeightBreak) {
+    .stage {
+      .header {
+        height: $headerLoLoLoResHeight;
+      }
+
+      .footer {
+        height: $footerLoResHeight;
+      }
+    }
+
+    .strip:not(.footer) {
+      height: $headerLoLoLoResHeight;
     }
   
     .strip.footer {

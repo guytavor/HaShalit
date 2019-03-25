@@ -32,8 +32,8 @@
     }
   }
 
-  @media (max-width: $loLoResHeightBreak) { 
-    padding: 10px 20px;
+  @media all and (max-Height: $loLoResHeightBreak) { 
+    padding: 10px 20px 20px;
     align-items: center;
 
     .year {
@@ -48,7 +48,7 @@
       }
     }
   }
-  @media (max-width: $tinyScreenBreakpoint) { 
+  @media all and (max-width: $tinyScreenBreakpoint) { 
 
     .year {
       font-size: 18px;

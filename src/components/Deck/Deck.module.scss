@@ -34,4 +34,9 @@
     width: $cardLoLoResDimension;
     height: $cardLoLoResDimension;
   }
+
+  @media all and (max-height: $loLoLoResHeightBreak) {
+    width: $cardLoLoLoResDimension;
+    height: $cardLoLoLoResDimension;
+  }
 }
