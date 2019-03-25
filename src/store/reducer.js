@@ -144,7 +144,7 @@ export default handleActions({
 
     [actions.startOver]: (state) => {
         log('Start over', state);
-        const nextLevel = gameManager.startNewGame(state.level);
+        const nextLevel = gameManager.startNewGame(cloneDeep(state.level));
         const score = state.level.yearsInPower;
         const highScore = Math.max(score, state.highScore);
 
