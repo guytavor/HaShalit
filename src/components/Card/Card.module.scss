@@ -121,6 +121,13 @@
           @media (max-width: $loLoResHeightBreak) {
             &.left, &.right {
               .answerContainer {
+                // top: -160%;
+              }
+            }
+          }
+          @media (max-width: $tinyScreenBreakpoint) {
+            &.left, &.right {
+              .answerContainer {
                 top: -160%;
               }
             }
