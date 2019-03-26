@@ -10,8 +10,8 @@ export default {
         thanks: 'תודות רבות ל-${split}reigns${split} על ההשראה'
     },
     win: {
-        title: 'ניצחת! השלטון שלך לעד!',
-        description: 'חיסלת את הדמוקרטיה'
+        title: 'שלטת ${years} שנים',
+        link: 'לחץ שוב לשחק'
     },
     lose: {
         title: 'הולכים לבחירות',

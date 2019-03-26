@@ -33,7 +33,7 @@ class Stage extends React.PureComponent {
                 content = <Intro startGame={startGame} />
                 break;
             case SCREENS.WON:
-                content = <Win startOver={startOver} />
+                content = <Win startOver={startOver} yearsInPower={yearsInPower}/>
                 break;
             case SCREENS.LOST:
                 content = <Lost startOver={startOver} highScore={highScore} score={yearsInPower}/>
