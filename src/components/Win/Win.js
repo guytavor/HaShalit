@@ -1,3 +1,4 @@
+/* eslint-disable no-template-curly-in-string */
 import React from 'react';
 import content from '../../content';
 import { ReactComponent as WinSvg } from '../../assets/cards/Reign_logo_win_icon.svg';

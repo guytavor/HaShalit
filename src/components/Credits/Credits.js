@@ -1,9 +1,10 @@
+/* eslint-disable no-template-curly-in-string */
 import React from 'react';
 import contributors from '../../contributors.json';
 import styles from './Credits.module.scss';
 import content from '../../content.js';
 
-function sortByLastName (a, b) {
+function sortByLastName(a, b) {
     try {
         return -1 * a.lastName.localeCompare(b.lastName, 'he', {sensitivity: 'base'});
     } catch(e) {}
