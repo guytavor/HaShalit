@@ -9,10 +9,12 @@ const CREDITS_TIMEOUT = 3000;
 
 const handlers = {
     [actions.init]: (store) => {
-        const gotoIntro = bindActionCreators(actions.gotoIntro, store.dispatch);
+        const gotoIntro = () => {
+            document.removeEventListener('click', onClick);
+            bindActionCreators(actions.gotoIntro, store.dispatch)();
+        }
 
         const timer = setTimeout(() => {
-            document.removeEventListener('click', onClick);
             gotoIntro();
         }, CREDITS_TIMEOUT);
 
