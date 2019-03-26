@@ -32,3 +32,10 @@
   font-weight: normal;
   font-style: normal;
 }
+
+@font-face {
+  font-family: "Hazit-Narrow";
+  src: url("./assets/fonts/Hazit-Narrow.ttf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}

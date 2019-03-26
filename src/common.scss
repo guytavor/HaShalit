@@ -23,6 +23,9 @@ $meterBgColor: #5783a0;
 $meterFgColor: white;
 // $meterFgColor: rgb(245, 243, 179);
 
+$lostBgColor: #F37A20;
+$lostNewScoreBgColor: $bgColorIntro;
+
 @mixin backCard() {
     background-image: url("../../assets/cards/game_cardBack.svg");
     background-position: center center;

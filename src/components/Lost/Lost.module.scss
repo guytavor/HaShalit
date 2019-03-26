@@ -1,20 +1,87 @@
+@import "../../common.scss";
+
 .wrapper {
     width: 100%;
     height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+    background-color: $lostBgColor;
+
+    &.newScore {
+        background-color: $lostNewScoreBgColor;
+        .title {
+            color: $lostNewScoreBgColor;
+        }
+    }
+ 
+    &.lost {
+        background-color: $lostBgColor;
+        .title {
+            color: $lostBgColor;
+            letter-spacing: 10px;
+        }
+    }
+
+    .title {
+        width: 100%;
+        height: 22vh;
+        text-align: center;
+        vertical-align: middle;
+        line-height: 22vh;     
+        background-color: white;
+        color: $lostBgColor;
+        font-size: 22vh;
+        font-family: "Hazit-Narrow";
+        font-weight: normal;
+
+    }
 
     .content {
+        flex: 1;
         text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding: 4vh 20px;
+        position: relative;
 
-        .title {
-            font-size: 65px;
+        .scoreContainer, .highScoreContainer {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            letter-spacing: -0.5px;
+        
+            .scoreBegin, .highScoreBegin {
+                margin-left: 20px; 
+            }
+
+            .scoreResult, .highScoreResult {
+                color: white;
+            }
+
+            .scoreBegin, .scoreResult {
+                margin-block-end: auto;
+            }
         }
     
-        .description {
-            font-size: 35px;
+        .highScoreMessage {
+            color: white;
+            font-size: 24px;
+        }
+
+        .startOver {
+            font-size: 16px;
+            color: white;
+            cursor: pointer;
+        }
+
+        .message {
+            align-self: flex-end;
+            max-width: 300px;
+            bottom: 20px;
+            position: absolute;
         }
     }
 }

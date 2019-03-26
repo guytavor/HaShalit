@@ -14,11 +14,15 @@ export default {
         link: 'לחץ שוב לשחק'
     },
     lose: {
-        title: 'הולכים לבחירות',
-        subTitle: 'שרדת ${years} שנים',
-        highScore: 'שיא חדש!',
-        oldHighScore: 'שיא: ${highScore}',
-        description: 'לחץ על מנת לנסות שוב'
+        title: 'הודחת',
+        titleNewScore: 'שיא חדש!',
+        scoreBegin: 'שלטת',  
+        scoreResult: '${years} שנים',  
+        highScoreBegin: 'השיא שלך',  
+        highScoreResult: '${years} שנים',
+        highScoreMessage: ['סחתיין עליך', 'וואלה, יצאת מלך', 'האמת, ריגשת', 'פששש אתה'],
+        startOver: 'לחץ כדי לנסות לשוב לשלטון',
+        message: 'נותרו עוד ${days} ימים לבחירות. יאללה לך להצביע!',
     },
     footer: {
         yearsInPower: 'שנים בשלטון'
