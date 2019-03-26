@@ -7,4 +7,6 @@ if (process.env.NODE_ENV === 'development') {
 }
 
 export const log = _log;
-export const err = console.error.bind(console);
+export const err = (...args) => {
+    console.error(...args);
+};
