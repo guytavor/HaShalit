@@ -56,9 +56,6 @@ const INITIAL_STATE = {
     interactions: {
         moveCardSide: null,
     },
-    settings: {
-        showTutorial: true,
-    },
 };
 
 export default handleActions({
@@ -69,19 +66,15 @@ export default handleActions({
         }
     },
     [actions.init]: (state, {payload}) => {
-        log('Init', state);
         // TODO: Start with the intro, then if loading a save, go to the timeline.
-        const { saved, highScore, showTutorial } = payload;
-        const nextLevel = gameManager.getNextLevel(saved ? saved.level : state.level, null, showTutorial);
+        const { saved, highScore } = payload;
+        log('Init', state, saved);
+        const nextLevel = saved ? saved.level : gameManager.getNextLevel(state.level);
 
         return {
             ...state,
             highScore,
             level: cloneDeep(nextLevel),
-            settings: {
-                ...state.settings,
-                showTutorial,
-            }
         }
     },
 

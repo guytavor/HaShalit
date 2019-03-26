@@ -4,6 +4,7 @@ import { save } from '../utils/StorageHelper';
 import { sendEvent, CATEGORIES } from '../utils/AnalyticsHelper';
 import actions from './actions';
 import { SCREENS } from '../utils/constants';
+import cloneDeep from "lodash/cloneDeep";
 
 const CREDITS_TIMEOUT = 3000;
 
@@ -63,15 +64,18 @@ export default store => next => action => {
     }
 
     if (prevState !== newState) {
-        save('state', newState);
+        const savedState = cloneDeep(newState);
+        if (savedState && savedState.level) {
+            const level = savedState.level;
+            level.cardsUnlocked = [...level.cardsUnlocked];
+            level.cardsUnlockedForever = [...level.cardsUnlockedForever];
+            level.playedCards = [...level.playedCards];
+        }
+        save('state', savedState);
     }
 
     if (prevState.screen !== newState.screen) {
         sendEvent(CATEGORIES.SCREEN, 'new screen', newState.screen, get(newState, 'level.card.id', -1));
-    }
-
-    if (get(newState, 'level.card.id') === '10') {
-        save('sawTutorial', true);
     }
 
     if (newState.screen === SCREENS.LOST) {
@@ -80,4 +84,4 @@ export default store => next => action => {
     }
 
     return result;
-  }
+}
