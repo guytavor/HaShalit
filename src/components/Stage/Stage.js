@@ -8,6 +8,7 @@ import DeckContainer from '../DeckContainer/DeckContainer';
 import Intro from '../Intro/Intro';
 import Win from '../Win/Win';
 import Lost from '../Lost/Lost';
+import Credits from '../Credits/Credits';
 import { SCREENS } from '../../utils/constants';
 import styles from "./Stage.module.scss";
 
@@ -37,8 +38,10 @@ class Stage extends React.PureComponent {
             case SCREENS.LOST:
                 content = <Lost startOver={startOver} highScore={highScore} score={yearsInPower}/>
                 break;
-            case SCREENS.GAME:
             case SCREENS.CREDITS:
+                content = <Credits />
+                break;
+            case SCREENS.GAME:
                 content = (
                     <React.Fragment>
                         <div className={styles.header}><Header metrics={metrics} card={card} interactions={interactions}/></div>

@@ -1,10 +1,28 @@
 import get from 'lodash/get';
+import { bindActionCreators } from 'redux';
 import { save } from '../utils/StorageHelper';
 import { sendEvent, CATEGORIES } from '../utils/AnalyticsHelper';
 import actions from './actions';
 import { SCREENS } from '../utils/constants';
 
+const CREDITS_TIMEOUT = 3000;
+
 const handlers = {
+    [actions.init]: (store) => {
+        const gotoIntro = bindActionCreators(actions.gotoIntro, store.dispatch);
+
+        const timer = setTimeout(() => {
+            document.removeEventListener('click', onClick);
+            gotoIntro();
+        }, CREDITS_TIMEOUT);
+
+        const onClick = function () {
+            clearTimeout(timer);
+            gotoIntro();
+        }
+
+        document.addEventListener('click', onClick);
+    },
     [actions.startGame]: () => {
         const isPhone = get(window, 'isMobile.phone', false);
 

@@ -5,6 +5,10 @@ export default {
         subTitle: 'כמה שנים תוכל לשמור על השלטון?',
         description: 'התחל במשחק'
     },
+    credits: {
+        title: 'מלך',
+        thanks: 'תודות רבות ל-${split}reigns${split} על ההשראה'
+    },
     win: {
         title: 'ניצחת! השלטון שלך לעד!',
         description: 'חיסלת את הדמוקרטיה'

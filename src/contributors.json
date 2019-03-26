@@ -1,0 +1,28 @@
+{
+    "list": [
+        {
+            "firstName": "יונתן",
+            "lastName": "אדלר"
+        },
+        {
+            "firstName": "אור",
+            "lastName": "אברהמי"
+        },
+        {
+            "firstName": "ענבל",
+            "lastName": "פינטו"
+        },
+        {
+            "firstName": "עדי",
+            "lastName": "קלאג"
+        },
+        {
+            "firstName": "גיא",
+            "lastName": "תבור"
+        },
+        {
+            "firstName": "עמית",
+            "lastName": "בר-ניר"
+        }
+    ]
+}

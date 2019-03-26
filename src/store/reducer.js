@@ -20,7 +20,7 @@ export const DEFAULT_METRICS_POINTS = 50;
 const gameManager = new GameManager({cards, newGameCards, boosters, blameBoosters, startAt: getQueryParam('start')});
 
 const INITIAL_STATE = {
-    screen: SCREENS.INTRO,
+    screen: SCREENS.CREDITS,
     highScore: 0,
     level: {
         card: null,
@@ -62,6 +62,12 @@ const INITIAL_STATE = {
 };
 
 export default handleActions({
+    [actions.gotoIntro]: (state) => {
+        return {
+            ...state,
+            screen: SCREENS.INTRO
+        }
+    },
     [actions.init]: (state, {payload}) => {
         log('Init', state);
         // TODO: Start with the intro, then if loading a save, go to the timeline.
