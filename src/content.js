@@ -10,9 +10,8 @@ export default {
         thanks: 'תודות רבות ל-${split}reigns${split} על ההשראה'
     },
     win: {
-        title: 'שלטת ${years} שנים',
-        link: 'לחיצה כדי לשחק שוב',
-        credits: 'קרדיטים'
+        title: 'המדינה היא ממלכתך והאזרחים הם נתיניך',
+        subtitle: 'הידד!'
     },
     lose: {
         title: 'הודחת',
