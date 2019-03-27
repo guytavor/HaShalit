@@ -2,8 +2,8 @@
 export default {
     intro: {
         title: 'מלך',
-        subTitle: 'כמה שנים תוכל לשמור על השלטון?',
-        description: 'התחל במשחק'
+        subTitle: 'כמה שנים ניתן לשמור על השלטון?',
+        description: 'לחיצה כדי להתחיל במשחק'
     },
     credits: {
         title: 'מלך',
@@ -11,7 +11,7 @@ export default {
     },
     win: {
         title: 'שלטת ${years} שנים',
-        link: 'לחץ שוב לשחק'
+        link: 'לחיצה כדי לשחק שוב'
     },
     lose: {
         title: 'הודחת',
@@ -20,9 +20,9 @@ export default {
         scoreResult: '${years} שנים',  
         highScoreBegin: 'השיא שלך',  
         highScoreResult: '${years} שנים',
-        highScoreMessage: ['סחתיין עליך', 'וואלה, יצאת מלך', 'האמת, ריגשת', 'פששש אתה'],
-        startOver: 'לחץ כדי לנסות לשוב לשלטון',
-        message: 'נותרו עוד ${days} ימים לבחירות. יאללה לך להצביע!',
+        highScoreMessage: ['סחתיין עליך', 'וואלה, יצאת מלוכה', 'האמת, ריגשת', 'פששש'],
+        startOver: 'לחיצה כדי לנסות לשוב לשלטון',
+        message: 'נותרו עוד ${days} ימים לבחירות. יאללה ללכת להצביע!',
     },
     footer: {
         yearsInPower: 'שנים בשלטון'
