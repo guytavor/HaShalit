@@ -2,7 +2,7 @@ import { createAction } from 'redux-actions';
 
 export default {
     init: createAction('INIT'),
-    gotoIntro: createAction('GOTO_INTRO'),
+    gotoCredits: createAction('GOTO_CREDITS'),
     startGame: createAction('START_GAME'),
     startOver: createAction('START_OVER'),
     selectAnswer: createAction('SELECT_ANSWER'),

@@ -9,23 +9,6 @@ import cloneDeep from "lodash/cloneDeep";
 const CREDITS_TIMEOUT = 3000;
 
 const handlers = {
-    [actions.init]: (store) => {
-        const gotoIntro = () => {
-            document.removeEventListener('click', onClick);
-            bindActionCreators(actions.gotoIntro, store.dispatch)();
-        }
-
-        const timer = setTimeout(() => {
-            gotoIntro();
-        }, CREDITS_TIMEOUT);
-
-        const onClick = function () {
-            clearTimeout(timer);
-            gotoIntro();
-        }
-
-        document.addEventListener('click', onClick);
-    },
     [actions.startGame]: () => {
         const isPhone = get(window, 'isMobile.phone', false);
 

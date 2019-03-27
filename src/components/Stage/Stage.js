@@ -25,7 +25,8 @@ class Stage extends React.PureComponent {
     }
 
     _getContent() {
-        const { screen, card, metrics, interactions, afterText, selectAnswer, moveCard, startGame, startOver, currentYear, yearsInPower, highScore } = this.props;
+        const { screen, card, metrics, interactions, afterText, selectAnswer, moveCard, startGame, 
+            startOver, currentYear, yearsInPower, highScore, gotoCredits } = this.props;
         let content = null;
 
         switch(screen) {
@@ -33,13 +34,13 @@ class Stage extends React.PureComponent {
                 content = <Intro startGame={startGame} />
                 break;
             case SCREENS.WON:
-                content = <Win startOver={startOver} yearsInPower={yearsInPower}/>
+                content = <Win startOver={startOver} yearsInPower={yearsInPower} gotoCredits={gotoCredits}/>
                 break;
             case SCREENS.LOST:
-                content = <Lost startOver={startOver} highScore={highScore} score={yearsInPower}/>
+                content = <Lost startOver={startOver} highScore={highScore} score={yearsInPower} gotoCredits={gotoCredits}/>
                 break;
             case SCREENS.CREDITS:
-                content = <Credits />
+                content = <Credits startOver={startOver} />
                 break;
             case SCREENS.GAME:
                 content = (
@@ -86,6 +87,7 @@ const mapDispatchToProps = dispatch => {
         moveCard: actions.moveCard,
         startGame: actions.startGame,
         startOver: actions.startOver,
+        gotoCredits: actions.gotoCredits,
     }, dispatch);
 };
 

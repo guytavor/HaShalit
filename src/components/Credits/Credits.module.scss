@@ -10,6 +10,7 @@
     align-items: center;
     justify-content: flex-start;
     padding-top: 130px;
+    cursor: pointer;
 
     .title {
         font-size: 30px;
@@ -20,6 +21,11 @@
     }
 
     .footer {
-        
+        margin-top: 30px;
+
+        a {
+            text-decoration: underline;
+            color: #f96bb6;
+        }
     }
 }

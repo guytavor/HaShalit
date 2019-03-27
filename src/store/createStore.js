@@ -17,8 +17,8 @@ function shouldLoadFromStorage() {
 export default function() {
     const store = createStore(reducer, applyMiddleware(middleware));
     const initGame = bindActionCreators(actions.init, store.dispatch);
-    let savedState = null;
     const highScore = load('highScore');
+    let savedState = null;
 
     if (shouldLoadFromStorage()) {
         savedState = load('state');

@@ -14,18 +14,18 @@ function sortByLastName(a, b) {
 
 contributors.list.sort(sortByLastName);
 
-export default function () {
+export default function ({startOver}) {
     const footerParts = content.credits.thanks.split('${split}');
 
     return (
-        <div className={styles.wrapper}>
+        <div className={styles.wrapper} onClick={startOver}>
             <h1 className={styles.title}>{content.credits.title}</h1>
             {contributors.list.map((cont, id) => (
                 <div className={styles.name} key={id}>{`${cont.firstName} ${cont.lastName}`}</div>
             ))}
             <div className={styles.footer}>
                 {footerParts[0]}
-                <a href="https://reignsgame.com" target="_blank" rel="noopener noreferrer">
+                <a href="https://reignsgame.com" target="_blank" rel="noopener noreferrer" onClick={e => e.stopPropagation()}>
                 {footerParts[1]}</a>{footerParts[2]}
             </div>
         </div>

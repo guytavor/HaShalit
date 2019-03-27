@@ -8,6 +8,12 @@
     justify-content: space-between;
     align-items: center;
     background-color: $lostBgColor;
+    cursor: pointer;
+    padding-bottom: 38px;
+
+    svg {
+        width: 100%;
+    }
 
     &.newScore {
         background-color: $lostNewScoreBgColor;
@@ -82,6 +88,12 @@
             max-width: 300px;
             bottom: 20px;
             position: absolute;
+        }
+    }
+
+    .gotoCredits {
+        &:hover {
+            text-decoration: underline;
         }
     }
 }

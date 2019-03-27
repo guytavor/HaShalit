@@ -11,7 +11,8 @@ export default {
     },
     win: {
         title: 'שלטת ${years} שנים',
-        link: 'לחיצה כדי לשחק שוב'
+        link: 'לחיצה כדי לשחק שוב',
+        credits: 'קרדיטים'
     },
     lose: {
         title: 'הודחת',
@@ -23,6 +24,7 @@ export default {
         highScoreMessage: ['סחתיין עליך', 'וואלה, יצאת מלוכה', 'האמת, ריגשת', 'פששש'],
         startOver: 'לחיצה כדי לנסות לשוב לשלטון',
         message: 'נותרו עוד ${days} ימים לבחירות. יאללה ללכת להצביע!',
+        credits: 'קרדיטים'
     },
     footer: {
         yearsInPower: 'שנים בשלטון'

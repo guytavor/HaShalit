@@ -20,7 +20,7 @@ export const DEFAULT_METRICS_POINTS = 50;
 const gameManager = new GameManager({cards, newGameCards, boosters, blameBoosters, startAt: getQueryParam('start')});
 
 const INITIAL_STATE = {
-    screen: SCREENS.CREDITS,
+    screen: SCREENS.INTRO,
     highScore: 0,
     level: {
         card: null,
@@ -59,10 +59,10 @@ const INITIAL_STATE = {
 };
 
 export default handleActions({
-    [actions.gotoIntro]: (state) => {
+    [actions.gotoCredits]: (state) => {
         return {
             ...state,
-            screen: SCREENS.INTRO
+            screen: SCREENS.CREDITS
         }
     },
     [actions.init]: (state, {payload}) => {
