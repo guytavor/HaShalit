@@ -1,12 +1,9 @@
 import get from 'lodash/get';
-import { bindActionCreators } from 'redux';
 import { save } from '../utils/StorageHelper';
 import { sendEvent, CATEGORIES } from '../utils/AnalyticsHelper';
 import actions from './actions';
 import { SCREENS } from '../utils/constants';
 import cloneDeep from "lodash/cloneDeep";
-
-const CREDITS_TIMEOUT = 3000;
 
 const handlers = {
     [actions.startGame]: () => {
