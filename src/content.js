@@ -22,7 +22,7 @@ export default {
         highScoreResult: '${years} שנים',
         highScoreMessage: ['סחתיין עליך', 'וואלה, יצאת מלוכה', 'האמת, ריגשת', 'פששש'],
         startOver: 'לחיצה כדי לנסות לשוב לשלטון',
-        message: 'נותרו עוד ${days} ימים לבחירות. יאללה ללכת להצביע!',
+        message: 'נותרו עוד ${days} ימים לבחירות. יאללה לכו להצביע!',
         credits: 'קרדיטים'
     },
     footer: {
