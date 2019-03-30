@@ -17,7 +17,7 @@ function shouldLoadFromStorage() {
 export default function() {
     const store = createStore(reducer, applyMiddleware(middleware));
     const initGame = bindActionCreators(actions.init, store.dispatch);
-    const highScore = load('highScore');
+    const highScore = load('highScore') || 0;
     let savedState = null;
     let screen = getQueryParam('screen');
 

@@ -63,8 +63,12 @@ export default handleActions({
         // TODO: Start with the intro, then if loading a save, go to the timeline.
         const { saved, highScore, screen } = payload;
         log('Init', state, saved);
-        const nextLevel = saved && !screen ? saved.level : gameManager.getNextLevel(state.level);
+        let nextLevel = saved ? saved.level : gameManager.getNextLevel(state.level);
         const newScreen = screen ? SCREENS[screen.toUpperCase()] : state.screen;
+
+        if (screen) {
+            nextLevel = state.level;
+        }
 
         return {
             ...state,
