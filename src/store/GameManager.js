@@ -211,6 +211,7 @@ export default class GameManager {
 
             availableCards.push(id);
         }
+        log('Available cards:', availableCards);
 
         // Give more chance to play unlocked cards to increase causation.
         if (Math.random() < 0.3) {
@@ -248,7 +249,7 @@ export default class GameManager {
                     console.error(
                         'No validation function named:', condition, 'Used in card', id);
                 }
-                const value = parameterCondition[condition];
+                const value = conditions[condition];
                 if (!validationFunction(currentValue, value)) {
                     return false;
                 }
