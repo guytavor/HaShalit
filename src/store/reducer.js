@@ -19,6 +19,9 @@ const ZERO_METRICS = {
 export const DEFAULT_METRICS_POINTS = 50;
 const gameManager = new GameManager({cards, newGameCards, boosters, blameBoosters, startAt: getQueryParam('start')});
 
+// NOTE: Changing this value will invalidate current saved states and reset the game for all players.
+export const GAME_VERSION = 1;
+
 const INITIAL_STATE = {
     screen: null,
     highScore: 0,
@@ -56,6 +59,7 @@ const INITIAL_STATE = {
     interactions: {
         moveCardSide: null,
     },
+    version: GAME_VERSION,
 };
 
 export default handleActions({

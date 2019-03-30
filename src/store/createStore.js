@@ -1,6 +1,6 @@
 import { createStore, applyMiddleware, bindActionCreators } from 'redux';
 import actions from './actions';
-import reducer from './reducer';
+import reducer, {GAME_VERSION} from './reducer';
 import middleware from './middleware';
 import { getQueryParam } from '../utils/common';
 import { load } from '../utils/StorageHelper';
@@ -23,6 +23,9 @@ export default function() {
 
     if (shouldLoadFromStorage()) {
         savedState = load('state');
+        if (savedState && savedState.version !== GAME_VERSION) {
+            savedState = null;
+        }
         if (savedState && savedState.level) {
             const level = savedState.level;
             if (!Array.isArray(level.cardsUnlocked)) {
