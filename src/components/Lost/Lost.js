@@ -1,9 +1,9 @@
 /* eslint-disable no-template-curly-in-string */
 import React from "react";
 import content from "../../content";
-import styles from "./Lost.module.scss";
 import { ReactComponent as LoseIcon } from "../../assets/lost_loseIcon.svg";
 import { ReactComponent as NewScoreIcon } from "../../assets/lost_newScoreIcon.svg";
+import styles from "./Lost.module.scss";
 
 function getDaysTillElection() {
   var oneDay = 24 * 60 * 60 * 1000; // hours*minutes*seconds*milliseconds

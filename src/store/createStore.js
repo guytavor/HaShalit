@@ -19,7 +19,7 @@ export default function() {
     const initGame = bindActionCreators(actions.init, store.dispatch);
     const highScore = load('highScore') || 0;
     let savedState = null;
-    let screen = getQueryParam('screen');
+    let screen = getQueryParam('debug');
 
     if (shouldLoadFromStorage()) {
         savedState = load('state');

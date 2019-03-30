@@ -1,8 +1,8 @@
 /* eslint-disable no-template-curly-in-string */
 import React from 'react';
 import contributors from '../../contributors.json';
-import styles from './Credits.module.scss';
 import content from '../../content.js';
+import styles from './Credits.module.scss';
 
 function sortByLastName(a, b) {
     try {
@@ -16,7 +16,6 @@ contributors.list.sort(sortByLastName);
 
 export default function ({startOver}) {
     const footerParts = content.credits.thanks.split('${split}');
-
     return (
         <div className={styles.wrapper} onClick={startOver}>
             <h1 className={styles.title}>{content.credits.title}</h1>

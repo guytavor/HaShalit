@@ -1,6 +1,6 @@
 import { getQueryParam } from './common';
 
-const isDebug = getQueryParam('debug') === 'true';
+const isDebug = !!getQueryParam('debug');
 
 let _log = () => {};
 

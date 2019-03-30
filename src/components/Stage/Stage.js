@@ -15,6 +15,7 @@ import styles from "./Stage.module.scss";
 class Stage extends React.PureComponent {
     render() {
         const { screen } = this.props;
+
         return (
             <div className={`${styles.wrapper} ${styles[screen.toLowerCase()]}`}>
                 {this._getFauxHeader()}

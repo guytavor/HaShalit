@@ -20,7 +20,7 @@ export const DEFAULT_METRICS_POINTS = 50;
 const gameManager = new GameManager({cards, newGameCards, boosters, blameBoosters, startAt: getQueryParam('start')});
 
 const INITIAL_STATE = {
-    screen: SCREENS.INTRO,
+    screen: null,
     highScore: 0,
     level: {
         card: null,
@@ -63,12 +63,8 @@ export default handleActions({
         // TODO: Start with the intro, then if loading a save, go to the timeline.
         const { saved, highScore, screen } = payload;
         log('Init', state, saved);
-        let nextLevel = saved ? saved.level : gameManager.getNextLevel(state.level);
-        const newScreen = screen ? SCREENS[screen.toUpperCase()] : state.screen;
-
-        if (screen) {
-            nextLevel = state.level;
-        }
+        let nextLevel = screen || !saved ? gameManager.getNextLevel(state.level) : saved.level;
+        const newScreen = (screen && SCREENS[screen.toUpperCase()]) || SCREENS.INTRO;
 
         return {
             ...state,
