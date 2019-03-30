@@ -217,7 +217,16 @@ export default class GameManager {
             // Select card from unlocked cards.
             let unlockedAvailableCards = [];
             for (const id of availableCards) {
-                if (state.cardsUnlocked.has(id) || state.cardsUnlockedForever.has(id)) {
+                if (state.cardsUnlocked.has(id)) {
+                    unlockedAvailableCards.push(id);
+                }
+            }
+            if (unlockedAvailableCards.length > 0) {
+                return chooseRandomFromArray(unlockedAvailableCards);
+            }
+            // No luck. Try the cards that are unlocked forever.
+            for (const id of availableCards) {
+                if (state.cardsUnlockedForever.has(id)) {
                     unlockedAvailableCards.push(id);
                 }
             }
