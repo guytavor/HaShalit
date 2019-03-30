@@ -1,3 +1,5 @@
+@import '../../common.scss';
+
 .wrapper {
     width: 100%;
     height: 100%;
@@ -6,6 +8,7 @@
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    padding: 0 30px;
 
     .title {
         font-size: 65px;
@@ -21,9 +24,29 @@
         width: 100%;
         text-align: center;
         margin-bottom: 15px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
 
     .description {
         font-size: 30px;
+        background-color: $stripColor;
+        height: 60px;
+        padding: 0 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 10px;
+        font-size: 24px;
+        color: white;
+        border: none;
+        box-shadow: 0px 13px 11px rgba(0, 0, 0, 0.3);
+        margin-top: 60px;
+
+        &:active {
+            box-shadow: none;
+        }
     }
 }

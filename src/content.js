@@ -3,7 +3,7 @@ export default {
     intro: {
         title: 'מלך',
         subTitle: 'כמה שנים ניתן לשמור על השלטון?',
-        description: 'לחיצה כדי להתחיל במשחק'
+        description: 'התחלה'
     },
     credits: {
         title: 'מלך',
