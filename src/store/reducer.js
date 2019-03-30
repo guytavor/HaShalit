@@ -65,7 +65,6 @@ export default handleActions({
         log('Init', state, saved);
         const nextLevel = saved ? saved.level : gameManager.getNextLevel(state.level);
         const newScreen = screen ? SCREENS[screen.toUpperCase()] : state.screen;
-        console.log('adler', newScreen);
 
         return {
             ...state,
