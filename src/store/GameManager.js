@@ -211,6 +211,20 @@ export default class GameManager {
 
             availableCards.push(id);
         }
+
+        // Give more chance to play unlocked cards to increase causation.
+        if (Math.random() < 0.3) {
+            // Select card from unlocked cards.
+            let unlockedAvailableCards = [];
+            for (const id of availableCards) {
+                if (state.cardsUnlocked.has(id) || state.cardsUnlockedForever.has(id)) {
+                    unlockedAvailableCards.push(id);
+                }
+            }
+            if (unlockedAvailableCards.length > 0) {
+                return chooseRandomFromArray(unlockedAvailableCards);
+            }
+        }
         return chooseRandomFromArray(availableCards);
     }
 
