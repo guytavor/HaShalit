@@ -26,7 +26,7 @@ export default {
         highScoreBegin: 'השיא שלך',  
         highScoreResult: '${years} שנים',
         highScoreMessage: ['סחתיין עליך', 'וואלה, יצאת מלוכה', 'האמת, ריגשת', 'פששש'],
-        startOver: 'לחיצה כדי לנסות לשוב לשלטון',
+        startOver: 'אתמודד שוב',
         message: 'נותרו עוד ${days} ימים לבחירות. יאללה לכו להצביע!',
         credits: 'קרדיטים'
     },

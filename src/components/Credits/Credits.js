@@ -1,5 +1,6 @@
 /* eslint-disable no-template-curly-in-string */
 import React from 'react';
+import { getDaysTillElection } from '../../utils/common';
 import contributors from '../../contributors.json';
 import content from '../../content.js';
 import styles from './Credits.module.scss';
@@ -27,6 +28,9 @@ export default function ({startOver}) {
                 <a href="https://reignsgame.com" target="_blank" rel="noopener noreferrer" onClick={e => e.stopPropagation()}>
                 {footerParts[1]}</a>{footerParts[2]}
             </div>
+            <p className={styles.message}>
+                {content.lose.message.replace("${days}", getDaysTillElection())}
+            </p>
         </div>
     );
 }

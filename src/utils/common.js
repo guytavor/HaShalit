@@ -20,3 +20,12 @@ export function getQueryParam(name) {
 
     return param;
 }
+
+export function getDaysTillElection() {
+  var oneDay = 24 * 60 * 60 * 1000; // hours*minutes*seconds*milliseconds
+  var electionDate = new Date(new Date().getFullYear(), 3, 9);
+  var playingDate = new Date();
+  return Math.round(
+    Math.abs((playingDate.getTime() - electionDate.getTime()) / oneDay)
+  );
+}
