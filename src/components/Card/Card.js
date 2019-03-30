@@ -75,6 +75,8 @@ function Card({ card, cardSide, onSelectAnswer, onCardMove, prevDir, afterText }
     const cardImg = afterText ? cardFrontBg : get(card, 'character.img', get(card, 'img', ''));
     let answer = getAnswer(card, cardSide);
 
+    let allowToDropTime = 0;
+
     const actionHandlers = useGesture(({ down, delta: [xDelta, yDelta] }) => {
         const isInCenter = Math.abs(xDelta) < 5;
         const isMovedToAnswer = Math.abs(xDelta) > 20;
@@ -82,13 +84,19 @@ function Card({ card, cardSide, onSelectAnswer, onCardMove, prevDir, afterText }
 
         if (!isInCenter && down) {
             onCardMove({side: SIDES[dir]});
+            if (allowToDropTime === 0) {
+                allowToDropTime = new Date().getTime() + 200;
+            }
         } else {
             onCardMove({side: null});
         }
 
-        if (!down && isMovedToAnswer) {
-            gone.add('true');
-            onCardMove({side: null});
+        if (!down && isMovedToAnswer && allowToDropTime > 0) {
+            const now = new Date().getTime();
+            if (now >= allowToDropTime) {
+                gone.add('true');
+                onCardMove({side: null});
+            }
         }
 
         set(() => {
