@@ -1,6 +1,10 @@
+import { getQueryParam } from './common';
+
+const isDebug = getQueryParam('debug') === 'true';
+
 let _log = () => {};
 
-if (process.env.NODE_ENV === 'development') {
+if (process.env.NODE_ENV === 'development' && !isDebug) {
     _log = function (...args) {
         console.log(...args);
     }

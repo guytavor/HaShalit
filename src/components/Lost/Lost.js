@@ -65,7 +65,7 @@ export default function({ startOver, highScore, score, gotoCredits }) {
         </p>
       </div>
       <div onClick={onGotoCredits} className={styles.gotoCredits}>
-        {content.win.credits}
+        {content.lose.credits}
       </div>
     </div>
   );

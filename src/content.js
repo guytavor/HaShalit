@@ -11,7 +11,8 @@ export default {
     },
     win: {
         title: 'המדינה היא ממלכתך והאזרחים הם נתיניך',
-        subtitle: 'הידד!'
+        subtitle: 'הידד!',
+        credits: 'קרדיטים'
     },
     lose: {
         title: 'הודחת',

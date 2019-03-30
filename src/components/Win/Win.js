@@ -13,6 +13,9 @@ export default function({gotoCredits}) {
                 </h1>
                 <h2 className={styles.subtitle}>{content.win.subtitle}</h2>
             </div>
+            <div className={styles.gotoCredits}>
+                {content.win.credits}
+            </div>
         </div>
     );
 }
