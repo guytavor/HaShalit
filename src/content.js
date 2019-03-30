@@ -10,9 +10,13 @@ export default {
         thanks: 'תודות רבות ל-${split}reigns${split} על ההשראה'
     },
     win: {
-        title: 'המדינה היא ממלכתך והאזרחים הם נתיניך',
-        subtitle: 'הידד!',
-        credits: 'קרדיטים'
+        text1Begin: 'המדינה',
+        text1End: 'היא ממלכתך',
+        text2Begin: 'והאזרחים',
+        text2End: 'הם נתיניך',
+        hooray: 'הידד!',
+        credits: 'קרדיטים',
+        startOver: 'חזרה לדמוקרטיה!'
     },
     lose: {
         title: 'הודחת',
