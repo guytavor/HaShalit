@@ -3,7 +3,7 @@ export default {
     intro: {
         title: 'מלך',
         subTitle: 'כמה שנים ניתן לשמור על השלטון?',
-        description: 'התחלה'
+        start: 'התחלה'
     },
     credits: {
         title: 'מלך',

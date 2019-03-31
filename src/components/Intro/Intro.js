@@ -11,8 +11,8 @@ export default function({startGame}) {
                 <p className={styles.subTitle}>
                     {content.intro.subTitle}
                 </p>
-                <button className={styles.description}>
-                    {content.intro.description}
+                <button className={styles.start}>
+                    {content.intro.start}
                 </button>
             </div>
         </div>

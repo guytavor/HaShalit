@@ -5,9 +5,11 @@ import contributors from '../../contributors.json';
 import content from '../../content.js';
 import styles from './Credits.module.scss';
 
+const randomFactor = Math.floor(2 * Math.random()) + 1;
+
 function sortByLastName(a, b) {
     try {
-        return -1 * a.lastName.localeCompare(b.lastName, 'he', {sensitivity: 'base'});
+        return Math.pow(-1, randomFactor) * a.lastName.localeCompare(b.lastName, 'he', {sensitivity: 'base'});
     } catch(e) {}
 
     return 0;
