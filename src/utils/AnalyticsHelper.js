@@ -20,7 +20,7 @@ function checkForGa() {
 
 const deferredEvents = [];
 let tries = 0;
-const hasGa = new Promise(res => {
+const hasGa = new Promise((res, rej) => {
   const timer = setInterval(() => {
     if (checkForGa()) {
       clearInterval(timer);
@@ -28,6 +28,7 @@ const hasGa = new Promise(res => {
     } else {
       if (tries === 10) {
         clearInterval(timer);
+        rej();
       }
     }
     tries++;
