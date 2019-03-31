@@ -1,6 +1,4 @@
-import { err } from "../utils/Logger";
-
-let send = () => {};
+import { err, log } from "../utils/Logger";
 
 const categories = {
   SCREEN: "screen",
@@ -12,21 +10,50 @@ export const CATEGORIES = Object.keys(categories).reduce((acc, key) => {
   return acc;
 }, {});
 
-if (typeof window.ga === "function") {
+const AnalyticsHelper = {
+  sendEvent: (...args) => { deferredEvents.push(args) }
+};
+
+function checkForGa() {
+  return !!window.ga;
+}
+
+const deferredEvents = [];
+let tries = 0;
+const hasGa = new Promise(res => {
+  const timer = setInterval(() => {
+    if (checkForGa()) {
+      clearInterval(timer);
+      res(true);
+    } else {
+      if (tries === 10) {
+        clearInterval(timer);
+      }
+    }
+    tries++;
+  }, 100);
+});
+
+hasGa.then(() => {
   try {
     const tracker = window.ga.getAll()[0];
-    send = function(category, event, label, value) {
+    AnalyticsHelper.sendEvent = function (category, event, label, value) {
+      log('Event sent: ', category, event, label, value);
       try {
         if (categories[category]) {
-            tracker.send("event", categories[category], event, label, value);
+          tracker.send("event", categories[category], event, label, value);
         }
       } catch (e) {
         err("Failed to send analytics", e);
       }
     };
+
+    deferredEvents.forEach(eventArgs => {
+      AnalyticsHelper.sendEvent(...eventArgs);
+    })
   } catch (e) {
     err(e);
   }
-}
+});
 
-export const sendEvent = send;
+export default AnalyticsHelper;

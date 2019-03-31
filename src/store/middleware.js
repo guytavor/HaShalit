@@ -1,6 +1,6 @@
 import get from 'lodash/get';
 import { save } from '../utils/StorageHelper';
-import { sendEvent, CATEGORIES } from '../utils/AnalyticsHelper';
+import AnalyticsHelper, { CATEGORIES } from '../utils/AnalyticsHelper';
 import actions from './actions';
 import { SCREENS } from '../utils/constants';
 import cloneDeep from "lodash/cloneDeep";
@@ -10,7 +10,7 @@ const handlers = {
         const isPhone = get(window, 'isMobile.phone', false);
 
         if (isPhone) {
-            document.body.requestFullscreen().then(() => {}).catch(() => {});
+            document.body.requestFullscreen().then(() => { }).catch(() => { });
             setTimeout(window.scrollTo.call(window, 0, 1));
         }
     },
@@ -22,7 +22,7 @@ const handlers = {
 
         if (card && card[side]) {
             const answer = card[side];
-            sendEvent(CATEGORIES.CARD, 'select answer', {
+            AnalyticsHelper.sendEvent(CATEGORIES.CARD, 'select answer', {
                 'metric1': card.id,
                 'metric2': answer.text,
                 'metric3': metrics.economy,
@@ -55,7 +55,7 @@ export default store => next => action => {
     }
 
     if (prevState.screen !== newState.screen) {
-        sendEvent(CATEGORIES.SCREEN, 'new screen', newState.screen, get(newState, 'level.card.id', -1));
+        AnalyticsHelper.sendEvent(CATEGORIES.SCREEN, 'new screen', newState.screen, get(newState, 'level.card.id', -1));
     }
 
     if (newState.screen === SCREENS.LOST) {
