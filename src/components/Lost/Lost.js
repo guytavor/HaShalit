@@ -5,7 +5,7 @@ import { ReactComponent as LoseIcon } from "../../assets/lost_loseIcon.svg";
 import { ReactComponent as NewScoreIcon } from "../../assets/lost_newScoreIcon.svg";
 import styles from "./Lost.module.scss";
 
-export default function({ startOver, highScore, score, gotoCredits }) {
+export default function ({ startOver, highScore, score, gotoCredits }) {
   const newScore = score > highScore;
   const onGotoCredits = e => {
     e.stopPropagation();
@@ -16,10 +16,11 @@ export default function({ startOver, highScore, score, gotoCredits }) {
     <div
       className={`${styles.wrapper} ${
         newScore ? styles.newScore : styles.lost
-      }`}
+        }`}
       onClick={startOver}
     >
-      {newScore ? <NewScoreIcon /> : <LoseIcon />}
+      <div className={styles.iconHeader}>
+        {newScore ? <NewScoreIcon /> : <LoseIcon />}</div>
       <div className={styles.title}>
         {newScore ? content.lose.titleNewScore : content.lose.title}
       </div>
@@ -36,20 +37,20 @@ export default function({ startOver, highScore, score, gotoCredits }) {
           <p className={styles.highScoreMessage}>
             {
               content.lose.highScoreMessage[
-                Math.floor(Math.random() * content.lose.highScoreMessage.length)
+              Math.floor(Math.random() * content.lose.highScoreMessage.length)
               ]
             }
           </p>
         ) : (
-          <div className={styles.highScoreContainer}>
-            <h1 className={`${styles.highScoreBegin} ${styles.begin}`}>
-              {content.lose.highScoreBegin}
-            </h1>
-            <h1 className={`${styles.highScoreResult} ${styles.result}`}>
-              {content.lose.highScoreResult.replace("${years}", highScore)}
-            </h1>
-          </div>
-        )}
+            <div className={styles.highScoreContainer}>
+              <h1 className={`${styles.highScoreBegin} ${styles.begin}`}>
+                {content.lose.highScoreBegin}
+              </h1>
+              <h1 className={`${styles.highScoreResult} ${styles.result}`}>
+                {content.lose.highScoreResult.replace("${years}", highScore)}
+              </h1>
+            </div>
+          )}
         <button className={styles.startOver}>{content.lose.startOver}</button>
       </div>
       <div onClick={onGotoCredits} className={styles.gotoCredits}>

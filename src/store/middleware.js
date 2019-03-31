@@ -10,8 +10,10 @@ const handlers = {
         const isPhone = get(window, 'isMobile.phone', false);
 
         if (isPhone) {
-            document.body.requestFullscreen().then(() => { }).catch(() => { });
-            setTimeout(window.scrollTo.call(window, 0, 1));
+            try {
+                document.body.requestFullscreen().then(() => { }).catch(() => { });
+                setTimeout(window.scrollTo.call(window, 0, 1));
+            } catch (e) { }
         }
     },
     [actions.selectAnswer]: (store, payload, prevState) => {
