@@ -60,6 +60,10 @@
         position: relative;
         width: 100%;
 
+        .year {
+            font-size: 24px;
+        }
+
         .scoreContainer, .highScoreContainer {
             display: flex;
             flex-direction: row;
@@ -68,10 +72,12 @@
         
             .scoreBegin, .highScoreBegin {
                 margin-left: 20px; 
+                font-size: 24px;
             }
 
             .scoreResult, .highScoreResult {
                 color: white;
+                font-size: 24px;
             }
 
             .scoreBegin, .scoreResult {

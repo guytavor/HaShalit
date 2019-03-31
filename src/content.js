@@ -29,7 +29,8 @@ export default {
         highScoreMessage: ['סחתיין עליך', 'וואלה, יצאת מלוכה', 'האמת, ריגשת', 'פששש'],
         startOver: 'אתמודד שוב',
         message: 'נותרו עוד ${days} ימים לבחירות. יאללה לכו להצביע!',
-        credits: 'קרדיטים'
+        credits: 'קרדיטים',
+        yearBegin: 'השנה היא'
     },
     footer: {
         yearsInPower: 'שנים בשלטון'

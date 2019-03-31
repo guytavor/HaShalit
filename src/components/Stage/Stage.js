@@ -27,7 +27,7 @@ class Stage extends React.PureComponent {
 
     _getContent() {
         const { screen, card, metrics, interactions, afterText, selectAnswer, moveCard, startGame, 
-            startOver, currentYear, yearsInPower, highScore, gotoCredits } = this.props;
+            startOver, currentYear, yearsInPower, highScore, gotoCredits, year } = this.props;
         let content = null;
 
         switch(screen) {
@@ -35,10 +35,10 @@ class Stage extends React.PureComponent {
                 content = <Intro startGame={startGame} />
                 break;
             case SCREENS.WON:
-                content = <Win startOver={startOver} yearsInPower={yearsInPower} gotoCredits={gotoCredits}/>
+                content = <Win startOver={startOver} yearsInPower={yearsInPower} gotoCredits={gotoCredits} year={year}/>
                 break;
             case SCREENS.LOST:
-                content = <Lost startOver={startOver} highScore={highScore} score={yearsInPower} gotoCredits={gotoCredits}/>
+                content = <Lost startOver={startOver} highScore={highScore} score={yearsInPower} gotoCredits={gotoCredits} year={year}/>
                 break;
             case SCREENS.CREDITS:
                 content = <Credits startOver={startOver} />
@@ -78,6 +78,7 @@ const mapStateToProps = state => {
         interactions: state.interactions,
         currentYear: state.level.year,
         yearsInPower: state.level.yearsInPower,
+        year: state.level.year,
         afterText: state.level.afterText,
     };
 };

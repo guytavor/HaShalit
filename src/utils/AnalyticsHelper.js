@@ -15,7 +15,7 @@ const AnalyticsHelper = {
 };
 
 function checkForGa() {
-  return !!window.ga;
+  return !!(window.ga && window.ga.getAll);
 }
 
 const deferredEvents = [];

@@ -5,13 +5,17 @@ import { ReactComponent as WinSvgText } from '../../assets/cards/win.svg';
 import { ReactComponent as WinSvg } from "../../assets/lost_newScoreIcon.svg";
 import styles from './Win.module.scss';
 
-export default function({gotoCredits, yearsInPower}) {
+export default function({gotoCredits, yearsInPower, year}) {
     return (
         <div className={styles.wrapper} onClick={gotoCredits}>
             <WinSvg />
             <WinSvgText />
             <div className={styles.content}>
                 <div className={styles.title}>
+                    <div className={styles.textPart}>
+                        <div>{content.lose.yearBegin}</div>
+                        <div>&nbsp;{year}</div>
+                    </div>
                     <div className={styles.textPart}>
                         <div>{content.lose.scoreBegin}</div>
                         <div>&nbsp;{content.lose.scoreResult.replace('${years}', yearsInPower)}</div>
