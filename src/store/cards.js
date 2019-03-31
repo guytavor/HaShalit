@@ -2173,7 +2173,8 @@ export const cards = {
             text: 'הטלגרף',
             unlockCards: ['1060'],
             effects: {
-                image: 10,
+                security: 10,
+                image: -10,
             },
         },
         right: {
@@ -2181,7 +2182,7 @@ export const cards = {
             effects: {
                 economy: 20,
                 security: -20,
-                image: -20,
+                image: 10,
             },
         },
     },
@@ -3248,7 +3249,7 @@ export const cards = {
         },
         right: {
             text: 'רעיון טוב!',
-            afterText: '"משאית יוצאת ממפעל הנקניקיות המדהימות של זוגלובק בארבע . מתי היא תתנגש ברכבת ישראל בהנחה שהרכבת לעולם לא מאחרת?"',
+            afterText: '"משאית יוצאת ממפעל הנקניקיות המדהימות של זוגלובק בארבע. מתי היא תתנגש ברכבת ישראל בהנחה שהרכבת לעולם לא מאחרת?"',
             effects: {
                 economy: 20,
             },
@@ -3308,23 +3309,6 @@ export const cards = {
             effects: {
                 security: 10,
                 religion: -10,
-            },
-        },
-    },
-    '2130': {
-        character: characters.general,
-        text: 'רוה"מ, אנחנו ספק הנכים הגדול ביותר שלך. אולי תעביר לידנו את התקציבים שלהם?',
-        left: {
-            text: 'תשכח מזה',
-            effects: {
-                image: 10,
-            },
-        },
-        right: {
-            text: 'נשמע הגיוני',
-            effects: {
-                security: 30,
-                image: -10,
             },
         },
     },
@@ -3394,6 +3378,9 @@ export const cards = {
             effects: {
                 security: -5,
                 image: 20,
+                add: [
+                    ['bad', 1],
+                ],
             },
         },
     },
@@ -3411,6 +3398,175 @@ export const cards = {
             effects: {
                 economy: 10,
                 image: -25,
+            },
+        },
+    },
+    '3000': {
+        character: characters.protest,
+        text: 'הדרוזים דורשים שיוויון זכויות',
+        left: {
+            text: 'הם ערבים, לא?',
+            effects: {
+                security: -10,
+                religion: 20,
+            },
+        },
+        right: {
+            text: 'דרוזים הם אחים',
+            effects: {
+                economy: -20,
+            },
+        },
+    },
+    '3001': {
+        character: characters.protest,
+        text: 'האתיופים מתקוממים נגד יחס משפיל נגדם',
+        left: {
+            text: 'הם לא סוג של סודאנים?',
+            effects: {
+                image: -10,
+                religion: 20,
+                add: [
+                    ['hafganot', 1],
+                ],
+            },
+        },
+        right: {
+            text: 'טפל בבעיה',
+            effects: {
+                image: 10,
+                religion: -20,
+                add: [
+                    ['hafganot', -1],
+                ],
+            },
+        },
+    },
+    '3002': {
+        character: characters.protest,
+        text: 'מסתננים ומבקשי מפלט דורשים זכויות',
+        left: {
+            text: 'הם סרטן',
+            effects: {
+                image: 20,
+            },
+        },
+        right: {
+            text: 'הם בני אדם',
+            effects: {
+                religion: -20,
+            },
+        },
+    },
+    '3003': {
+        character: characters.protest,
+        text: 'השמאל דורש העלאת שכר המינימום',
+        left: {
+            text: 'שמאלה זה רק לים!',
+            effects: {
+                economy: 20,
+                image: 20,
+            },
+        },
+        right: {
+            text: 'צודקים',
+            effects: {
+                economy: -30,
+            },
+        },
+    },
+    '3004': {
+        character: characters.ministerEducation,
+        text: 'נוער חרדי לא יודע אנגלית ושברים פשוטים. הם לא יוכלו לעבוד בכלום!',
+        left: {
+            text: 'לא נורא',
+            effects: {
+                religion: 20,
+            },
+        },
+        right: {
+            text: 'שלול קיצבה',
+            effects: {
+                religion: -30,
+            },
+        },
+    },
+    '4000': {
+        character: characters.general,
+        text: 'רוה"מ, אפשר את שמורת חוף דור? אני צריך לבנות בסיס צוללות חדש',
+        left: {
+            text: 'אין מצב',
+            effects: {
+                security: -10,
+            },
+        },
+        right: {
+            text: 'ברור',
+            effects: {
+                economy: -10,
+                security: 20,
+                image: -10,
+            },
+        },
+    },
+    '4010': {
+        character: characters.wife,
+        text: 'ראיתי סרט על חייל שהורג פיסטוקים וחשבתי לעצמי: למה צריך סרטים?',
+        left: {
+            text: 'ריבוי דעות זה טוב',
+            effects: {
+                economy: -10,
+                image: -10,
+                add: [
+                    ['bad', -1],
+                ],
+            },
+        },
+        right: {
+            text: 'צודקת. חתוך מימון',
+            effects: {
+                economy: 20,
+                add: [
+                    ['bad', 1],
+                ],
+            },
+        },
+    },
+    '4020': {
+        character: characters.wife,
+        text: 'איחרתי לחדר כושר כי מפגינים חסמו לי את הדרך. אפשר לדאוג שלא יפגינו לנו מול הבית?',
+        left: {
+            text: 'זכותם להפגין',
+            effects: {
+                image: -10,
+                add: [
+                    ['bad', -1],
+                ],
+            },
+        },
+        right: {
+            text: 'בקלות',
+            effects: {
+                image: 10,
+                add: [
+                    ['bad', 1],
+                ],
+            },
+        },
+    },
+    '4030': {
+        character: characters.consultant,
+        text: 'האתיופים חוגגים את הסיגד השבוע. הם חושבים שאתה לא חוגג איתם כי אתה לא אוהב אתיופים. מה להגיד להם?',
+        left: {
+            text: 'שאני מלא מהמימונה',
+            effects: {
+                image: -20,
+            },
+        },
+        right: {
+            text: 'בא לחגוג איתם!',
+            effects: {
+                image: 10,
             },
         },
     },
