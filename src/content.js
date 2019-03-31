@@ -7,7 +7,8 @@ export default {
     },
     credits: {
         title: 'מלך',
-        thanks: 'תודות רבות ל-${split}reigns${split} על ההשראה'
+        thanks: 'תודות רבות ל-${split}reigns${split} על ההשראה',
+        share: 'שתפו בפייסבוק'
     },
     win: {
         text1Begin: 'המדינה',
@@ -21,9 +22,9 @@ export default {
     lose: {
         title: 'הודחת',
         titleNewScore: 'שיא חדש!',
-        scoreBegin: 'שלטת',  
-        scoreResult: '${years} שנים',  
-        highScoreBegin: 'השיא שלך',  
+        scoreBegin: 'שלטת',
+        scoreResult: '${years} שנים',
+        highScoreBegin: 'השיא שלך',
         highScoreResult: '${years} שנים',
         highScoreMessage: ['סחתיין עליך', 'וואלה, יצאת מלוכה', 'האמת, ריגשת', 'פששש'],
         startOver: 'אתמודד שוב',

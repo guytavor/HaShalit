@@ -32,4 +32,19 @@
     .message {
         padding: 30px 60px;
     }
+
+    .share {
+        background: none;
+        border: none;
+        color: white;
+        background-color: #4267b2;
+        box-shadow: 0 10px 11px rgba(0, 0, 0, 0.3);
+        border-radius: 5px;
+        height: 30px;
+        padding: 0 30px;
+
+        &:active {
+            box-shadow: none;
+        }
+    }
 }

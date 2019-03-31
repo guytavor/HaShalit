@@ -9,16 +9,26 @@ const randomFactor = Math.floor(2 * Math.random()) + 1;
 
 function sortByLastName(a, b) {
     try {
-        return Math.pow(-1, randomFactor) * a.lastName.localeCompare(b.lastName, 'he', {sensitivity: 'base'});
-    } catch(e) {}
+        return Math.pow(-1, randomFactor) * a.lastName.localeCompare(b.lastName, 'he', { sensitivity: 'base' });
+    } catch (e) { }
 
     return 0;
 }
 
 contributors.list.sort(sortByLastName);
 
-export default function ({startOver}) {
+export default function ({ startOver }) {
     const footerParts = content.credits.thanks.split('${split}');
+
+    function onShare(e) {
+        e.stopPropagation();
+
+        window.FB.ui({
+            method: 'share',
+            href: 'https://melechgame.co.il/?ref=70'
+        }, function (response) { });
+    }
+
     return (
         <div className={styles.wrapper} onClick={startOver}>
             <h1 className={styles.title}>{content.credits.title}</h1>
@@ -28,11 +38,14 @@ export default function ({startOver}) {
             <div className={styles.footer}>
                 {footerParts[0]}
                 <a href="https://reignsgame.com" target="_blank" rel="noopener noreferrer" onClick={e => e.stopPropagation()}>
-                {footerParts[1]}</a>{footerParts[2]}
+                    {footerParts[1]}</a>{footerParts[2]}
             </div>
             <p className={styles.message}>
                 {content.lose.message.replace("${days}", getDaysTillElection())}
             </p>
+            <button className={styles.share} onClick={onShare}>
+                {content.credits.share}
+            </button>
         </div>
     );
 }
