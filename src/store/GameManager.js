@@ -290,7 +290,7 @@ export default class GameManager {
             for (const effect of effects.add) {
                 const parameter = effect[0];
                 const currentValue = state.parameters[parameter] || 0;
-                state.parameters[parameter] = currentValue + effect[1];
+                state.parameters[parameter] = clamp(currentValue + effect[1], 0, 20);
             }
         }
     }
