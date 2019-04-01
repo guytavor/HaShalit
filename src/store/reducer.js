@@ -67,7 +67,13 @@ export default handleActions({
         // TODO: Start with the intro, then if loading a save, go to the timeline.
         const { saved, highScore, screen } = payload;
         log('Init', state, saved);
-        let nextLevel = screen || !saved ? gameManager.getNextLevel(state.level) : saved.level;
+        let shouldGetNextLevel = screen || !saved;
+        if (!shouldGetNextLevel && saved.level.card === null) {
+            // The saved state has a null card. Need to get next level.
+            state = saved;
+            shouldGetNextLevel = true;
+        }
+        let nextLevel = shouldGetNextLevel ? gameManager.getNextLevel(state.level) : saved.level;
         const newScreen = (screen && SCREENS[screen.toUpperCase()]) || SCREENS.INTRO;
 
         return {
