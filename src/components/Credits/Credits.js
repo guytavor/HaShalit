@@ -23,10 +23,8 @@ export default function ({ startOver }) {
     function onShare(e) {
         e.stopPropagation();
 
-        window.FB.ui({
-            method: 'share',
-            href: 'https://melechgame.co.il/?ref=70'
-        }, function (response) { });
+        window.open("https://www.facebook.com/sharer/sharer.php?u=http://melechgame.co.il/?ref=70", "pop", "width=600, height=400, scrollbars=no");
+        return false;
     }
 
     return (
