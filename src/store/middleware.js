@@ -17,20 +17,17 @@ const handlers = {
         }
     },
     [actions.selectAnswer]: (store, payload, prevState) => {
-        const { side } = payload;
         const currentState = store.getState();
         const metrics = get(currentState, 'level.metrics', {});
         const card = get(prevState, 'level.card', null);
 
-        if (card && card[side]) {
-            const answer = card[side];
+        if (card && card.id) {
             AnalyticsHelper.sendEvent(CATEGORIES.CARD, 'select answer', {
-                'metric1': card.id,
-                'metric2': answer.text,
-                'metric3': metrics.economy,
-                'metric4': metrics.security,
-                'metric5': metrics.image,
-                'metric6': metrics.religion,
+                'dimension1': card.id,
+                'metric1': metrics.economy,
+                'metric2': metrics.security,
+                'metric3': metrics.image,
+                'metric4': metrics.religion,
             });
         }
     }
