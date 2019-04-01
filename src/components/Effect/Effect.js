@@ -52,6 +52,8 @@ export default class Effect extends React.PureComponent {
             <div className={styles.wrapper}>
                 <div className={`${styles.bg} ${bgClass}`} style={{height: `${Math.round(currentPoints)}%`}}/>
                 <div className={styles.icon}>{children}</div>
+                <div className={styles.veinFixer} />
+                <div className={`${styles.veinFixer} ${styles.vertical}`} />
                 <div className={`${styles.ball} ${ballClass}`} />
             </div>
         );
