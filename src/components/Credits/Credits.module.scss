@@ -48,4 +48,19 @@
             box-shadow: none;
         }
     }
+
+    @media all and (max-height: $loLoResHeightBreak) {
+        * {
+            font-size: 14px;
+        }
+
+        .title {
+            font-size: 30px;
+            margin: 0 0 6px;
+        }   
+
+        .message {
+            padding: 14px 60px;
+        }
+    }
 }

@@ -7,4 +7,5 @@ export default {
     startOver: createAction('START_OVER'),
     selectAnswer: createAction('SELECT_ANSWER'),
     moveCard: createAction('MOVE_CARD'),
+    share: createAction('SHARE')
 };

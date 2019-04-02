@@ -17,13 +17,12 @@ function sortByLastName(a, b) {
 
 contributors.list.sort(sortByLastName);
 
-export default function ({ startOver }) {
+export default function ({ startOver, share }) {
     const footerParts = content.credits.thanks.split('${split}');
 
     function onShare(e) {
         e.stopPropagation();
-
-        window.open("https://www.facebook.com/sharer/sharer.php?u=http://melechgame.co.il/?ref=70", "pop", "width=600, height=400, scrollbars=no");
+        share({});
         return false;
     }
 

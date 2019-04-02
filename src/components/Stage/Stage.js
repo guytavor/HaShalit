@@ -26,33 +26,33 @@ class Stage extends React.PureComponent {
     }
 
     _getContent() {
-        const { screen, card, metrics, interactions, afterText, selectAnswer, moveCard, startGame, 
-            startOver, currentYear, yearsInPower, highScore, gotoCredits, year } = this.props;
+        const { screen, card, metrics, interactions, afterText, selectAnswer, moveCard, startGame,
+            startOver, currentYear, yearsInPower, highScore, gotoCredits, year, share } = this.props;
         let content = null;
 
-        switch(screen) {
+        switch (screen) {
             case SCREENS.INTRO:
                 content = <Intro startGame={startGame} />
                 break;
             case SCREENS.WON:
-                content = <Win startOver={startOver} yearsInPower={yearsInPower} gotoCredits={gotoCredits} year={year}/>
+                content = <Win startOver={startOver} yearsInPower={yearsInPower} gotoCredits={gotoCredits} year={year} />
                 break;
             case SCREENS.LOST:
-                content = <Lost startOver={startOver} highScore={highScore} score={yearsInPower} gotoCredits={gotoCredits} year={year}/>
+                content = <Lost startOver={startOver} highScore={highScore} score={yearsInPower} gotoCredits={gotoCredits} year={year} />
                 break;
             case SCREENS.CREDITS:
-                content = <Credits startOver={startOver} />
+                content = <Credits startOver={startOver} share={share} />
                 break;
             case SCREENS.GAME:
                 content = (
                     <React.Fragment>
-                        <div className={styles.header}><Header metrics={metrics} card={card} interactions={interactions}/></div>
-                        <div className={styles.content}><DeckContainer card={card} 
-                                        afterText={afterText}
-                                       interactions={interactions}
-                                       onSelectAnswer={selectAnswer}
-                                       onMoveCard={moveCard} /></div>
-                        <div className={styles.footer}><Footer currentYear={currentYear} yearsInPower={yearsInPower}/></div>
+                        <div className={styles.header}><Header metrics={metrics} card={card} interactions={interactions} /></div>
+                        <div className={styles.content}><DeckContainer card={card}
+                            afterText={afterText}
+                            interactions={interactions}
+                            onSelectAnswer={selectAnswer}
+                            onMoveCard={moveCard} /></div>
+                        <div className={styles.footer}><Footer currentYear={currentYear} yearsInPower={yearsInPower} /></div>
                     </React.Fragment>
                 );
                 break;
@@ -90,6 +90,7 @@ const mapDispatchToProps = dispatch => {
         startGame: actions.startGame,
         startOver: actions.startOver,
         gotoCredits: actions.gotoCredits,
+        share: actions.share,
     }, dispatch);
 };
 

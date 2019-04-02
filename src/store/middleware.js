@@ -30,6 +30,14 @@ const handlers = {
                 'metric4': metrics.religion,
             });
         }
+    },
+    [actions.share]: (store, payload = {}) => {
+        const quote = encodeURIComponent(payload.quote || '');
+        const url = encodeURIComponent('http://melechgame.co.il/?ref=70');
+        const options = 'width=600, height=400, scrollbars=no';
+        const type = 'pop';
+
+        window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}&quote=${quote}`, type, options);
     }
 };
 
