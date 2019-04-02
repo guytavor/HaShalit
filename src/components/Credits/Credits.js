@@ -37,6 +37,10 @@ export default function ({ startOver, share }) {
                 <a href="https://reignsgame.com" target="_blank" rel="noopener noreferrer" onClick={e => e.stopPropagation()}>
                     {footerParts[1]}</a>{footerParts[2]}
             </div>
+            <div className={styles.footer}>
+                <a href="mailto:melechgame2019@gmail.com" target="_blank" rel="noopener noreferrer" onClick={e => e.stopPropagation()}>
+                    דברו איתנו</a>
+            </div>
             <p className={styles.message}>
                 {content.lose.message.replace("${days}", getDaysTillElection())}
             </p>
