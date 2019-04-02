@@ -5,7 +5,13 @@ import { ReactComponent as WinSvgText } from '../../assets/cards/win.svg';
 import { ReactComponent as WinSvg } from "../../assets/lost_newScoreIcon.svg";
 import styles from './Win.module.scss';
 
-export default function({gotoCredits, yearsInPower, year}) {
+export default function ({ gotoCredits, yearsInPower, year, games, share }) {
+    const onShare = (e) => {
+        e.stopPropagation();
+        share({ quote: content.win.share.replace('${games}', games).replace('${years}', yearsInPower) });
+        return false;
+    };
+
     return (
         <div className={styles.wrapper} onClick={gotoCredits}>
             <WinSvg />
@@ -15,6 +21,10 @@ export default function({gotoCredits, yearsInPower, year}) {
                     <div className={styles.textPart}>
                         <div>{content.lose.yearBegin}</div>
                         <div>&nbsp;{year}</div>
+                    </div>
+                    <div className={styles.textPart}>
+                        <div>{content.win.gameNumBegin}</div>
+                        <div>&nbsp;{content.win.gameNumEnd.replace('${games}', games)}</div>
                     </div>
                     <div className={styles.textPart}>
                         <div>{content.lose.scoreBegin}</div>
@@ -32,6 +42,9 @@ export default function({gotoCredits, yearsInPower, year}) {
                     </div>
                 </div>
                 <div className={styles.endTitle}>{content.win.hooray}</div>
+                <button className={styles.share} onClick={onShare}>
+                    {content.credits.share}
+                </button>
                 <button className={styles.startOver}>{content.win.startOver}</button>
                 <div className={styles.gotoCredits}>
                     {content.win.credits}

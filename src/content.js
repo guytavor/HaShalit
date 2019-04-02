@@ -17,7 +17,10 @@ export default {
         text2End: 'הם נתיניך',
         hooray: 'הידד!',
         credits: 'קרדיטים',
-        startOver: 'חזרה לדמוקרטיה!'
+        startOver: 'חזרה לדמוקרטיה!',
+        gameNumBegin: 'שרדת',
+        gameNumEnd: '${games} קדנציות',
+        share: 'ניצחתי! חיסלתי את הדמוקרטיה ב-${games} קדנציות ו-${years} שנים!',
     },
     lose: {
         title: 'הודחת',
