@@ -92,9 +92,9 @@
             width: 200%;
             height: 200%;
             background-color: rgba(0, 0, 0, 0.3);
-            top: -250%;
+            bottom: 200%;
             right: -50%;
-            transition: top .25s ease; 
+            transition: bottom .25s ease; 
             
             .answer {
               bottom: 0;
@@ -113,7 +113,7 @@
           
           &.left, &.right {
             .answerContainer {
-              top: -180%;
+              bottom: 175%;
             }
           }
           
@@ -150,26 +150,9 @@
           }
         }
         
-        @media (max-Height: $loLoResHeightBreak) {
-          .answerFixer {
-            &.left, &.right {
-              .answerContainer {
-                // top: -160%;
-              }
-            }
-          }
-          
+        @media (max-Height: $loLoResHeightBreak) {          
           .afterText {
             font-size: 14px;
-          }
-        }
-        @media (max-width: $tinyScreenBreakpoint) {
-          .answerFixer {
-            &.left, &.right {
-              .answerContainer {
-                top: -160%;
-              }
-            }
           }
         }
       }
